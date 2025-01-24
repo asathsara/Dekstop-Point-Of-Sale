@@ -61,6 +61,24 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Themes\ThemeColors.cs" />
+    <Compile Include="Views\AdminPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AdminPanelForm.Designer.cs">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeePanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeePanelForm.Designer.cs">
+      <DependentUpon>EmployeePanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ItemManagementForm.Designer.cs">
+      <DependentUpon>ItemManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +95,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\AdminPanelForm.resx">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeePanelForm.resx">
+      <DependentUpon>EmployeePanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ItemManagementForm.resx">
+      <DependentUpon>ItemManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,9 +122,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Resources\Icons\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Icons\dashboard.png" />
+    <Content Include="Resources\Icons\employee.png" />
+    <Content Include="Resources\Icons\managment.png" />
+    <Content Include="Resources\Icons\search.png" />
+    <Content Include="Resources\Icons\signout.png" />
+    <Content Include="Resources\Icons\store.png" />
+    <Content Include="Resources\Icons\suppliers.png" />
     <Content Include="Resources\Images\PointOfSale.png" />
     <Content Include="Resources\Images\sale.png" />
     <Content Include="Resources\Images\user.png" />

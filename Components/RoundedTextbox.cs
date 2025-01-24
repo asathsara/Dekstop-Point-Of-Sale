@@ -1,5 +1,4 @@
-﻿using PointOfSale.Themes;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -9,13 +8,13 @@ namespace PointOfSale.Components
     public partial class RoundedTextbox : UserControl
     {
         private TextBox textBox;
-        private int borderRadius = 15; // Default radius
-        private int borderWidth = 2;   // Border width
+        private int borderRadius = 10; // Default radius
+        private int borderWidth = 0;   // Border width
         private string placeholderText = "Enter text..."; // Default placeholder text
         private bool isPlaceholderActive = true; // Flag to check if the placeholder is active
         private char passwordChar = '\0'; // Default no password char
-        private Color borderColor = Color.Gray;
-        private Color backgroundColor = ThemeColors.LightGray;
+        private Color borderColor = System.Drawing.SystemColors.Control;
+        private Color backgroundColor = System.Drawing.SystemColors.Control;
 
         // Event to notify when Enter key is pressed
         public event EventHandler EnterKeyPressed;

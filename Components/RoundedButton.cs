@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing.Drawing2D;
+﻿using PointOfSale.Themes;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace PointOfSale.Components
@@ -47,8 +44,10 @@ namespace PointOfSale.Components
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.White;
-            this.ForeColor = Color.Black;
+            this.BackColor = ThemeColors.SoftBlue;
+            this.ForeColor = Color.White;
+            this.Cursor = Cursors.Hand;
+            this.Font = new Font("Poppins", 12, System.Drawing.FontStyle.Bold);
         }
 
         // Method to generate path for custom rounded corners

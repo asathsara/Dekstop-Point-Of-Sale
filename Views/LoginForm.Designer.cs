@@ -59,9 +59,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanelHome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelHome.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelHome.Name = "tableLayoutPanelHome";
-            this.tableLayoutPanelHome.RowCount = 2;
+            this.tableLayoutPanelHome.RowCount = 1;
             this.tableLayoutPanelHome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelHome.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanelHome.Size = new System.Drawing.Size(1060, 625);
             this.tableLayoutPanelHome.TabIndex = 0;
             // 
@@ -71,7 +70,7 @@ namespace PointOfSale.Views
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.sale;
             this.pictureBox1.Location = new System.Drawing.Point(427, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(630, 602);
+            this.pictureBox1.Size = new System.Drawing.Size(630, 619);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -90,7 +89,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(418, 602);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(418, 619);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // roundedPanel1
@@ -100,9 +99,9 @@ namespace PointOfSale.Views
             this.roundedPanel1.BottomRightRadius = 40;
             this.roundedPanel1.Controls.Add(this.tableLayoutPanelCard);
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel1.Location = new System.Drawing.Point(44, 93);
+            this.roundedPanel1.Location = new System.Drawing.Point(44, 95);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(328, 415);
+            this.roundedPanel1.Size = new System.Drawing.Size(328, 427);
             this.roundedPanel1.TabIndex = 0;
             this.roundedPanel1.TopLeftRadius = 40;
             this.roundedPanel1.TopRightRadius = 40;
@@ -129,7 +128,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanelCard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanelCard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelCard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23F));
-            this.tableLayoutPanelCard.Size = new System.Drawing.Size(328, 415);
+            this.tableLayoutPanelCard.Size = new System.Drawing.Size(328, 427);
             this.tableLayoutPanelCard.TabIndex = 1;
             // 
             // labelLogin
@@ -141,7 +140,7 @@ namespace PointOfSale.Views
             this.labelLogin.Location = new System.Drawing.Point(34, 35);
             this.labelLogin.Margin = new System.Windows.Forms.Padding(0);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(260, 79);
+            this.labelLogin.Size = new System.Drawing.Size(260, 82);
             this.labelLogin.TabIndex = 2;
             this.labelLogin.Text = "Login";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,12 +153,12 @@ namespace PointOfSale.Views
             this.roundedTextboxUsername.BorderRadius = 15;
             this.roundedTextboxUsername.BorderWidth = 0;
             this.roundedTextboxUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxUsername.Location = new System.Drawing.Point(37, 151);
+            this.roundedTextboxUsername.Location = new System.Drawing.Point(37, 155);
             this.roundedTextboxUsername.Name = "roundedTextboxUsername";
             this.roundedTextboxUsername.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxUsername.PasswordChar = '\0';
             this.roundedTextboxUsername.PlaceholderText = "Username";
-            this.roundedTextboxUsername.Size = new System.Drawing.Size(254, 45);
+            this.roundedTextboxUsername.Size = new System.Drawing.Size(254, 47);
             this.roundedTextboxUsername.TabIndex = 6;
             // 
             // roundedTextboxPassword
@@ -169,19 +168,19 @@ namespace PointOfSale.Views
             this.roundedTextboxPassword.BorderColor = System.Drawing.Color.Transparent;
             this.roundedTextboxPassword.BorderRadius = 15;
             this.roundedTextboxPassword.BorderWidth = 0;
+            this.roundedTextboxPassword.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedTextboxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roundedTextboxPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedTextboxPassword.Location = new System.Drawing.Point(37, 215);
+            this.roundedTextboxPassword.Location = new System.Drawing.Point(37, 222);
             this.roundedTextboxPassword.Name = "roundedTextboxPassword";
             this.roundedTextboxPassword.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxPassword.PasswordChar = '•';
             this.roundedTextboxPassword.PlaceholderText = "Password";
-            this.roundedTextboxPassword.Size = new System.Drawing.Size(254, 45);
+            this.roundedTextboxPassword.Size = new System.Drawing.Size(254, 47);
             this.roundedTextboxPassword.TabIndex = 7;
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
             this.buttonLogin.BottomLeftRadius = 40;
             this.buttonLogin.BottomRightRadius = 40;
             this.buttonLogin.Dock = System.Windows.Forms.DockStyle.Top;
@@ -189,7 +188,7 @@ namespace PointOfSale.Views
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(37, 300);
+            this.buttonLogin.Location = new System.Drawing.Point(37, 310);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(254, 47);
             this.buttonLogin.TabIndex = 8;
