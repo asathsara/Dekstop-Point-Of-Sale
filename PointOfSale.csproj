@@ -67,6 +67,24 @@
     <Compile Include="Views\AdminPanelForm.Designer.cs">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\BillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\BillingForm.Designer.cs">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DashboardForm.Designer.cs">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\EmployeePanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +103,24 @@
     <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoyaltyCustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoyaltyCustomersForm.Designer.cs">
+      <DependentUpon>LoyaltyCustomersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StoreForm.Designer.cs">
+      <DependentUpon>StoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SuppliersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SuppliersForm.Designer.cs">
+      <DependentUpon>SuppliersForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +134,9 @@
     <EmbeddedResource Include="Views\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeePanelForm.resx">
       <DependentUpon>EmployeePanelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +145,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoyaltyCustomersForm.resx">
+      <DependentUpon>LoyaltyCustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SuppliersForm.resx">
+      <DependentUpon>SuppliersForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -116,6 +161,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
