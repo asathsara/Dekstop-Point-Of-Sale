@@ -22,6 +22,16 @@ namespace PointOfSale.Views
             base.Dispose(disposing);
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -30,9 +40,9 @@ namespace PointOfSale.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,6 +54,12 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
@@ -51,12 +67,6 @@ namespace PointOfSale.Views
             this.roundedTextBoxCardNumber = new PointOfSale.Components.RoundedTextbox();
             this.roundedTtextboxCustomerName = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,7 +88,7 @@ namespace PointOfSale.Views
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1097, 733);
+            this.panel1.Size = new System.Drawing.Size(939, 666);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -99,16 +109,16 @@ namespace PointOfSale.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1097, 733);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(939, 666);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tableLayoutPanel3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(494, 39);
+            this.panel3.Location = new System.Drawing.Point(423, 36);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(542, 653);
+            this.panel3.Size = new System.Drawing.Size(463, 593);
             this.panel3.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -128,7 +138,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(542, 653);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(463, 593);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // roundedPanel2
@@ -138,9 +148,9 @@ namespace PointOfSale.Views
             this.roundedPanel2.BottomRightRadius = 30;
             this.roundedPanel2.Controls.Add(this.tableLayoutPanel6);
             this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel2.Location = new System.Drawing.Point(111, 3);
+            this.roundedPanel2.Location = new System.Drawing.Point(95, 3);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(319, 59);
+            this.roundedPanel2.Size = new System.Drawing.Size(271, 53);
             this.roundedPanel2.TabIndex = 3;
             this.roundedPanel2.TopLeftRadius = 30;
             this.roundedPanel2.TopRightRadius = 30;
@@ -203,10 +213,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.SetColumnSpan(this.roundedPanel3, 3);
             this.roundedPanel3.Controls.Add(this.tableLayoutPanel5);
             this.roundedPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel3.Location = new System.Drawing.Point(0, 97);
+            this.roundedPanel3.Location = new System.Drawing.Point(0, 88);
             this.roundedPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Size = new System.Drawing.Size(542, 556);
+            this.roundedPanel3.Size = new System.Drawing.Size(463, 505);
             this.roundedPanel3.TabIndex = 4;
             this.roundedPanel3.TopLeftRadius = 40;
             this.roundedPanel3.TopRightRadius = 40;
@@ -237,21 +247,21 @@ namespace PointOfSale.Views
             this.dataGridViewItems.AllowUserToDeleteRows = false;
             this.dataGridViewItems.AllowUserToResizeColumns = false;
             this.dataGridViewItems.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewItems.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -260,15 +270,15 @@ namespace PointOfSale.Views
             this.Points,
             this.EmployeeID,
             this.Delete});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewItems.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewItems.EnableHeadersVisualStyles = false;
             this.dataGridViewItems.Location = new System.Drawing.Point(0, 55);
@@ -279,141 +289,6 @@ namespace PointOfSale.Views
             this.dataGridViewItems.RowTemplate.Height = 30;
             this.dataGridViewItems.Size = new System.Drawing.Size(542, 444);
             this.dataGridViewItems.TabIndex = 6;
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.White;
-            this.roundedPanel1.BottomLeftRadius = 30;
-            this.roundedPanel1.BottomRightRadius = 30;
-            this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
-            this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel1.Location = new System.Drawing.Point(57, 39);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(377, 653);
-            this.roundedPanel1.TabIndex = 2;
-            this.roundedPanel1.TopLeftRadius = 30;
-            this.roundedPanel1.TopRightRadius = 30;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonSubmit, 1, 8);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxPoints, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextBoxCardNumber, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTtextboxCustomerName, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxID, 1, 3);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 12;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(377, 653);
-            this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // buttonSubmit
-            // 
-            this.buttonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.buttonSubmit.BottomLeftRadius = 40;
-            this.buttonSubmit.BottomRightRadius = 40;
-            this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSubmit.FlatAppearance.BorderSize = 0;
-            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSubmit.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(40, 462);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(295, 55);
-            this.buttonSubmit.TabIndex = 1;
-            this.buttonSubmit.Text = "Submit";
-            this.buttonSubmit.TopLeftRadius = 40;
-            this.buttonSubmit.TopRightRadius = 40;
-            this.buttonSubmit.UseVisualStyleBackColor = false;
-            // 
-            // roundedTextboxPoints
-            // 
-            this.roundedTextboxPoints.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxPoints.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxPoints.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxPoints.BorderRadius = 10;
-            this.roundedTextboxPoints.BorderWidth = 0;
-            this.roundedTextboxPoints.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxPoints.Location = new System.Drawing.Point(42, 342);
-            this.roundedTextboxPoints.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxPoints.Name = "roundedTextboxPoints";
-            this.roundedTextboxPoints.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxPoints.PasswordChar = '\0';
-            this.roundedTextboxPoints.PlaceholderText = "Points";
-            this.roundedTextboxPoints.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxPoints.TabIndex = 11;
-            // 
-            // roundedTextBoxCardNumber
-            // 
-            this.roundedTextBoxCardNumber.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextBoxCardNumber.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextBoxCardNumber.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextBoxCardNumber.BorderRadius = 10;
-            this.roundedTextBoxCardNumber.BorderWidth = 0;
-            this.roundedTextBoxCardNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextBoxCardNumber.Location = new System.Drawing.Point(42, 281);
-            this.roundedTextBoxCardNumber.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextBoxCardNumber.Name = "roundedTextBoxCardNumber";
-            this.roundedTextBoxCardNumber.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextBoxCardNumber.PasswordChar = '\0';
-            this.roundedTextBoxCardNumber.PlaceholderText = "Card Number";
-            this.roundedTextBoxCardNumber.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextBoxCardNumber.TabIndex = 12;
-            // 
-            // roundedTtextboxCustomerName
-            // 
-            this.roundedTtextboxCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTtextboxCustomerName.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTtextboxCustomerName.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTtextboxCustomerName.BorderRadius = 10;
-            this.roundedTtextboxCustomerName.BorderWidth = 0;
-            this.roundedTtextboxCustomerName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTtextboxCustomerName.Location = new System.Drawing.Point(42, 220);
-            this.roundedTtextboxCustomerName.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTtextboxCustomerName.Name = "roundedTtextboxCustomerName";
-            this.roundedTtextboxCustomerName.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTtextboxCustomerName.PasswordChar = '\0';
-            this.roundedTtextboxCustomerName.PlaceholderText = "Name";
-            this.roundedTtextboxCustomerName.Size = new System.Drawing.Size(291, 51);
-            this.roundedTtextboxCustomerName.TabIndex = 13;
-            // 
-            // roundedTextboxID
-            // 
-            this.roundedTextboxID.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxID.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxID.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxID.BorderRadius = 10;
-            this.roundedTextboxID.BorderWidth = 0;
-            this.roundedTextboxID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxID.Location = new System.Drawing.Point(42, 159);
-            this.roundedTextboxID.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxID.Name = "roundedTextboxID";
-            this.roundedTextboxID.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxID.PasswordChar = '\0';
-            this.roundedTextboxID.PlaceholderText = "ID";
-            this.roundedTextboxID.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxID.TabIndex = 14;
             // 
             // ID
             // 
@@ -461,12 +336,147 @@ namespace PointOfSale.Views
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.BackColor = System.Drawing.Color.White;
+            this.roundedPanel1.BottomLeftRadius = 30;
+            this.roundedPanel1.BottomRightRadius = 30;
+            this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
+            this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedPanel1.Location = new System.Drawing.Point(49, 36);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Size = new System.Drawing.Size(322, 593);
+            this.roundedPanel1.TabIndex = 2;
+            this.roundedPanel1.TopLeftRadius = 30;
+            this.roundedPanel1.TopRightRadius = 30;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.buttonSubmit, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxPoints, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextBoxCardNumber, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTtextboxCustomerName, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxID, 1, 3);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 12;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(322, 593);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            this.buttonSubmit.BottomLeftRadius = 40;
+            this.buttonSubmit.BottomRightRadius = 40;
+            this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSubmit.FlatAppearance.BorderSize = 0;
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
+            this.buttonSubmit.Location = new System.Drawing.Point(35, 417);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(251, 49);
+            this.buttonSubmit.TabIndex = 1;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.TopLeftRadius = 40;
+            this.buttonSubmit.TopRightRadius = 40;
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            // 
+            // roundedTextboxPoints
+            // 
+            this.roundedTextboxPoints.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxPoints.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxPoints.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxPoints.BorderRadius = 10;
+            this.roundedTextboxPoints.BorderWidth = 0;
+            this.roundedTextboxPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxPoints.Location = new System.Drawing.Point(37, 309);
+            this.roundedTextboxPoints.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxPoints.Name = "roundedTextboxPoints";
+            this.roundedTextboxPoints.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxPoints.PasswordChar = '\0';
+            this.roundedTextboxPoints.PlaceholderText = "Points";
+            this.roundedTextboxPoints.Size = new System.Drawing.Size(247, 45);
+            this.roundedTextboxPoints.TabIndex = 11;
+            // 
+            // roundedTextBoxCardNumber
+            // 
+            this.roundedTextBoxCardNumber.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextBoxCardNumber.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextBoxCardNumber.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextBoxCardNumber.BorderRadius = 10;
+            this.roundedTextBoxCardNumber.BorderWidth = 0;
+            this.roundedTextBoxCardNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextBoxCardNumber.Location = new System.Drawing.Point(37, 254);
+            this.roundedTextBoxCardNumber.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextBoxCardNumber.Name = "roundedTextBoxCardNumber";
+            this.roundedTextBoxCardNumber.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextBoxCardNumber.PasswordChar = '\0';
+            this.roundedTextBoxCardNumber.PlaceholderText = "Card Number";
+            this.roundedTextBoxCardNumber.Size = new System.Drawing.Size(247, 45);
+            this.roundedTextBoxCardNumber.TabIndex = 12;
+            // 
+            // roundedTtextboxCustomerName
+            // 
+            this.roundedTtextboxCustomerName.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTtextboxCustomerName.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTtextboxCustomerName.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTtextboxCustomerName.BorderRadius = 10;
+            this.roundedTtextboxCustomerName.BorderWidth = 0;
+            this.roundedTtextboxCustomerName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTtextboxCustomerName.Location = new System.Drawing.Point(37, 199);
+            this.roundedTtextboxCustomerName.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTtextboxCustomerName.Name = "roundedTtextboxCustomerName";
+            this.roundedTtextboxCustomerName.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTtextboxCustomerName.PasswordChar = '\0';
+            this.roundedTtextboxCustomerName.PlaceholderText = "Name";
+            this.roundedTtextboxCustomerName.Size = new System.Drawing.Size(247, 45);
+            this.roundedTtextboxCustomerName.TabIndex = 13;
+            // 
+            // roundedTextboxID
+            // 
+            this.roundedTextboxID.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxID.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxID.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxID.BorderRadius = 10;
+            this.roundedTextboxID.BorderWidth = 0;
+            this.roundedTextboxID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxID.Location = new System.Drawing.Point(37, 144);
+            this.roundedTextboxID.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxID.Name = "roundedTextboxID";
+            this.roundedTextboxID.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxID.PasswordChar = '\0';
+            this.roundedTextboxID.PlaceholderText = "ID";
+            this.roundedTextboxID.Size = new System.Drawing.Size(247, 45);
+            this.roundedTextboxID.TabIndex = 14;
+            // 
             // LoyaltyCustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1097, 733);
+            this.ClientSize = new System.Drawing.Size(939, 666);
             this.Controls.Add(this.panel1);
             this.Name = "LoyaltyCustomersForm";
             this.Text = "Loyalty Customers ";

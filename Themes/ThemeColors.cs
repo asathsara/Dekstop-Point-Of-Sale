@@ -11,6 +11,9 @@ namespace PointOfSale.Themes
         public static readonly Color SkyBlue = Color.FromArgb(0xFF, 0x00, 0x99, 0xFF);   // Sky Blue (#0099FF)
         public static readonly Color BrightBlue = Color.FromArgb(0xFF, 0x32, 0xCC, 0xFF); // Bright Blue (#32CCFF)
 
+        public static readonly Color TextColor = Color.FromArgb(0xFF, 0x32, 0xCC, 0xFF); // Bright Blue (#32CCFF)
+
+
 
         public static void ApplyGradientToPanel(Panel panel, Color startColor, Color endColor, LinearGradientMode mode)
         {

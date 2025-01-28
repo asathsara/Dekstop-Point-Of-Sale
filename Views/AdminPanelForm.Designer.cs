@@ -25,6 +25,16 @@ namespace PointOfSale.Views
             base.Dispose(disposing);
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -34,49 +44,49 @@ namespace PointOfSale.Views
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelStatus = new System.Windows.Forms.Label();
+            this.labelGreeting = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelConetentForm = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxStore = new System.Windows.Forms.PictureBox();
             this.labelStore = new System.Windows.Forms.Label();
             this.panelImageFour = new System.Windows.Forms.Panel();
+            this.pictureBoxSuppliers = new System.Windows.Forms.PictureBox();
             this.panelImageThree = new System.Windows.Forms.Panel();
+            this.pictureBoxEmployees = new System.Windows.Forms.PictureBox();
             this.panelImageTwo = new System.Windows.Forms.Panel();
+            this.pictureBoxManagment = new System.Windows.Forms.PictureBox();
             this.labelSuppliers = new System.Windows.Forms.Label();
             this.labelEmployee = new System.Windows.Forms.Label();
             this.labelManagment = new System.Windows.Forms.Label();
             this.labelDashboard = new System.Windows.Forms.Label();
             this.panelImageOne = new System.Windows.Forms.Panel();
+            this.pictureBoxDashboard = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelSignout = new System.Windows.Forms.Label();
+            this.pictureBoxSignout = new System.Windows.Forms.PictureBox();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
-            this.pictureBoxStore = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSuppliers = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEmployees = new System.Windows.Forms.PictureBox();
-            this.pictureBoxManagment = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDashboard = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSignout = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panelImageFour.SuspendLayout();
-            this.panelImageThree.SuspendLayout();
-            this.panelImageTwo.SuspendLayout();
-            this.panelImageOne.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.roundedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuppliers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmployees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStore)).BeginInit();
+            this.panelImageFour.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuppliers)).BeginInit();
+            this.panelImageThree.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmployees)).BeginInit();
+            this.panelImageTwo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagment)).BeginInit();
+            this.panelImageOne.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignout)).BeginInit();
+            this.roundedPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -87,34 +97,45 @@ namespace PointOfSale.Views
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Controls.Add(this.labelStatus, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelGreeting, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(229, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(831, 56);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(955, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // labelStatus
+            // labelGreeting
             // 
-            this.labelStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelStatus.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelStatus.Location = new System.Drawing.Point(44, 0);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(243, 56);
-            this.labelStatus.TabIndex = 0;
-            this.labelStatus.Text = "Good Morning";
-            this.labelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelGreeting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelGreeting.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGreeting.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.labelGreeting.Location = new System.Drawing.Point(50, 0);
+            this.labelGreeting.Name = "labelGreeting";
+            this.labelGreeting.Size = new System.Drawing.Size(280, 56);
+            this.labelGreeting.TabIndex = 0;
+            this.labelGreeting.Text = "Good Morning";
+            this.labelGreeting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox6.Image = global::PointOfSale.Properties.Resources.user;
+            this.pictureBox6.Location = new System.Drawing.Point(882, 9);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(49, 37);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
             // panelConetentForm
             // 
             this.panelConetentForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConetentForm.Location = new System.Drawing.Point(229, 56);
             this.panelConetentForm.Name = "panelConetentForm";
-            this.panelConetentForm.Size = new System.Drawing.Size(831, 569);
+            this.panelConetentForm.Size = new System.Drawing.Size(955, 705);
             this.panelConetentForm.TabIndex = 1;
             // 
             // panel1
@@ -140,6 +161,19 @@ namespace PointOfSale.Views
             this.labelTitle.TabIndex = 1;
             this.labelTitle.Text = "Point Of Sale";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::PointOfSale.Properties.Resources.PointOfSale;
+            this.pictureBox1.Location = new System.Drawing.Point(61, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(103, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
@@ -169,6 +203,17 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.Size = new System.Drawing.Size(230, 250);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
+            // pictureBoxStore
+            // 
+            this.pictureBoxStore.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxStore.Image = global::PointOfSale.Properties.Resources.store;
+            this.pictureBoxStore.Location = new System.Drawing.Point(12, 214);
+            this.pictureBoxStore.Name = "pictureBoxStore";
+            this.pictureBoxStore.Size = new System.Drawing.Size(21, 22);
+            this.pictureBoxStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxStore.TabIndex = 16;
+            this.pictureBoxStore.TabStop = false;
+            // 
             // labelStore
             // 
             this.labelStore.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -181,6 +226,7 @@ namespace PointOfSale.Views
             this.labelStore.TabIndex = 15;
             this.labelStore.Text = "Store";
             this.labelStore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelStore.Click += new System.EventHandler(this.labelStore_Click);
             // 
             // panelImageFour
             // 
@@ -192,6 +238,17 @@ namespace PointOfSale.Views
             this.panelImageFour.Size = new System.Drawing.Size(46, 50);
             this.panelImageFour.TabIndex = 13;
             // 
+            // pictureBoxSuppliers
+            // 
+            this.pictureBoxSuppliers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxSuppliers.Image = global::PointOfSale.Properties.Resources.suppliers;
+            this.pictureBoxSuppliers.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxSuppliers.Name = "pictureBoxSuppliers";
+            this.pictureBoxSuppliers.Size = new System.Drawing.Size(21, 22);
+            this.pictureBoxSuppliers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSuppliers.TabIndex = 2;
+            this.pictureBoxSuppliers.TabStop = false;
+            // 
             // panelImageThree
             // 
             this.panelImageThree.Controls.Add(this.pictureBoxEmployees);
@@ -202,6 +259,17 @@ namespace PointOfSale.Views
             this.panelImageThree.Size = new System.Drawing.Size(46, 50);
             this.panelImageThree.TabIndex = 12;
             // 
+            // pictureBoxEmployees
+            // 
+            this.pictureBoxEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxEmployees.Image = global::PointOfSale.Properties.Resources.employee;
+            this.pictureBoxEmployees.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxEmployees.Name = "pictureBoxEmployees";
+            this.pictureBoxEmployees.Size = new System.Drawing.Size(21, 22);
+            this.pictureBoxEmployees.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEmployees.TabIndex = 2;
+            this.pictureBoxEmployees.TabStop = false;
+            // 
             // panelImageTwo
             // 
             this.panelImageTwo.Controls.Add(this.pictureBoxManagment);
@@ -211,6 +279,17 @@ namespace PointOfSale.Views
             this.panelImageTwo.Name = "panelImageTwo";
             this.panelImageTwo.Size = new System.Drawing.Size(46, 50);
             this.panelImageTwo.TabIndex = 11;
+            // 
+            // pictureBoxManagment
+            // 
+            this.pictureBoxManagment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxManagment.Image = global::PointOfSale.Properties.Resources.managment;
+            this.pictureBoxManagment.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxManagment.Name = "pictureBoxManagment";
+            this.pictureBoxManagment.Size = new System.Drawing.Size(21, 22);
+            this.pictureBoxManagment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxManagment.TabIndex = 2;
+            this.pictureBoxManagment.TabStop = false;
             // 
             // labelSuppliers
             // 
@@ -224,6 +303,7 @@ namespace PointOfSale.Views
             this.labelSuppliers.TabIndex = 9;
             this.labelSuppliers.Text = "Suppliers";
             this.labelSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSuppliers.Click += new System.EventHandler(this.labelSuppliers_Click);
             // 
             // labelEmployee
             // 
@@ -237,6 +317,7 @@ namespace PointOfSale.Views
             this.labelEmployee.TabIndex = 7;
             this.labelEmployee.Text = "Employees";
             this.labelEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelEmployee.Click += new System.EventHandler(this.labelEmployee_Click);
             // 
             // labelManagment
             // 
@@ -250,6 +331,7 @@ namespace PointOfSale.Views
             this.labelManagment.TabIndex = 3;
             this.labelManagment.Text = "Item Managment";
             this.labelManagment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelManagment.Click += new System.EventHandler(this.labelManagment_Click);
             // 
             // labelDashboard
             // 
@@ -265,6 +347,7 @@ namespace PointOfSale.Views
             this.labelDashboard.TabIndex = 0;
             this.labelDashboard.Text = "Dashboard";
             this.labelDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDashboard.Click += new System.EventHandler(this.labelDashboard_Click);
             // 
             // panelImageOne
             // 
@@ -277,6 +360,18 @@ namespace PointOfSale.Views
             this.panelImageOne.Size = new System.Drawing.Size(46, 50);
             this.panelImageOne.TabIndex = 10;
             // 
+            // pictureBoxDashboard
+            // 
+            this.pictureBoxDashboard.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxDashboard.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxDashboard.Image = global::PointOfSale.Properties.Resources.dashboard;
+            this.pictureBoxDashboard.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxDashboard.Name = "pictureBoxDashboard";
+            this.pictureBoxDashboard.Size = new System.Drawing.Size(21, 22);
+            this.pictureBoxDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDashboard.TabIndex = 2;
+            this.pictureBoxDashboard.TabStop = false;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
@@ -286,7 +381,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.Controls.Add(this.labelSignout, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.pictureBoxSignout, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 575);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 711);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -306,100 +401,7 @@ namespace PointOfSale.Views
             this.labelSignout.TabIndex = 0;
             this.labelSignout.Text = "Sign out";
             this.labelSignout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panelNavigation
-            // 
-            this.panelNavigation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelNavigation.Location = new System.Drawing.Point(0, 0);
-            this.panelNavigation.Margin = new System.Windows.Forms.Padding(0);
-            this.panelNavigation.Name = "panelNavigation";
-            this.panelNavigation.Size = new System.Drawing.Size(229, 625);
-            this.panelNavigation.TabIndex = 0;
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.SystemColors.Control;
-            this.roundedPanel1.BottomLeftRadius = 0;
-            this.roundedPanel1.BottomRightRadius = 40;
-            this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
-            this.roundedPanel1.Controls.Add(this.panel1);
-            this.roundedPanel1.Controls.Add(this.tableLayoutPanel3);
-            this.roundedPanel1.Location = new System.Drawing.Point(0, 0);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(230, 625);
-            this.roundedPanel1.TabIndex = 9;
-            this.roundedPanel1.TopLeftRadius = 0;
-            this.roundedPanel1.TopRightRadius = 40;
-            // 
-            // pictureBoxStore
-            // 
-            this.pictureBoxStore.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxStore.Image = global::PointOfSale.Properties.Resources.store;
-            this.pictureBoxStore.Location = new System.Drawing.Point(12, 214);
-            this.pictureBoxStore.Name = "pictureBoxStore";
-            this.pictureBoxStore.Size = new System.Drawing.Size(21, 22);
-            this.pictureBoxStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxStore.TabIndex = 16;
-            this.pictureBoxStore.TabStop = false;
-            // 
-            // pictureBoxSuppliers
-            // 
-            this.pictureBoxSuppliers.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxSuppliers.Image = global::PointOfSale.Properties.Resources.suppliers;
-            this.pictureBoxSuppliers.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxSuppliers.Name = "pictureBoxSuppliers";
-            this.pictureBoxSuppliers.Size = new System.Drawing.Size(21, 22);
-            this.pictureBoxSuppliers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSuppliers.TabIndex = 2;
-            this.pictureBoxSuppliers.TabStop = false;
-            // 
-            // pictureBoxEmployees
-            // 
-            this.pictureBoxEmployees.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxEmployees.Image = global::PointOfSale.Properties.Resources.employee;
-            this.pictureBoxEmployees.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxEmployees.Name = "pictureBoxEmployees";
-            this.pictureBoxEmployees.Size = new System.Drawing.Size(21, 22);
-            this.pictureBoxEmployees.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEmployees.TabIndex = 2;
-            this.pictureBoxEmployees.TabStop = false;
-            // 
-            // pictureBoxManagment
-            // 
-            this.pictureBoxManagment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxManagment.Image = global::PointOfSale.Properties.Resources.managment;
-            this.pictureBoxManagment.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxManagment.Name = "pictureBoxManagment";
-            this.pictureBoxManagment.Size = new System.Drawing.Size(21, 22);
-            this.pictureBoxManagment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxManagment.TabIndex = 2;
-            this.pictureBoxManagment.TabStop = false;
-            // 
-            // pictureBoxDashboard
-            // 
-            this.pictureBoxDashboard.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxDashboard.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxDashboard.Image = global::PointOfSale.Properties.Resources.dashboard;
-            this.pictureBoxDashboard.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxDashboard.Name = "pictureBoxDashboard";
-            this.pictureBoxDashboard.Size = new System.Drawing.Size(21, 22);
-            this.pictureBoxDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxDashboard.TabIndex = 2;
-            this.pictureBoxDashboard.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::PointOfSale.Properties.Resources.PointOfSale;
-            this.pictureBox1.Location = new System.Drawing.Point(61, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(103, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.labelSignout.Click += new System.EventHandler(this.labelSignout_Click);
             // 
             // pictureBoxSignout
             // 
@@ -415,54 +417,71 @@ namespace PointOfSale.Views
             this.pictureBoxSignout.TabIndex = 1;
             this.pictureBoxSignout.TabStop = false;
             // 
-            // pictureBox6
+            // panelNavigation
             // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox6.Image = global::PointOfSale.Properties.Resources.user;
-            this.pictureBox6.Location = new System.Drawing.Point(764, 9);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(49, 37);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.panelNavigation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelNavigation.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelNavigation.Location = new System.Drawing.Point(0, 0);
+            this.panelNavigation.Margin = new System.Windows.Forms.Padding(0);
+            this.panelNavigation.Name = "panelNavigation";
+            this.panelNavigation.Size = new System.Drawing.Size(229, 761);
+            this.panelNavigation.TabIndex = 0;
+            // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.roundedPanel1.BackColor = System.Drawing.SystemColors.Control;
+            this.roundedPanel1.BottomLeftRadius = 0;
+            this.roundedPanel1.BottomRightRadius = 40;
+            this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
+            this.roundedPanel1.Controls.Add(this.panel1);
+            this.roundedPanel1.Controls.Add(this.tableLayoutPanel3);
+            this.roundedPanel1.Location = new System.Drawing.Point(0, 0);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Size = new System.Drawing.Size(230, 761);
+            this.roundedPanel1.TabIndex = 9;
+            this.roundedPanel1.TopLeftRadius = 0;
+            this.roundedPanel1.TopRightRadius = 40;
             // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1060, 625);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.roundedPanel1);
             this.Controls.Add(this.panelConetentForm);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelNavigation);
             this.Name = "AdminPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard";
+            this.Text = "Admin";
+            this.Load += new System.EventHandler(this.AdminPanelForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.panelImageFour.ResumeLayout(false);
-            this.panelImageThree.ResumeLayout(false);
-            this.panelImageTwo.ResumeLayout(false);
-            this.panelImageOne.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.roundedPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuppliers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmployees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStore)).EndInit();
+            this.panelImageFour.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuppliers)).EndInit();
+            this.panelImageThree.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmployees)).EndInit();
+            this.panelImageTwo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagment)).EndInit();
+            this.panelImageOne.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignout)).EndInit();
+            this.roundedPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private TableLayoutPanel tableLayoutPanel1;
-        private Label labelStatus;
+        private Label labelGreeting;
         private Panel panelConetentForm;
         private PictureBox pictureBox6;
         private Panel panel1;

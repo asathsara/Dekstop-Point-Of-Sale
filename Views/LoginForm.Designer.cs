@@ -40,7 +40,7 @@ namespace PointOfSale.Views
             this.labelLogin = new System.Windows.Forms.Label();
             this.roundedTextboxUsername = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxPassword = new PointOfSale.Components.RoundedTextbox();
-            this.buttonLogin = new PointOfSale.Components.RoundedButton();
+            this.roundButtonLogin = new PointOfSale.Components.RoundedButton();
             this.tableLayoutPanelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -115,7 +115,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanelCard.Controls.Add(this.labelLogin, 0, 0);
             this.tableLayoutPanelCard.Controls.Add(this.roundedTextboxUsername, 0, 2);
             this.tableLayoutPanelCard.Controls.Add(this.roundedTextboxPassword, 0, 4);
-            this.tableLayoutPanelCard.Controls.Add(this.buttonLogin, 0, 6);
+            this.tableLayoutPanelCard.Controls.Add(this.roundButtonLogin, 0, 6);
             this.tableLayoutPanelCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelCard.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelCard.Name = "tableLayoutPanelCard";
@@ -179,23 +179,26 @@ namespace PointOfSale.Views
             this.roundedTextboxPassword.Size = new System.Drawing.Size(254, 47);
             this.roundedTextboxPassword.TabIndex = 7;
             // 
-            // buttonLogin
+            // roundButtonLogin
             // 
-            this.buttonLogin.BottomLeftRadius = 40;
-            this.buttonLogin.BottomRightRadius = 40;
-            this.buttonLogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonLogin.FlatAppearance.BorderSize = 0;
-            this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(37, 310);
-            this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(254, 47);
-            this.buttonLogin.TabIndex = 8;
-            this.buttonLogin.Text = "Log in";
-            this.buttonLogin.TopLeftRadius = 40;
-            this.buttonLogin.TopRightRadius = 40;
-            this.buttonLogin.UseVisualStyleBackColor = false;
+            this.roundButtonLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            this.roundButtonLogin.BottomLeftRadius = 40;
+            this.roundButtonLogin.BottomRightRadius = 40;
+            this.roundButtonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundButtonLogin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.roundButtonLogin.FlatAppearance.BorderSize = 0;
+            this.roundButtonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundButtonLogin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButtonLogin.ForeColor = System.Drawing.Color.White;
+            this.roundButtonLogin.Location = new System.Drawing.Point(37, 310);
+            this.roundButtonLogin.Name = "roundButtonLogin";
+            this.roundButtonLogin.Size = new System.Drawing.Size(254, 47);
+            this.roundButtonLogin.TabIndex = 8;
+            this.roundButtonLogin.Text = "Log in";
+            this.roundButtonLogin.TopLeftRadius = 40;
+            this.roundButtonLogin.TopRightRadius = 40;
+            this.roundButtonLogin.UseVisualStyleBackColor = false;
+            this.roundButtonLogin.Click += new System.EventHandler(this.roundButtonLogin_Click);
             // 
             // LoginForm
             // 
@@ -225,6 +228,6 @@ namespace PointOfSale.Views
         private Label labelLogin;
         private Components.RoundedTextbox roundedTextboxUsername;
         private Components.RoundedTextbox roundedTextboxPassword;
-        private Components.RoundedButton buttonLogin;
+        private Components.RoundedButton roundButtonLogin;
     }
 }

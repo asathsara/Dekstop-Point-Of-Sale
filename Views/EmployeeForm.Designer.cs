@@ -22,6 +22,16 @@ namespace PointOfSale.Views
             base.Dispose(disposing);
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -44,6 +54,12 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
@@ -51,12 +67,6 @@ namespace PointOfSale.Views
             this.roundedTextboxPassword = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxUsername = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,7 +88,7 @@ namespace PointOfSale.Views
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1097, 733);
+            this.panel1.Size = new System.Drawing.Size(936, 657);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -99,16 +109,16 @@ namespace PointOfSale.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1097, 733);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(936, 657);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.tableLayoutPanel3);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(494, 39);
+            this.panel3.Location = new System.Drawing.Point(422, 35);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(542, 653);
+            this.panel3.Size = new System.Drawing.Size(462, 585);
             this.panel3.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -128,7 +138,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(542, 653);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(462, 585);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // roundedPanel2
@@ -138,9 +148,9 @@ namespace PointOfSale.Views
             this.roundedPanel2.BottomRightRadius = 30;
             this.roundedPanel2.Controls.Add(this.tableLayoutPanel6);
             this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel2.Location = new System.Drawing.Point(111, 3);
+            this.roundedPanel2.Location = new System.Drawing.Point(95, 3);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(319, 59);
+            this.roundedPanel2.Size = new System.Drawing.Size(271, 52);
             this.roundedPanel2.TabIndex = 3;
             this.roundedPanel2.TopLeftRadius = 30;
             this.roundedPanel2.TopRightRadius = 30;
@@ -162,7 +172,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(319, 59);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(271, 52);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
             // roundedTextbox3
@@ -174,23 +184,23 @@ namespace PointOfSale.Views
             this.roundedTextbox3.BorderWidth = 0;
             this.roundedTextbox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roundedTextbox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedTextbox3.Location = new System.Drawing.Point(63, 14);
+            this.roundedTextbox3.Location = new System.Drawing.Point(54, 13);
             this.roundedTextbox3.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.roundedTextbox3.Name = "roundedTextbox3";
             this.roundedTextbox3.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextbox3.PasswordChar = '\0';
             this.roundedTextbox3.PlaceholderText = "Search";
-            this.roundedTextbox3.Size = new System.Drawing.Size(236, 29);
+            this.roundedTextbox3.Size = new System.Drawing.Size(197, 26);
             this.roundedTextbox3.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -203,10 +213,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.SetColumnSpan(this.roundedPanel3, 3);
             this.roundedPanel3.Controls.Add(this.tableLayoutPanel5);
             this.roundedPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel3.Location = new System.Drawing.Point(0, 97);
+            this.roundedPanel3.Location = new System.Drawing.Point(0, 87);
             this.roundedPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Size = new System.Drawing.Size(542, 556);
+            this.roundedPanel3.Size = new System.Drawing.Size(462, 498);
             this.roundedPanel3.TabIndex = 4;
             this.roundedPanel3.TopLeftRadius = 40;
             this.roundedPanel3.TopRightRadius = 40;
@@ -228,7 +238,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(542, 556);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(462, 498);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // dataGridViewItems
@@ -271,149 +281,14 @@ namespace PointOfSale.Views
             this.dataGridViewItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewItems.EnableHeadersVisualStyles = false;
-            this.dataGridViewItems.Location = new System.Drawing.Point(0, 55);
+            this.dataGridViewItems.Location = new System.Drawing.Point(0, 49);
             this.dataGridViewItems.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewItems.RowTemplate.Height = 30;
-            this.dataGridViewItems.Size = new System.Drawing.Size(542, 444);
+            this.dataGridViewItems.Size = new System.Drawing.Size(462, 398);
             this.dataGridViewItems.TabIndex = 6;
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.White;
-            this.roundedPanel1.BottomLeftRadius = 30;
-            this.roundedPanel1.BottomRightRadius = 30;
-            this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
-            this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel1.Location = new System.Drawing.Point(57, 39);
-            this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(377, 653);
-            this.roundedPanel1.TabIndex = 2;
-            this.roundedPanel1.TopLeftRadius = 30;
-            this.roundedPanel1.TopRightRadius = 30;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.buttonSubmit, 1, 8);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxName, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxPassword, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxUsername, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxID, 1, 3);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 12;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(377, 653);
-            this.tableLayoutPanel2.TabIndex = 3;
-            // 
-            // buttonSubmit
-            // 
-            this.buttonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.buttonSubmit.BottomLeftRadius = 40;
-            this.buttonSubmit.BottomRightRadius = 40;
-            this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSubmit.FlatAppearance.BorderSize = 0;
-            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSubmit.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(40, 462);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(295, 55);
-            this.buttonSubmit.TabIndex = 1;
-            this.buttonSubmit.Text = "Submit";
-            this.buttonSubmit.TopLeftRadius = 40;
-            this.buttonSubmit.TopRightRadius = 40;
-            this.buttonSubmit.UseVisualStyleBackColor = false;
-            // 
-            // roundedTextboxName
-            // 
-            this.roundedTextboxName.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxName.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxName.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxName.BorderRadius = 10;
-            this.roundedTextboxName.BorderWidth = 0;
-            this.roundedTextboxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxName.Location = new System.Drawing.Point(42, 342);
-            this.roundedTextboxName.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxName.Name = "roundedTextboxName";
-            this.roundedTextboxName.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxName.PasswordChar = '\0';
-            this.roundedTextboxName.PlaceholderText = "Name";
-            this.roundedTextboxName.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxName.TabIndex = 11;
-            // 
-            // roundedTextboxPassword
-            // 
-            this.roundedTextboxPassword.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxPassword.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxPassword.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxPassword.BorderRadius = 10;
-            this.roundedTextboxPassword.BorderWidth = 0;
-            this.roundedTextboxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxPassword.Location = new System.Drawing.Point(42, 281);
-            this.roundedTextboxPassword.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxPassword.Name = "roundedTextboxPassword";
-            this.roundedTextboxPassword.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxPassword.PasswordChar = '\0';
-            this.roundedTextboxPassword.PlaceholderText = "Password";
-            this.roundedTextboxPassword.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxPassword.TabIndex = 12;
-            // 
-            // roundedTextboxUsername
-            // 
-            this.roundedTextboxUsername.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxUsername.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxUsername.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxUsername.BorderRadius = 10;
-            this.roundedTextboxUsername.BorderWidth = 0;
-            this.roundedTextboxUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxUsername.Location = new System.Drawing.Point(42, 220);
-            this.roundedTextboxUsername.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxUsername.Name = "roundedTextboxUsername";
-            this.roundedTextboxUsername.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxUsername.PasswordChar = '\0';
-            this.roundedTextboxUsername.PlaceholderText = "Username";
-            this.roundedTextboxUsername.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxUsername.TabIndex = 13;
-            // 
-            // roundedTextboxID
-            // 
-            this.roundedTextboxID.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxID.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxID.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxID.BorderRadius = 10;
-            this.roundedTextboxID.BorderWidth = 0;
-            this.roundedTextboxID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxID.Location = new System.Drawing.Point(42, 159);
-            this.roundedTextboxID.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxID.Name = "roundedTextboxID";
-            this.roundedTextboxID.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxID.PasswordChar = '\0';
-            this.roundedTextboxID.PlaceholderText = "ID";
-            this.roundedTextboxID.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxID.TabIndex = 14;
             // 
             // ID
             // 
@@ -460,12 +335,148 @@ namespace PointOfSale.Views
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.BackColor = System.Drawing.Color.White;
+            this.roundedPanel1.BottomLeftRadius = 30;
+            this.roundedPanel1.BottomRightRadius = 30;
+            this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
+            this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedPanel1.Location = new System.Drawing.Point(49, 35);
+            this.roundedPanel1.Name = "roundedPanel1";
+            this.roundedPanel1.Size = new System.Drawing.Size(321, 585);
+            this.roundedPanel1.TabIndex = 2;
+            this.roundedPanel1.TopLeftRadius = 30;
+            this.roundedPanel1.TopRightRadius = 30;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.buttonSubmit, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxName, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxPassword, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxUsername, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxID, 1, 3);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 12;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.375F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(321, 585);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // buttonSubmit
+            // 
+            this.buttonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            this.buttonSubmit.BottomLeftRadius = 40;
+            this.buttonSubmit.BottomRightRadius = 40;
+            this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSubmit.FlatAppearance.BorderSize = 0;
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSubmit.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
+            this.buttonSubmit.Location = new System.Drawing.Point(35, 410);
+            this.buttonSubmit.Name = "buttonSubmit";
+            this.buttonSubmit.Size = new System.Drawing.Size(250, 48);
+            this.buttonSubmit.TabIndex = 1;
+            this.buttonSubmit.Text = "Submit";
+            this.buttonSubmit.TopLeftRadius = 40;
+            this.buttonSubmit.TopRightRadius = 40;
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            // 
+            // roundedTextboxName
+            // 
+            this.roundedTextboxName.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxName.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxName.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxName.BorderRadius = 10;
+            this.roundedTextboxName.BorderWidth = 0;
+            this.roundedTextboxName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxName.Location = new System.Drawing.Point(37, 304);
+            this.roundedTextboxName.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxName.Name = "roundedTextboxName";
+            this.roundedTextboxName.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxName.PasswordChar = '\0';
+            this.roundedTextboxName.PlaceholderText = "Name";
+            this.roundedTextboxName.Size = new System.Drawing.Size(246, 44);
+            this.roundedTextboxName.TabIndex = 11;
+            // 
+            // roundedTextboxPassword
+            // 
+            this.roundedTextboxPassword.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxPassword.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxPassword.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxPassword.BorderRadius = 10;
+            this.roundedTextboxPassword.BorderWidth = 0;
+            this.roundedTextboxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxPassword.Location = new System.Drawing.Point(37, 250);
+            this.roundedTextboxPassword.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxPassword.Name = "roundedTextboxPassword";
+            this.roundedTextboxPassword.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxPassword.PasswordChar = '\0';
+            this.roundedTextboxPassword.PlaceholderText = "Password";
+            this.roundedTextboxPassword.Size = new System.Drawing.Size(246, 44);
+            this.roundedTextboxPassword.TabIndex = 12;
+            // 
+            // roundedTextboxUsername
+            // 
+            this.roundedTextboxUsername.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxUsername.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxUsername.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxUsername.BorderRadius = 10;
+            this.roundedTextboxUsername.BorderWidth = 0;
+            this.roundedTextboxUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxUsername.Location = new System.Drawing.Point(37, 196);
+            this.roundedTextboxUsername.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxUsername.Name = "roundedTextboxUsername";
+            this.roundedTextboxUsername.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxUsername.PasswordChar = '\0';
+            this.roundedTextboxUsername.PlaceholderText = "Username";
+            this.roundedTextboxUsername.Size = new System.Drawing.Size(246, 44);
+            this.roundedTextboxUsername.TabIndex = 13;
+            // 
+            // roundedTextboxID
+            // 
+            this.roundedTextboxID.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxID.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxID.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxID.BorderRadius = 10;
+            this.roundedTextboxID.BorderWidth = 0;
+            this.roundedTextboxID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxID.Location = new System.Drawing.Point(37, 142);
+            this.roundedTextboxID.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxID.Name = "roundedTextboxID";
+            this.roundedTextboxID.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxID.PasswordChar = '\0';
+            this.roundedTextboxID.PlaceholderText = "ID";
+            this.roundedTextboxID.Size = new System.Drawing.Size(246, 44);
+            this.roundedTextboxID.TabIndex = 14;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1097, 733);
+            this.ClientSize = new System.Drawing.Size(936, 657);
             this.Controls.Add(this.panel1);
             this.Name = "EmployeeForm";
             this.Text = "ItemManagmentForm";

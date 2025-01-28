@@ -24,6 +24,17 @@ namespace PointOfSale.Views
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -94,7 +105,7 @@ namespace PointOfSale.Views
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 728);
+            this.panel1.Size = new System.Drawing.Size(939, 666);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -117,7 +128,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1053, 728);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(939, 666);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // roundedPanel1
@@ -127,9 +138,9 @@ namespace PointOfSale.Views
             this.roundedPanel1.BottomRightRadius = 15;
             this.roundedPanel1.Controls.Add(this.tableLayoutPanel2);
             this.roundedPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel1.Location = new System.Drawing.Point(45, 17);
+            this.roundedPanel1.Location = new System.Drawing.Point(40, 16);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(562, 256);
+            this.roundedPanel1.Size = new System.Drawing.Size(501, 233);
             this.roundedPanel1.TabIndex = 4;
             this.roundedPanel1.TopLeftRadius = 15;
             this.roundedPanel1.TopRightRadius = 15;
@@ -159,7 +170,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(562, 256);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(501, 233);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // panel9
@@ -167,9 +178,9 @@ namespace PointOfSale.Views
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel9.Controls.Add(this.labelTotalPrice);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(293, 97);
+            this.panel9.Location = new System.Drawing.Point(263, 88);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(218, 63);
+            this.panel9.Size = new System.Drawing.Size(194, 56);
             this.panel9.TabIndex = 4;
             // 
             // labelTotalPrice
@@ -179,7 +190,7 @@ namespace PointOfSale.Views
             this.labelTotalPrice.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelTotalPrice.Location = new System.Drawing.Point(0, 0);
             this.labelTotalPrice.Name = "labelTotalPrice";
-            this.labelTotalPrice.Size = new System.Drawing.Size(218, 63);
+            this.labelTotalPrice.Size = new System.Drawing.Size(194, 56);
             this.labelTotalPrice.TabIndex = 0;
             this.labelTotalPrice.Text = "Rs. 0.00";
             this.labelTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,12 +203,12 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.Controls.Add(this.roundedTextboxQuantitiy, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxUnit, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(47, 97);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(43, 88);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(218, 63);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(194, 56);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // roundedTextboxQuantitiy
@@ -214,7 +225,7 @@ namespace PointOfSale.Views
             this.roundedTextboxQuantitiy.Padding = new System.Windows.Forms.Padding(8);
             this.roundedTextboxQuantitiy.PasswordChar = '\0';
             this.roundedTextboxQuantitiy.PlaceholderText = "Quantity";
-            this.roundedTextboxQuantitiy.Size = new System.Drawing.Size(124, 43);
+            this.roundedTextboxQuantitiy.Size = new System.Drawing.Size(110, 36);
             this.roundedTextboxQuantitiy.TabIndex = 0;
             // 
             // comboBoxUnit
@@ -224,10 +235,10 @@ namespace PointOfSale.Views
             this.comboBoxUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxUnit.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxUnit.FormattingEnabled = true;
-            this.comboBoxUnit.Location = new System.Drawing.Point(133, 10);
+            this.comboBoxUnit.Location = new System.Drawing.Point(119, 10);
             this.comboBoxUnit.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.comboBoxUnit.Name = "comboBoxUnit";
-            this.comboBoxUnit.Size = new System.Drawing.Size(82, 36);
+            this.comboBoxUnit.Size = new System.Drawing.Size(72, 36);
             this.comboBoxUnit.TabIndex = 1;
             // 
             // comboBoxSuppliers
@@ -236,9 +247,9 @@ namespace PointOfSale.Views
             this.comboBoxSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSuppliers.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSuppliers.FormattingEnabled = true;
-            this.comboBoxSuppliers.Location = new System.Drawing.Point(47, 28);
+            this.comboBoxSuppliers.Location = new System.Drawing.Point(43, 26);
             this.comboBoxSuppliers.Name = "comboBoxSuppliers";
-            this.comboBoxSuppliers.Size = new System.Drawing.Size(218, 36);
+            this.comboBoxSuppliers.Size = new System.Drawing.Size(194, 36);
             this.comboBoxSuppliers.TabIndex = 11;
             // 
             // label1
@@ -246,9 +257,9 @@ namespace PointOfSale.Views
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(293, 25);
+            this.label1.Location = new System.Drawing.Point(263, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 69);
+            this.label1.Size = new System.Drawing.Size(194, 62);
             this.label1.TabIndex = 12;
             this.label1.Text = "123456";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,9 +277,9 @@ namespace PointOfSale.Views
             this.buttonCalculate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCalculate.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalculate.ForeColor = System.Drawing.Color.White;
-            this.buttonCalculate.Location = new System.Drawing.Point(47, 191);
+            this.buttonCalculate.Location = new System.Drawing.Point(43, 173);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(218, 34);
+            this.buttonCalculate.Size = new System.Drawing.Size(194, 31);
             this.buttonCalculate.TabIndex = 13;
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.TopLeftRadius = 40;
@@ -288,9 +299,9 @@ namespace PointOfSale.Views
             this.roundedButtonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonAdd.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonAdd.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonAdd.Location = new System.Drawing.Point(293, 191);
+            this.roundedButtonAdd.Location = new System.Drawing.Point(263, 173);
             this.roundedButtonAdd.Name = "roundedButtonAdd";
-            this.roundedButtonAdd.Size = new System.Drawing.Size(218, 34);
+            this.roundedButtonAdd.Size = new System.Drawing.Size(194, 31);
             this.roundedButtonAdd.TabIndex = 14;
             this.roundedButtonAdd.Text = "Add";
             this.roundedButtonAdd.TopLeftRadius = 40;
@@ -304,10 +315,10 @@ namespace PointOfSale.Views
             this.roundedPanel2.BottomRightRadius = 30;
             this.roundedPanel2.Controls.Add(this.tableLayoutPanel4);
             this.roundedPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel2.Location = new System.Drawing.Point(644, 17);
+            this.roundedPanel2.Location = new System.Drawing.Point(575, 16);
             this.roundedPanel2.Name = "roundedPanel2";
             this.tableLayoutPanel1.SetRowSpan(this.roundedPanel2, 3);
-            this.roundedPanel2.Size = new System.Drawing.Size(362, 691);
+            this.roundedPanel2.Size = new System.Drawing.Size(322, 631);
             this.roundedPanel2.TabIndex = 5;
             this.roundedPanel2.TopLeftRadius = 30;
             this.roundedPanel2.TopRightRadius = 30;
@@ -355,7 +366,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(362, 691);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(322, 631);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // labelBalance
@@ -365,9 +376,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelBalance.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBalance.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelBalance.Location = new System.Drawing.Point(183, 280);
+            this.labelBalance.Location = new System.Drawing.Point(163, 253);
             this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(167, 41);
+            this.labelBalance.Size = new System.Drawing.Size(148, 37);
             this.labelBalance.TabIndex = 40;
             this.labelBalance.Text = "Rs. 0.00";
             this.labelBalance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,9 +390,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label31.Location = new System.Drawing.Point(10, 280);
+            this.label31.Location = new System.Drawing.Point(9, 253);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(167, 41);
+            this.label31.Size = new System.Drawing.Size(148, 37);
             this.label31.TabIndex = 39;
             this.label31.Text = "Balance :";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -393,9 +404,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label27.Location = new System.Drawing.Point(10, 239);
+            this.label27.Location = new System.Drawing.Point(9, 216);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(167, 41);
+            this.label27.Size = new System.Drawing.Size(148, 37);
             this.label27.TabIndex = 35;
             this.label27.Text = "Amount Paid :";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -407,9 +418,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotal.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelTotal.Location = new System.Drawing.Point(183, 198);
+            this.labelTotal.Location = new System.Drawing.Point(163, 179);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(167, 41);
+            this.labelTotal.Size = new System.Drawing.Size(148, 37);
             this.labelTotal.TabIndex = 32;
             this.labelTotal.Text = "Rs. 0.00";
             this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -421,9 +432,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(10, 198);
+            this.label23.Location = new System.Drawing.Point(9, 179);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(167, 41);
+            this.label23.Size = new System.Drawing.Size(148, 37);
             this.label23.TabIndex = 31;
             this.label23.Text = "Total : ";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -435,9 +446,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDiscount.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDiscount.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelDiscount.Location = new System.Drawing.Point(183, 157);
+            this.labelDiscount.Location = new System.Drawing.Point(163, 142);
             this.labelDiscount.Name = "labelDiscount";
-            this.labelDiscount.Size = new System.Drawing.Size(167, 41);
+            this.labelDiscount.Size = new System.Drawing.Size(148, 37);
             this.labelDiscount.TabIndex = 28;
             this.labelDiscount.Text = "Rs. 0.00";
             this.labelDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -449,9 +460,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(10, 157);
+            this.label19.Location = new System.Drawing.Point(9, 142);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(167, 41);
+            this.label19.Size = new System.Drawing.Size(148, 37);
             this.label19.TabIndex = 27;
             this.label19.Text = "Total Discount :";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -463,9 +474,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(10, 116);
+            this.label15.Location = new System.Drawing.Point(9, 105);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(167, 41);
+            this.label15.Size = new System.Drawing.Size(148, 37);
             this.label15.TabIndex = 23;
             this.label15.Text = "Discount";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -477,9 +488,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(10, 75);
+            this.label11.Location = new System.Drawing.Point(9, 68);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(167, 41);
+            this.label11.Size = new System.Drawing.Size(148, 37);
             this.label11.TabIndex = 19;
             this.label11.Text = "Loyalty Customer";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -491,9 +502,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSubTotal.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSubTotal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.labelSubTotal.Location = new System.Drawing.Point(183, 34);
+            this.labelSubTotal.Location = new System.Drawing.Point(163, 31);
             this.labelSubTotal.Name = "labelSubTotal";
-            this.labelSubTotal.Size = new System.Drawing.Size(167, 41);
+            this.labelSubTotal.Size = new System.Drawing.Size(148, 37);
             this.labelSubTotal.TabIndex = 16;
             this.labelSubTotal.Text = "Rs. 0.00";
             this.labelSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -505,9 +516,9 @@ namespace PointOfSale.Views
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(10, 34);
+            this.label6.Location = new System.Drawing.Point(9, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 41);
+            this.label6.Size = new System.Drawing.Size(148, 37);
             this.label6.TabIndex = 15;
             this.label6.Text = "Sub Total : ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -517,9 +528,9 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.SetColumnSpan(this.panel16, 2);
             this.panel16.Controls.Add(this.richTextBoxBill);
             this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(10, 337);
+            this.panel16.Location = new System.Drawing.Point(9, 305);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(340, 270);
+            this.panel16.Size = new System.Drawing.Size(302, 246);
             this.panel16.TabIndex = 7;
             // 
             // richTextBoxBill
@@ -529,7 +540,7 @@ namespace PointOfSale.Views
             this.richTextBoxBill.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBoxBill.Location = new System.Drawing.Point(0, 0);
             this.richTextBoxBill.Name = "richTextBoxBill";
-            this.richTextBoxBill.Size = new System.Drawing.Size(340, 270);
+            this.richTextBoxBill.Size = new System.Drawing.Size(302, 246);
             this.richTextBoxBill.TabIndex = 0;
             this.richTextBoxBill.Text = "";
             // 
@@ -546,9 +557,9 @@ namespace PointOfSale.Views
             this.roundedButtonClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonClear.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonClear.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonClear.Location = new System.Drawing.Point(10, 626);
+            this.roundedButtonClear.Location = new System.Drawing.Point(9, 569);
             this.roundedButtonClear.Name = "roundedButtonClear";
-            this.roundedButtonClear.Size = new System.Drawing.Size(167, 28);
+            this.roundedButtonClear.Size = new System.Drawing.Size(148, 25);
             this.roundedButtonClear.TabIndex = 44;
             this.roundedButtonClear.Text = "Clear";
             this.roundedButtonClear.TopLeftRadius = 30;
@@ -568,9 +579,9 @@ namespace PointOfSale.Views
             this.roundedButtonPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.roundedButtonPrint.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedButtonPrint.ForeColor = System.Drawing.Color.White;
-            this.roundedButtonPrint.Location = new System.Drawing.Point(183, 626);
+            this.roundedButtonPrint.Location = new System.Drawing.Point(163, 569);
             this.roundedButtonPrint.Name = "roundedButtonPrint";
-            this.roundedButtonPrint.Size = new System.Drawing.Size(167, 28);
+            this.roundedButtonPrint.Size = new System.Drawing.Size(148, 25);
             this.roundedButtonPrint.TabIndex = 45;
             this.roundedButtonPrint.Text = "Print";
             this.roundedButtonPrint.TopLeftRadius = 30;
@@ -585,13 +596,13 @@ namespace PointOfSale.Views
             this.roundedTextboxAmountPaid.BorderRadius = 10;
             this.roundedTextboxAmountPaid.BorderWidth = 0;
             this.roundedTextboxAmountPaid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxAmountPaid.Location = new System.Drawing.Point(185, 244);
+            this.roundedTextboxAmountPaid.Location = new System.Drawing.Point(165, 221);
             this.roundedTextboxAmountPaid.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.roundedTextboxAmountPaid.Name = "roundedTextboxAmountPaid";
             this.roundedTextboxAmountPaid.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxAmountPaid.PasswordChar = '\0';
             this.roundedTextboxAmountPaid.PlaceholderText = "Order";
-            this.roundedTextboxAmountPaid.Size = new System.Drawing.Size(163, 36);
+            this.roundedTextboxAmountPaid.Size = new System.Drawing.Size(144, 32);
             this.roundedTextboxAmountPaid.TabIndex = 48;
             // 
             // roundedTextboxDiscountPercenatge
@@ -602,13 +613,13 @@ namespace PointOfSale.Views
             this.roundedTextboxDiscountPercenatge.BorderRadius = 10;
             this.roundedTextboxDiscountPercenatge.BorderWidth = 0;
             this.roundedTextboxDiscountPercenatge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxDiscountPercenatge.Location = new System.Drawing.Point(185, 121);
+            this.roundedTextboxDiscountPercenatge.Location = new System.Drawing.Point(165, 110);
             this.roundedTextboxDiscountPercenatge.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.roundedTextboxDiscountPercenatge.Name = "roundedTextboxDiscountPercenatge";
             this.roundedTextboxDiscountPercenatge.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxDiscountPercenatge.PasswordChar = '\0';
             this.roundedTextboxDiscountPercenatge.PlaceholderText = "Discount (%)";
-            this.roundedTextboxDiscountPercenatge.Size = new System.Drawing.Size(163, 36);
+            this.roundedTextboxDiscountPercenatge.Size = new System.Drawing.Size(144, 32);
             this.roundedTextboxDiscountPercenatge.TabIndex = 49;
             // 
             // roundedTextboxCustomerCard
@@ -619,13 +630,13 @@ namespace PointOfSale.Views
             this.roundedTextboxCustomerCard.BorderRadius = 10;
             this.roundedTextboxCustomerCard.BorderWidth = 0;
             this.roundedTextboxCustomerCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxCustomerCard.Location = new System.Drawing.Point(185, 80);
+            this.roundedTextboxCustomerCard.Location = new System.Drawing.Point(165, 73);
             this.roundedTextboxCustomerCard.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.roundedTextboxCustomerCard.Name = "roundedTextboxCustomerCard";
             this.roundedTextboxCustomerCard.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxCustomerCard.PasswordChar = '\0';
             this.roundedTextboxCustomerCard.PlaceholderText = "Card Number";
-            this.roundedTextboxCustomerCard.Size = new System.Drawing.Size(163, 36);
+            this.roundedTextboxCustomerCard.Size = new System.Drawing.Size(144, 32);
             this.roundedTextboxCustomerCard.TabIndex = 50;
             // 
             // roundedPanel3
@@ -635,9 +646,9 @@ namespace PointOfSale.Views
             this.roundedPanel3.BottomRightRadius = 40;
             this.roundedPanel3.Controls.Add(this.tableLayoutPanel5);
             this.roundedPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel3.Location = new System.Drawing.Point(45, 300);
+            this.roundedPanel3.Location = new System.Drawing.Point(40, 274);
             this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Size = new System.Drawing.Size(562, 408);
+            this.roundedPanel3.Size = new System.Drawing.Size(501, 373);
             this.roundedPanel3.TabIndex = 6;
             this.roundedPanel3.TopLeftRadius = 40;
             this.roundedPanel3.TopRightRadius = 40;
@@ -658,7 +669,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(562, 408);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(501, 373);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
             // panel18
@@ -666,10 +677,10 @@ namespace PointOfSale.Views
             this.panel18.BackColor = System.Drawing.Color.Transparent;
             this.panel18.Controls.Add(this.dataGridViewItems);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(0, 40);
+            this.panel18.Location = new System.Drawing.Point(0, 37);
             this.panel18.Margin = new System.Windows.Forms.Padding(0);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(562, 326);
+            this.panel18.Size = new System.Drawing.Size(501, 298);
             this.panel18.TabIndex = 0;
             // 
             // dataGridViewItems
@@ -719,7 +730,7 @@ namespace PointOfSale.Views
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewItems.RowTemplate.Height = 30;
-            this.dataGridViewItems.Size = new System.Drawing.Size(562, 326);
+            this.dataGridViewItems.Size = new System.Drawing.Size(501, 298);
             this.dataGridViewItems.TabIndex = 2;
             // 
             // Order
@@ -776,7 +787,7 @@ namespace PointOfSale.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 728);
+            this.ClientSize = new System.Drawing.Size(939, 666);
             this.Controls.Add(this.panel1);
             this.Name = "BillingForm";
             this.Text = "Billing";

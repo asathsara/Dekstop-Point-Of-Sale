@@ -23,6 +23,16 @@ namespace PointOfSale.Views
             base.Dispose(disposing);
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -137,7 +147,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 729);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(939, 666);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -161,7 +171,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1058, 212);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(933, 193);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // roundedPanelTopOne
@@ -171,9 +181,9 @@ namespace PointOfSale.Views
             this.roundedPanelTopOne.BottomRightRadius = 25;
             this.roundedPanelTopOne.Controls.Add(this.tableLayoutPanelTopOne);
             this.roundedPanelTopOne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelTopOne.Location = new System.Drawing.Point(72, 24);
+            this.roundedPanelTopOne.Location = new System.Drawing.Point(63, 22);
             this.roundedPanelTopOne.Name = "roundedPanelTopOne";
-            this.roundedPanelTopOne.Size = new System.Drawing.Size(262, 163);
+            this.roundedPanelTopOne.Size = new System.Drawing.Size(230, 148);
             this.roundedPanelTopOne.TabIndex = 8;
             this.roundedPanelTopOne.TopLeftRadius = 25;
             this.roundedPanelTopOne.TopRightRadius = 25;
@@ -201,13 +211,13 @@ namespace PointOfSale.Views
             this.tableLayoutPanelTopOne.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.777778F));
             this.tableLayoutPanelTopOne.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.77778F));
             this.tableLayoutPanelTopOne.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
-            this.tableLayoutPanelTopOne.Size = new System.Drawing.Size(262, 163);
+            this.tableLayoutPanelTopOne.Size = new System.Drawing.Size(239, 150);
             this.tableLayoutPanelTopOne.TabIndex = 2;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.income;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,10 +231,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanelTopOne.SetColumnSpan(this.label4, 2);
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(35, 107);
+            this.label4.Location = new System.Drawing.Point(32, 98);
             this.label4.Margin = new System.Windows.Forms.Padding(9, 0, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 45);
+            this.label4.Size = new System.Drawing.Size(75, 41);
             this.label4.TabIndex = 2;
             this.label4.Text = "This Month";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,9 +246,9 @@ namespace PointOfSale.Views
             this.tableLayoutPanelTopOne.SetColumnSpan(this.labelMonthlyIncome, 2);
             this.labelMonthlyIncome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonthlyIncome.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyIncome.Location = new System.Drawing.Point(117, 58);
+            this.labelMonthlyIncome.Location = new System.Drawing.Point(94, 53);
             this.labelMonthlyIncome.Name = "labelMonthlyIncome";
-            this.labelMonthlyIncome.Size = new System.Drawing.Size(142, 45);
+            this.labelMonthlyIncome.Size = new System.Drawing.Size(142, 41);
             this.labelMonthlyIncome.TabIndex = 5;
             this.labelMonthlyIncome.Text = "Rs. 10000.00";
             this.labelMonthlyIncome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -250,10 +260,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanelTopOne.SetColumnSpan(this.label1, 2);
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Location = new System.Drawing.Point(32, 8);
             this.label1.Margin = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 45);
+            this.label1.Size = new System.Drawing.Size(75, 41);
             this.label1.TabIndex = 0;
             this.label1.Text = "Income";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -265,9 +275,9 @@ namespace PointOfSale.Views
             this.roundedPanelTopThree.BottomRightRadius = 25;
             this.roundedPanelTopThree.Controls.Add(this.tableLayoutPanel5);
             this.roundedPanelTopThree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelTopThree.Location = new System.Drawing.Point(722, 24);
+            this.roundedPanelTopThree.Location = new System.Drawing.Point(635, 22);
             this.roundedPanelTopThree.Name = "roundedPanelTopThree";
-            this.roundedPanelTopThree.Size = new System.Drawing.Size(262, 163);
+            this.roundedPanelTopThree.Size = new System.Drawing.Size(230, 148);
             this.roundedPanelTopThree.TabIndex = 9;
             this.roundedPanelTopThree.TopLeftRadius = 25;
             this.roundedPanelTopThree.TopRightRadius = 25;
@@ -295,13 +305,13 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.777778F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.77778F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(262, 163);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(239, 150);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::PointOfSale.Properties.Resources.cart;
-            this.pictureBox3.Location = new System.Drawing.Point(29, 61);
+            this.pictureBox3.Location = new System.Drawing.Point(26, 56);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(62, 27);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -315,10 +325,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.SetColumnSpan(this.label3, 2);
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(35, 107);
+            this.label3.Location = new System.Drawing.Point(32, 98);
             this.label3.Margin = new System.Windows.Forms.Padding(9, 0, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 45);
+            this.label3.Size = new System.Drawing.Size(75, 41);
             this.label3.TabIndex = 2;
             this.label3.Text = "This Month";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -330,10 +340,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.SetColumnSpan(this.label5, 2);
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(35, 9);
+            this.label5.Location = new System.Drawing.Point(32, 8);
             this.label5.Margin = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 45);
+            this.label5.Size = new System.Drawing.Size(75, 41);
             this.label5.TabIndex = 0;
             this.label5.Text = "Orders";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,10 +355,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.SetColumnSpan(this.labelMonthlyOrders, 2);
             this.labelMonthlyOrders.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMonthlyOrders.ForeColor = System.Drawing.Color.White;
-            this.labelMonthlyOrders.Location = new System.Drawing.Point(179, 58);
+            this.labelMonthlyOrders.Location = new System.Drawing.Point(156, 53);
             this.labelMonthlyOrders.Margin = new System.Windows.Forms.Padding(3, 0, 17, 0);
             this.labelMonthlyOrders.Name = "labelMonthlyOrders";
-            this.labelMonthlyOrders.Size = new System.Drawing.Size(66, 45);
+            this.labelMonthlyOrders.Size = new System.Drawing.Size(66, 41);
             this.labelMonthlyOrders.TabIndex = 5;
             this.labelMonthlyOrders.Text = "150";
             this.labelMonthlyOrders.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -360,9 +370,9 @@ namespace PointOfSale.Views
             this.roundedPanelTopTwo.BottomRightRadius = 25;
             this.roundedPanelTopTwo.Controls.Add(this.tableLayoutPanel4);
             this.roundedPanelTopTwo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelTopTwo.Location = new System.Drawing.Point(397, 24);
+            this.roundedPanelTopTwo.Location = new System.Drawing.Point(349, 22);
             this.roundedPanelTopTwo.Name = "roundedPanelTopTwo";
-            this.roundedPanelTopTwo.Size = new System.Drawing.Size(262, 163);
+            this.roundedPanelTopTwo.Size = new System.Drawing.Size(230, 148);
             this.roundedPanelTopTwo.TabIndex = 11;
             this.roundedPanelTopTwo.TopLeftRadius = 25;
             this.roundedPanelTopTwo.TopRightRadius = 25;
@@ -390,13 +400,13 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.777778F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.77778F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(262, 163);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(239, 150);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PointOfSale.Properties.Resources.profit;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 61);
+            this.pictureBox2.Location = new System.Drawing.Point(26, 56);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(45, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -410,10 +420,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.SetColumnSpan(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(35, 107);
+            this.label2.Location = new System.Drawing.Point(32, 98);
             this.label2.Margin = new System.Windows.Forms.Padding(9, 0, 3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 45);
+            this.label2.Size = new System.Drawing.Size(75, 41);
             this.label2.TabIndex = 2;
             this.label2.Text = "This Month";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -425,9 +435,9 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.SetColumnSpan(this.label6, 2);
             this.label6.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(117, 58);
+            this.label6.Location = new System.Drawing.Point(94, 53);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 45);
+            this.label6.Size = new System.Drawing.Size(142, 41);
             this.label6.TabIndex = 5;
             this.label6.Text = "Rs. 10000.00";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -439,10 +449,10 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.SetColumnSpan(this.label10, 2);
             this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(35, 9);
+            this.label10.Location = new System.Drawing.Point(32, 8);
             this.label10.Margin = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 45);
+            this.label10.Size = new System.Drawing.Size(75, 41);
             this.label10.TabIndex = 0;
             this.label10.Text = "Profit";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -462,7 +472,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.Controls.Add(this.roundedPanelBottomFour, 3, 3);
             this.tableLayoutPanel3.Controls.Add(this.roundedPanelBottomFive, 1, 5);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 221);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 202);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 7;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.72973F));
@@ -472,7 +482,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.72973F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.02703F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.72973F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1058, 505);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(933, 461);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // roundedPanelBottomSix
@@ -482,9 +492,9 @@ namespace PointOfSale.Views
             this.roundedPanelBottomSix.BottomRightRadius = 25;
             this.roundedPanelBottomSix.Controls.Add(this.tableLayoutPanel12);
             this.roundedPanelBottomSix.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelBottomSix.Location = new System.Drawing.Point(588, 344);
+            this.roundedPanelBottomSix.Location = new System.Drawing.Point(518, 314);
             this.roundedPanelBottomSix.Name = "roundedPanelBottomSix";
-            this.roundedPanelBottomSix.Size = new System.Drawing.Size(396, 130);
+            this.roundedPanelBottomSix.Size = new System.Drawing.Size(348, 118);
             this.roundedPanelBottomSix.TabIndex = 27;
             this.roundedPanelBottomSix.TopLeftRadius = 25;
             this.roundedPanelBottomSix.TopRightRadius = 25;
@@ -507,7 +517,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(396, 130);
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(362, 120);
             this.tableLayoutPanel12.TabIndex = 2;
             // 
             // label16
@@ -515,9 +525,9 @@ namespace PointOfSale.Views
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label16.Location = new System.Drawing.Point(69, 9);
+            this.label16.Location = new System.Drawing.Point(63, 9);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(324, 50);
+            this.label16.Size = new System.Drawing.Size(296, 46);
             this.label16.TabIndex = 0;
             this.label16.Text = "Total Items";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -527,9 +537,9 @@ namespace PointOfSale.Views
             this.labelTotalItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTotalItems.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelTotalItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelTotalItems.Location = new System.Drawing.Point(69, 68);
+            this.labelTotalItems.Location = new System.Drawing.Point(63, 64);
             this.labelTotalItems.Name = "labelTotalItems";
-            this.labelTotalItems.Size = new System.Drawing.Size(324, 50);
+            this.labelTotalItems.Size = new System.Drawing.Size(296, 46);
             this.labelTotalItems.TabIndex = 1;
             this.labelTotalItems.Text = "250";
             this.labelTotalItems.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -550,7 +560,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(60, 103);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(54, 95);
             this.tableLayoutPanel18.TabIndex = 4;
             // 
             // roundedPanelShapeSix
@@ -559,11 +569,11 @@ namespace PointOfSale.Views
             this.roundedPanelShapeSix.BottomLeftRadius = 8;
             this.roundedPanelShapeSix.BottomRightRadius = 8;
             this.roundedPanelShapeSix.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelShapeSix.Location = new System.Drawing.Point(22, 10);
+            this.roundedPanelShapeSix.Location = new System.Drawing.Point(20, 9);
             this.roundedPanelShapeSix.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanelShapeSix.Name = "roundedPanelShapeSix";
             this.tableLayoutPanel18.SetRowSpan(this.roundedPanelShapeSix, 2);
-            this.roundedPanelShapeSix.Size = new System.Drawing.Size(14, 82);
+            this.roundedPanelShapeSix.Size = new System.Drawing.Size(13, 76);
             this.roundedPanelShapeSix.TabIndex = 1;
             this.roundedPanelShapeSix.TopLeftRadius = 8;
             this.roundedPanelShapeSix.TopRightRadius = 8;
@@ -575,9 +585,9 @@ namespace PointOfSale.Views
             this.roundedPanelBottomOne.BottomRightRadius = 25;
             this.roundedPanelBottomOne.Controls.Add(this.tableLayoutPanel6);
             this.roundedPanelBottomOne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelBottomOne.Location = new System.Drawing.Point(71, 26);
+            this.roundedPanelBottomOne.Location = new System.Drawing.Point(63, 24);
             this.roundedPanelBottomOne.Name = "roundedPanelBottomOne";
-            this.roundedPanelBottomOne.Size = new System.Drawing.Size(396, 130);
+            this.roundedPanelBottomOne.Size = new System.Drawing.Size(348, 118);
             this.roundedPanelBottomOne.TabIndex = 28;
             this.roundedPanelBottomOne.TopLeftRadius = 25;
             this.roundedPanelBottomOne.TopRightRadius = 25;
@@ -600,7 +610,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(396, 130);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(362, 120);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // label7
@@ -608,9 +618,9 @@ namespace PointOfSale.Views
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label7.Location = new System.Drawing.Point(69, 9);
+            this.label7.Location = new System.Drawing.Point(63, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(324, 50);
+            this.label7.Size = new System.Drawing.Size(296, 46);
             this.label7.TabIndex = 0;
             this.label7.Text = "Today Income";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -620,9 +630,9 @@ namespace PointOfSale.Views
             this.labelTodayIncome.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTodayIncome.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelTodayIncome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelTodayIncome.Location = new System.Drawing.Point(69, 68);
+            this.labelTodayIncome.Location = new System.Drawing.Point(63, 64);
             this.labelTodayIncome.Name = "labelTodayIncome";
-            this.labelTodayIncome.Size = new System.Drawing.Size(324, 50);
+            this.labelTodayIncome.Size = new System.Drawing.Size(296, 46);
             this.labelTodayIncome.TabIndex = 1;
             this.labelTodayIncome.Text = "Rs. 5000.00";
             this.labelTodayIncome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -643,7 +653,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(60, 103);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(54, 95);
             this.tableLayoutPanel13.TabIndex = 2;
             // 
             // roundedPanelShapeOne
@@ -652,11 +662,11 @@ namespace PointOfSale.Views
             this.roundedPanelShapeOne.BottomLeftRadius = 8;
             this.roundedPanelShapeOne.BottomRightRadius = 8;
             this.roundedPanelShapeOne.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelShapeOne.Location = new System.Drawing.Point(22, 10);
+            this.roundedPanelShapeOne.Location = new System.Drawing.Point(20, 9);
             this.roundedPanelShapeOne.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanelShapeOne.Name = "roundedPanelShapeOne";
             this.tableLayoutPanel13.SetRowSpan(this.roundedPanelShapeOne, 2);
-            this.roundedPanelShapeOne.Size = new System.Drawing.Size(14, 82);
+            this.roundedPanelShapeOne.Size = new System.Drawing.Size(13, 76);
             this.roundedPanelShapeOne.TabIndex = 1;
             this.roundedPanelShapeOne.TopLeftRadius = 8;
             this.roundedPanelShapeOne.TopRightRadius = 8;
@@ -668,9 +678,9 @@ namespace PointOfSale.Views
             this.roundedPanelBottomTwo.BottomRightRadius = 25;
             this.roundedPanelBottomTwo.Controls.Add(this.tableLayoutPanel7);
             this.roundedPanelBottomTwo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelBottomTwo.Location = new System.Drawing.Point(588, 26);
+            this.roundedPanelBottomTwo.Location = new System.Drawing.Point(518, 24);
             this.roundedPanelBottomTwo.Name = "roundedPanelBottomTwo";
-            this.roundedPanelBottomTwo.Size = new System.Drawing.Size(396, 130);
+            this.roundedPanelBottomTwo.Size = new System.Drawing.Size(348, 118);
             this.roundedPanelBottomTwo.TabIndex = 29;
             this.roundedPanelBottomTwo.TopLeftRadius = 25;
             this.roundedPanelBottomTwo.TopRightRadius = 25;
@@ -693,7 +703,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(396, 130);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(362, 120);
             this.tableLayoutPanel7.TabIndex = 2;
             // 
             // label8
@@ -701,9 +711,9 @@ namespace PointOfSale.Views
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label8.Location = new System.Drawing.Point(69, 9);
+            this.label8.Location = new System.Drawing.Point(63, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(324, 50);
+            this.label8.Size = new System.Drawing.Size(296, 46);
             this.label8.TabIndex = 0;
             this.label8.Text = "Today Profit";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -713,9 +723,9 @@ namespace PointOfSale.Views
             this.labelTodayProfit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTodayProfit.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelTodayProfit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelTodayProfit.Location = new System.Drawing.Point(69, 68);
+            this.labelTodayProfit.Location = new System.Drawing.Point(63, 64);
             this.labelTodayProfit.Name = "labelTodayProfit";
-            this.labelTodayProfit.Size = new System.Drawing.Size(324, 50);
+            this.labelTodayProfit.Size = new System.Drawing.Size(296, 46);
             this.labelTodayProfit.TabIndex = 1;
             this.labelTodayProfit.Text = "Rs. 5000.00";
             this.labelTodayProfit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -736,7 +746,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(60, 103);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(54, 95);
             this.tableLayoutPanel14.TabIndex = 3;
             // 
             // roundedPanelShapeTwo
@@ -745,11 +755,11 @@ namespace PointOfSale.Views
             this.roundedPanelShapeTwo.BottomLeftRadius = 8;
             this.roundedPanelShapeTwo.BottomRightRadius = 8;
             this.roundedPanelShapeTwo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelShapeTwo.Location = new System.Drawing.Point(22, 10);
+            this.roundedPanelShapeTwo.Location = new System.Drawing.Point(20, 9);
             this.roundedPanelShapeTwo.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanelShapeTwo.Name = "roundedPanelShapeTwo";
             this.tableLayoutPanel14.SetRowSpan(this.roundedPanelShapeTwo, 2);
-            this.roundedPanelShapeTwo.Size = new System.Drawing.Size(14, 82);
+            this.roundedPanelShapeTwo.Size = new System.Drawing.Size(13, 76);
             this.roundedPanelShapeTwo.TabIndex = 1;
             this.roundedPanelShapeTwo.TopLeftRadius = 8;
             this.roundedPanelShapeTwo.TopRightRadius = 8;
@@ -761,9 +771,9 @@ namespace PointOfSale.Views
             this.roundedPanelBottomThree.BottomRightRadius = 25;
             this.roundedPanelBottomThree.Controls.Add(this.tableLayoutPanel8);
             this.roundedPanelBottomThree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelBottomThree.Location = new System.Drawing.Point(71, 185);
+            this.roundedPanelBottomThree.Location = new System.Drawing.Point(63, 169);
             this.roundedPanelBottomThree.Name = "roundedPanelBottomThree";
-            this.roundedPanelBottomThree.Size = new System.Drawing.Size(396, 130);
+            this.roundedPanelBottomThree.Size = new System.Drawing.Size(348, 118);
             this.roundedPanelBottomThree.TabIndex = 30;
             this.roundedPanelBottomThree.TopLeftRadius = 25;
             this.roundedPanelBottomThree.TopRightRadius = 25;
@@ -786,7 +796,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(396, 130);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(362, 120);
             this.tableLayoutPanel8.TabIndex = 2;
             // 
             // label9
@@ -794,9 +804,9 @@ namespace PointOfSale.Views
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label9.Location = new System.Drawing.Point(69, 9);
+            this.label9.Location = new System.Drawing.Point(63, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(324, 50);
+            this.label9.Size = new System.Drawing.Size(296, 46);
             this.label9.TabIndex = 0;
             this.label9.Text = "Today Orders";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -806,9 +816,9 @@ namespace PointOfSale.Views
             this.labelTodayOrders.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTodayOrders.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelTodayOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelTodayOrders.Location = new System.Drawing.Point(69, 68);
+            this.labelTodayOrders.Location = new System.Drawing.Point(63, 64);
             this.labelTodayOrders.Name = "labelTodayOrders";
-            this.labelTodayOrders.Size = new System.Drawing.Size(324, 50);
+            this.labelTodayOrders.Size = new System.Drawing.Size(296, 46);
             this.labelTodayOrders.TabIndex = 1;
             this.labelTodayOrders.Text = "25";
             this.labelTodayOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -829,7 +839,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(60, 103);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(54, 95);
             this.tableLayoutPanel16.TabIndex = 4;
             // 
             // roundedPanelShapeThree
@@ -838,11 +848,11 @@ namespace PointOfSale.Views
             this.roundedPanelShapeThree.BottomLeftRadius = 8;
             this.roundedPanelShapeThree.BottomRightRadius = 8;
             this.roundedPanelShapeThree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelShapeThree.Location = new System.Drawing.Point(22, 10);
+            this.roundedPanelShapeThree.Location = new System.Drawing.Point(20, 9);
             this.roundedPanelShapeThree.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanelShapeThree.Name = "roundedPanelShapeThree";
             this.tableLayoutPanel16.SetRowSpan(this.roundedPanelShapeThree, 2);
-            this.roundedPanelShapeThree.Size = new System.Drawing.Size(14, 82);
+            this.roundedPanelShapeThree.Size = new System.Drawing.Size(13, 76);
             this.roundedPanelShapeThree.TabIndex = 1;
             this.roundedPanelShapeThree.TopLeftRadius = 8;
             this.roundedPanelShapeThree.TopRightRadius = 8;
@@ -854,9 +864,9 @@ namespace PointOfSale.Views
             this.roundedPanelBottomFour.BottomRightRadius = 25;
             this.roundedPanelBottomFour.Controls.Add(this.tableLayoutPanel10);
             this.roundedPanelBottomFour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelBottomFour.Location = new System.Drawing.Point(588, 185);
+            this.roundedPanelBottomFour.Location = new System.Drawing.Point(518, 169);
             this.roundedPanelBottomFour.Name = "roundedPanelBottomFour";
-            this.roundedPanelBottomFour.Size = new System.Drawing.Size(396, 130);
+            this.roundedPanelBottomFour.Size = new System.Drawing.Size(348, 118);
             this.roundedPanelBottomFour.TabIndex = 31;
             this.roundedPanelBottomFour.TopLeftRadius = 25;
             this.roundedPanelBottomFour.TopRightRadius = 25;
@@ -879,7 +889,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(396, 130);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(362, 120);
             this.tableLayoutPanel10.TabIndex = 2;
             // 
             // label13
@@ -887,9 +897,9 @@ namespace PointOfSale.Views
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label13.Location = new System.Drawing.Point(69, 9);
+            this.label13.Location = new System.Drawing.Point(63, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(324, 50);
+            this.label13.Size = new System.Drawing.Size(296, 46);
             this.label13.TabIndex = 0;
             this.label13.Text = "Total Customers";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -899,9 +909,9 @@ namespace PointOfSale.Views
             this.labelTotalCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTotalCustomers.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelTotalCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelTotalCustomers.Location = new System.Drawing.Point(69, 68);
+            this.labelTotalCustomers.Location = new System.Drawing.Point(63, 64);
             this.labelTotalCustomers.Name = "labelTotalCustomers";
-            this.labelTotalCustomers.Size = new System.Drawing.Size(324, 50);
+            this.labelTotalCustomers.Size = new System.Drawing.Size(296, 46);
             this.labelTotalCustomers.TabIndex = 1;
             this.labelTotalCustomers.Text = "5";
             this.labelTotalCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -922,7 +932,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(60, 103);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(54, 95);
             this.tableLayoutPanel15.TabIndex = 4;
             // 
             // roundedPanelShapeFour
@@ -931,11 +941,11 @@ namespace PointOfSale.Views
             this.roundedPanelShapeFour.BottomLeftRadius = 8;
             this.roundedPanelShapeFour.BottomRightRadius = 8;
             this.roundedPanelShapeFour.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelShapeFour.Location = new System.Drawing.Point(22, 10);
+            this.roundedPanelShapeFour.Location = new System.Drawing.Point(20, 9);
             this.roundedPanelShapeFour.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanelShapeFour.Name = "roundedPanelShapeFour";
             this.tableLayoutPanel15.SetRowSpan(this.roundedPanelShapeFour, 2);
-            this.roundedPanelShapeFour.Size = new System.Drawing.Size(14, 82);
+            this.roundedPanelShapeFour.Size = new System.Drawing.Size(13, 76);
             this.roundedPanelShapeFour.TabIndex = 1;
             this.roundedPanelShapeFour.TopLeftRadius = 8;
             this.roundedPanelShapeFour.TopRightRadius = 8;
@@ -947,9 +957,9 @@ namespace PointOfSale.Views
             this.roundedPanelBottomFive.BottomRightRadius = 25;
             this.roundedPanelBottomFive.Controls.Add(this.tableLayoutPanel11);
             this.roundedPanelBottomFive.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelBottomFive.Location = new System.Drawing.Point(71, 344);
+            this.roundedPanelBottomFive.Location = new System.Drawing.Point(63, 314);
             this.roundedPanelBottomFive.Name = "roundedPanelBottomFive";
-            this.roundedPanelBottomFive.Size = new System.Drawing.Size(396, 130);
+            this.roundedPanelBottomFive.Size = new System.Drawing.Size(348, 118);
             this.roundedPanelBottomFive.TabIndex = 32;
             this.roundedPanelBottomFive.TopLeftRadius = 25;
             this.roundedPanelBottomFive.TopRightRadius = 25;
@@ -972,7 +982,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(396, 130);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(362, 120);
             this.tableLayoutPanel11.TabIndex = 2;
             // 
             // label17
@@ -980,9 +990,9 @@ namespace PointOfSale.Views
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.label17.Location = new System.Drawing.Point(69, 9);
+            this.label17.Location = new System.Drawing.Point(63, 9);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(324, 50);
+            this.label17.Size = new System.Drawing.Size(296, 46);
             this.label17.TabIndex = 0;
             this.label17.Text = "Total Suppliers";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -992,9 +1002,9 @@ namespace PointOfSale.Views
             this.labelTotalSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTotalSuppliers.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.labelTotalSuppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelTotalSuppliers.Location = new System.Drawing.Point(69, 68);
+            this.labelTotalSuppliers.Location = new System.Drawing.Point(63, 64);
             this.labelTotalSuppliers.Name = "labelTotalSuppliers";
-            this.labelTotalSuppliers.Size = new System.Drawing.Size(324, 50);
+            this.labelTotalSuppliers.Size = new System.Drawing.Size(296, 46);
             this.labelTotalSuppliers.TabIndex = 1;
             this.labelTotalSuppliers.Text = "20";
             this.labelTotalSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1015,7 +1025,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(60, 103);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(54, 95);
             this.tableLayoutPanel17.TabIndex = 4;
             // 
             // roundedPanelShapeFive
@@ -1024,11 +1034,11 @@ namespace PointOfSale.Views
             this.roundedPanelShapeFive.BottomLeftRadius = 8;
             this.roundedPanelShapeFive.BottomRightRadius = 8;
             this.roundedPanelShapeFive.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanelShapeFive.Location = new System.Drawing.Point(22, 10);
+            this.roundedPanelShapeFive.Location = new System.Drawing.Point(20, 9);
             this.roundedPanelShapeFive.Margin = new System.Windows.Forms.Padding(0);
             this.roundedPanelShapeFive.Name = "roundedPanelShapeFive";
             this.tableLayoutPanel17.SetRowSpan(this.roundedPanelShapeFive, 2);
-            this.roundedPanelShapeFive.Size = new System.Drawing.Size(14, 82);
+            this.roundedPanelShapeFive.Size = new System.Drawing.Size(13, 76);
             this.roundedPanelShapeFive.TabIndex = 1;
             this.roundedPanelShapeFive.TopLeftRadius = 8;
             this.roundedPanelShapeFive.TopRightRadius = 8;
@@ -1079,8 +1089,8 @@ namespace PointOfSale.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1064, 729);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(939, 666);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";

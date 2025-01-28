@@ -10,10 +10,14 @@ namespace PointOfSale.Views
         public DashboardForm()
         {
             InitializeComponent();
+            DoubleBuffered = true;
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
+
+            
+
             // Example usage with an existing panel
             ThemeColors.ApplyGradientToPanel(roundedPanelTopOne, ThemeColors.SkyBlue, ThemeColors.BrightBlue, LinearGradientMode.Vertical);
             ThemeColors.ApplyGradientToPanel(roundedPanelTopThree, ThemeColors.SkyBlue, ThemeColors.BrightBlue, LinearGradientMode.Vertical);
