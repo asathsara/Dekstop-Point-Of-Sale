@@ -44,6 +44,15 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
+            this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WholeSaleQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WholeSaleUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WholeSaleUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedTextboxUnitPrice = new PointOfSale.Components.RoundedTextbox();
@@ -55,15 +64,6 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedTextboxQuantitiy = new PointOfSale.Components.RoundedTextbox();
             this.comboBoxUnit = new System.Windows.Forms.ComboBox();
-            this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WholeSaleQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WholeSaleUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WholeSaleUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -291,6 +291,74 @@ namespace PointOfSale.Views
             this.dataGridViewItems.Size = new System.Drawing.Size(542, 444);
             this.dataGridViewItems.TabIndex = 6;
             // 
+            // SupplierID
+            // 
+            this.SupplierID.DataPropertyName = "SupplierID";
+            this.SupplierID.HeaderText = " ID";
+            this.SupplierID.Name = "SupplierID";
+            this.SupplierID.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "ItemName";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 140;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.HeaderText = "Supplier Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            this.SupplierName.Width = 170;
+            // 
+            // ContactNumber
+            // 
+            this.ContactNumber.DataPropertyName = "ContactNumber";
+            this.ContactNumber.HeaderText = "Contact Number";
+            this.ContactNumber.Name = "ContactNumber";
+            this.ContactNumber.ReadOnly = true;
+            this.ContactNumber.Width = 190;
+            // 
+            // WholeSaleQuantity
+            // 
+            this.WholeSaleQuantity.DataPropertyName = "WholeSaleQuantity";
+            this.WholeSaleQuantity.HeaderText = "Quantity";
+            this.WholeSaleQuantity.Name = "WholeSaleQuantity";
+            this.WholeSaleQuantity.ReadOnly = true;
+            // 
+            // WholeSaleUnit
+            // 
+            this.WholeSaleUnit.DataPropertyName = "WholeSaleUnit";
+            this.WholeSaleUnit.HeaderText = "Unit";
+            this.WholeSaleUnit.Name = "WholeSaleUnit";
+            this.WholeSaleUnit.ReadOnly = true;
+            // 
+            // WholeSaleUnitPrice
+            // 
+            this.WholeSaleUnitPrice.DataPropertyName = "WholeSaleUnitPrice";
+            this.WholeSaleUnitPrice.HeaderText = "Unit Price";
+            this.WholeSaleUnitPrice.Name = "WholeSaleUnitPrice";
+            this.WholeSaleUnitPrice.ReadOnly = true;
+            this.WholeSaleUnitPrice.Width = 140;
+            // 
+            // AdminID
+            // 
+            this.AdminID.DataPropertyName = "AdminID";
+            this.AdminID.HeaderText = "Admin ID";
+            this.AdminID.Name = "AdminID";
+            this.AdminID.ReadOnly = true;
+            this.AdminID.Width = 130;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.White;
@@ -489,74 +557,6 @@ namespace PointOfSale.Views
             this.comboBoxUnit.Name = "comboBoxUnit";
             this.comboBoxUnit.Size = new System.Drawing.Size(112, 36);
             this.comboBoxUnit.TabIndex = 1;
-            // 
-            // SupplierID
-            // 
-            this.SupplierID.DataPropertyName = "SupplierID";
-            this.SupplierID.HeaderText = " ID";
-            this.SupplierID.Name = "SupplierID";
-            this.SupplierID.ReadOnly = true;
-            // 
-            // ItemName
-            // 
-            this.ItemName.DataPropertyName = "ItemName";
-            this.ItemName.HeaderText = "ItemName";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 140;
-            // 
-            // SupplierName
-            // 
-            this.SupplierName.DataPropertyName = "SupplierName";
-            this.SupplierName.HeaderText = "Supplier Name";
-            this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
-            this.SupplierName.Width = 170;
-            // 
-            // ContactNumber
-            // 
-            this.ContactNumber.DataPropertyName = "ContactNumber";
-            this.ContactNumber.HeaderText = "Contact Number";
-            this.ContactNumber.Name = "ContactNumber";
-            this.ContactNumber.ReadOnly = true;
-            this.ContactNumber.Width = 190;
-            // 
-            // WholeSaleQuantity
-            // 
-            this.WholeSaleQuantity.DataPropertyName = "WholeSaleQuantity";
-            this.WholeSaleQuantity.HeaderText = "Quantity";
-            this.WholeSaleQuantity.Name = "WholeSaleQuantity";
-            this.WholeSaleQuantity.ReadOnly = true;
-            // 
-            // WholeSaleUnit
-            // 
-            this.WholeSaleUnit.DataPropertyName = "WholeSaleUnit";
-            this.WholeSaleUnit.HeaderText = "Unit";
-            this.WholeSaleUnit.Name = "WholeSaleUnit";
-            this.WholeSaleUnit.ReadOnly = true;
-            // 
-            // WholeSaleUnitPrice
-            // 
-            this.WholeSaleUnitPrice.DataPropertyName = "WholeSaleUnitPrice";
-            this.WholeSaleUnitPrice.HeaderText = "Unit Price";
-            this.WholeSaleUnitPrice.Name = "WholeSaleUnitPrice";
-            this.WholeSaleUnitPrice.ReadOnly = true;
-            this.WholeSaleUnitPrice.Width = 140;
-            // 
-            // AdminID
-            // 
-            this.AdminID.DataPropertyName = "AdminID";
-            this.AdminID.HeaderText = "Admin ID";
-            this.AdminID.Name = "AdminID";
-            this.AdminID.ReadOnly = true;
-            this.AdminID.Width = 130;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
             // 
             // SuppliersForm
             // 

@@ -134,6 +134,12 @@
     <EmbeddedResource Include="Views\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\BillingForm.resx">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DashboardForm.resx">
+      <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoyaltyCustomersForm.resx">
       <DependentUpon>LoyaltyCustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StoreForm.resx">
+      <DependentUpon>StoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SuppliersForm.resx">
       <DependentUpon>SuppliersForm.cs</DependentUpon>
@@ -170,9 +179,12 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Icons\cart.png" />
     <Content Include="Resources\Icons\dashboard.png" />
     <Content Include="Resources\Icons\employee.png" />
+    <Content Include="Resources\Icons\income.png" />
     <Content Include="Resources\Icons\managment.png" />
+    <Content Include="Resources\Icons\profit.png" />
     <Content Include="Resources\Icons\search.png" />
     <Content Include="Resources\Icons\signout.png" />
     <Content Include="Resources\Icons\store.png" />

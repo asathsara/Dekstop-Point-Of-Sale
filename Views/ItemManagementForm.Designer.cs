@@ -42,6 +42,7 @@ namespace PointOfSale.Views
             this.roundedPanel2 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedTextbox3 = new PointOfSale.Components.RoundedTextbox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
@@ -69,20 +70,19 @@ namespace PointOfSale.Views
             this.comboBoxItems = new System.Windows.Forms.ComboBox();
             this.comboBoxSuppliers = new System.Windows.Forms.ComboBox();
             this.roundedTextboxBarcode = new PointOfSale.Components.RoundedTextbox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.roundedPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.roundedPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             this.roundedPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -196,6 +196,18 @@ namespace PointOfSale.Views
             this.roundedTextbox3.PlaceholderText = "Search";
             this.roundedTextbox3.Size = new System.Drawing.Size(236, 29);
             this.roundedTextbox3.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::PointOfSale.Properties.Resources.search;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 29);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // roundedPanel3
             // 
@@ -591,18 +603,6 @@ namespace PointOfSale.Views
             this.roundedTextboxBarcode.Size = new System.Drawing.Size(291, 51);
             this.roundedTextboxBarcode.TabIndex = 11;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::PointOfSale.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 29);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // ItemManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,13 +618,13 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.ResumeLayout(false);
             this.roundedPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.roundedPanel3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
             this.roundedPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

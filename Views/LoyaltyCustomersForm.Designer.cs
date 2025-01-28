@@ -30,9 +30,9 @@ namespace PointOfSale.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,19 +44,19 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
-            this.roundedTextboxName = new PointOfSale.Components.RoundedTextbox();
-            this.roundedTextboxPassword = new PointOfSale.Components.RoundedTextbox();
+            this.roundedTextboxPoints = new PointOfSale.Components.RoundedTextbox();
+            this.roundedTextBoxCardNumber = new PointOfSale.Components.RoundedTextbox();
             this.roundedTtextboxCustomerName = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -237,38 +237,38 @@ namespace PointOfSale.Views
             this.dataGridViewItems.AllowUserToDeleteRows = false;
             this.dataGridViewItems.AllowUserToResizeColumns = false;
             this.dataGridViewItems.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewItems.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewItems.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.Item,
-            this.Password,
-            this.EmployeeName,
-            this.AdminID,
+            this.CustomerName,
+            this.CardNumber,
+            this.Points,
+            this.EmployeeID,
             this.Delete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewItems.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewItems.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewItems.EnableHeadersVisualStyles = false;
             this.dataGridViewItems.Location = new System.Drawing.Point(0, 55);
@@ -279,51 +279,6 @@ namespace PointOfSale.Views
             this.dataGridViewItems.RowTemplate.Height = 30;
             this.dataGridViewItems.Size = new System.Drawing.Size(542, 444);
             this.dataGridViewItems.TabIndex = 6;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "EmployeeID";
-            this.ID.HeaderText = " ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "Username";
-            this.Item.HeaderText = "Username";
-            this.Item.Name = "Item";
-            this.Item.ReadOnly = true;
-            this.Item.Width = 130;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.DataPropertyName = "EmployeeName";
-            this.EmployeeName.HeaderText = "Employee Name";
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            this.EmployeeName.Width = 190;
-            // 
-            // AdminID
-            // 
-            this.AdminID.DataPropertyName = "AdminID";
-            this.AdminID.HeaderText = "Admin ID";
-            this.AdminID.Name = "AdminID";
-            this.AdminID.ReadOnly = true;
-            this.AdminID.Width = 150;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
             // 
             // roundedPanel1
             // 
@@ -347,8 +302,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.Controls.Add(this.buttonSubmit, 1, 8);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxName, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxPassword, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextboxPoints, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.roundedTextBoxCardNumber, 1, 5);
             this.tableLayoutPanel2.Controls.Add(this.roundedTtextboxCustomerName, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.roundedTextboxID, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -392,39 +347,39 @@ namespace PointOfSale.Views
             this.buttonSubmit.TopRightRadius = 40;
             this.buttonSubmit.UseVisualStyleBackColor = false;
             // 
-            // roundedTextboxName
+            // roundedTextboxPoints
             // 
-            this.roundedTextboxName.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxName.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxName.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxName.BorderRadius = 10;
-            this.roundedTextboxName.BorderWidth = 0;
-            this.roundedTextboxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxName.Location = new System.Drawing.Point(42, 342);
-            this.roundedTextboxName.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxName.Name = "roundedTextboxName";
-            this.roundedTextboxName.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxName.PasswordChar = '\0';
-            this.roundedTextboxName.PlaceholderText = "Name";
-            this.roundedTextboxName.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxName.TabIndex = 11;
+            this.roundedTextboxPoints.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextboxPoints.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxPoints.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextboxPoints.BorderRadius = 10;
+            this.roundedTextboxPoints.BorderWidth = 0;
+            this.roundedTextboxPoints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextboxPoints.Location = new System.Drawing.Point(42, 342);
+            this.roundedTextboxPoints.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextboxPoints.Name = "roundedTextboxPoints";
+            this.roundedTextboxPoints.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextboxPoints.PasswordChar = '\0';
+            this.roundedTextboxPoints.PlaceholderText = "Points";
+            this.roundedTextboxPoints.Size = new System.Drawing.Size(291, 51);
+            this.roundedTextboxPoints.TabIndex = 11;
             // 
-            // roundedTextboxPassword
+            // roundedTextBoxCardNumber
             // 
-            this.roundedTextboxPassword.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextboxPassword.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxPassword.BorderColor = System.Drawing.SystemColors.Control;
-            this.roundedTextboxPassword.BorderRadius = 10;
-            this.roundedTextboxPassword.BorderWidth = 0;
-            this.roundedTextboxPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextboxPassword.Location = new System.Drawing.Point(42, 281);
-            this.roundedTextboxPassword.Margin = new System.Windows.Forms.Padding(5);
-            this.roundedTextboxPassword.Name = "roundedTextboxPassword";
-            this.roundedTextboxPassword.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextboxPassword.PasswordChar = '\0';
-            this.roundedTextboxPassword.PlaceholderText = "Password";
-            this.roundedTextboxPassword.Size = new System.Drawing.Size(291, 51);
-            this.roundedTextboxPassword.TabIndex = 12;
+            this.roundedTextBoxCardNumber.BackColor = System.Drawing.Color.Transparent;
+            this.roundedTextBoxCardNumber.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.roundedTextBoxCardNumber.BorderColor = System.Drawing.SystemColors.Control;
+            this.roundedTextBoxCardNumber.BorderRadius = 10;
+            this.roundedTextBoxCardNumber.BorderWidth = 0;
+            this.roundedTextBoxCardNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roundedTextBoxCardNumber.Location = new System.Drawing.Point(42, 281);
+            this.roundedTextBoxCardNumber.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedTextBoxCardNumber.Name = "roundedTextBoxCardNumber";
+            this.roundedTextBoxCardNumber.Padding = new System.Windows.Forms.Padding(10);
+            this.roundedTextBoxCardNumber.PasswordChar = '\0';
+            this.roundedTextBoxCardNumber.PlaceholderText = "Card Number";
+            this.roundedTextBoxCardNumber.Size = new System.Drawing.Size(291, 51);
+            this.roundedTextBoxCardNumber.TabIndex = 12;
             // 
             // roundedTtextboxCustomerName
             // 
@@ -460,6 +415,52 @@ namespace PointOfSale.Views
             this.roundedTextboxID.Size = new System.Drawing.Size(291, 51);
             this.roundedTextboxID.TabIndex = 14;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "EmployeeID";
+            this.ID.HeaderText = " ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "Customer Name";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            this.CustomerName.Width = 200;
+            // 
+            // CardNumber
+            // 
+            this.CardNumber.DataPropertyName = "CustomerCardNumber";
+            this.CardNumber.HeaderText = "Card Number";
+            this.CardNumber.Name = "CardNumber";
+            this.CardNumber.ReadOnly = true;
+            this.CardNumber.Width = 165;
+            // 
+            // Points
+            // 
+            this.Points.DataPropertyName = "Points";
+            this.Points.HeaderText = "Points";
+            this.Points.Name = "Points";
+            this.Points.ReadOnly = true;
+            this.Points.Width = 190;
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.DataPropertyName = "EmployeeID";
+            this.EmployeeID.HeaderText = "Employee ID";
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.ReadOnly = true;
+            this.EmployeeID.Width = 150;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
             // LoyaltyCustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,7 +469,7 @@ namespace PointOfSale.Views
             this.ClientSize = new System.Drawing.Size(1097, 733);
             this.Controls.Add(this.panel1);
             this.Name = "LoyaltyCustomersForm";
-            this.Text = "ItemManagmentForm";
+            this.Text = "Loyalty Customers ";
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -501,15 +502,15 @@ namespace PointOfSale.Views
         private Components.RoundedPanel roundedPanel3;
         private TableLayoutPanel tableLayoutPanel5;
         private DataGridView dataGridViewItems;
-        private Components.RoundedTextbox roundedTextboxName;
-        private Components.RoundedTextbox roundedTextboxPassword;
+        private Components.RoundedTextbox roundedTextboxPoints;
+        private Components.RoundedTextbox roundedTextBoxCardNumber;
         private Components.RoundedTextbox roundedTtextboxCustomerName;
         private Components.RoundedTextbox roundedTextboxID;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Item;
-        private DataGridViewTextBoxColumn Password;
-        private DataGridViewTextBoxColumn EmployeeName;
-        private DataGridViewTextBoxColumn AdminID;
+        private DataGridViewTextBoxColumn CustomerName;
+        private DataGridViewTextBoxColumn CardNumber;
+        private DataGridViewTextBoxColumn Points;
+        private DataGridViewTextBoxColumn EmployeeID;
         private DataGridViewImageColumn Delete;
     }
 }
