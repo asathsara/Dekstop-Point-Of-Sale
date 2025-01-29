@@ -39,7 +39,6 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedPanel2 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.roundedTextbox3 = new PointOfSale.Components.RoundedTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -57,6 +56,7 @@ namespace PointOfSale.Views
             this.roundedTextBoxContactNumber = new PointOfSale.Components.RoundedTextbox();
             this.roundedTtextboxStoreName = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -152,8 +152,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel6.Controls.Add(this.roundedTextbox3, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.textBoxSearch, 1, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
@@ -162,26 +162,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(272, 53);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(271, 53);
             this.tableLayoutPanel6.TabIndex = 4;
-            // 
-            // roundedTextbox3
-            // 
-            this.roundedTextbox3.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextbox3.BackgroundColor = System.Drawing.Color.White;
-            this.roundedTextbox3.BorderColor = System.Drawing.Color.White;
-            this.roundedTextbox3.BorderRadius = 10;
-            this.roundedTextbox3.BorderWidth = 0;
-            this.roundedTextbox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextbox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedTextbox3.Location = new System.Drawing.Point(54, 13);
-            this.roundedTextbox3.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.roundedTextbox3.Name = "roundedTextbox3";
-            this.roundedTextbox3.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextbox3.PasswordChar = '\0';
-            this.roundedTextbox3.PlaceholderText = "Search";
-            this.roundedTextbox3.Size = new System.Drawing.Size(198, 26);
-            this.roundedTextbox3.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -228,7 +210,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(464, 509);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(463, 505);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // dataGridViewItems
@@ -277,7 +259,7 @@ namespace PointOfSale.Views
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewItems.RowTemplate.Height = 30;
-            this.dataGridViewItems.Size = new System.Drawing.Size(464, 407);
+            this.dataGridViewItems.Size = new System.Drawing.Size(463, 404);
             this.dataGridViewItems.TabIndex = 6;
             // 
             // ID
@@ -369,7 +351,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(323, 597);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(322, 593);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // buttonSubmit
@@ -387,7 +369,7 @@ namespace PointOfSale.Views
             this.buttonSubmit.ForeColor = System.Drawing.Color.White;
             this.buttonSubmit.Location = new System.Drawing.Point(35, 417);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(252, 49);
+            this.buttonSubmit.Size = new System.Drawing.Size(251, 49);
             this.buttonSubmit.TabIndex = 1;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.TopLeftRadius = 40;
@@ -408,7 +390,7 @@ namespace PointOfSale.Views
             this.roundedTextboxAddress.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxAddress.PasswordChar = '\0';
             this.roundedTextboxAddress.PlaceholderText = "Address";
-            this.roundedTextboxAddress.Size = new System.Drawing.Size(248, 45);
+            this.roundedTextboxAddress.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxAddress.TabIndex = 11;
             // 
             // roundedTextBoxContactNumber
@@ -425,7 +407,7 @@ namespace PointOfSale.Views
             this.roundedTextBoxContactNumber.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextBoxContactNumber.PasswordChar = '\0';
             this.roundedTextBoxContactNumber.PlaceholderText = "Contact Number";
-            this.roundedTextBoxContactNumber.Size = new System.Drawing.Size(248, 45);
+            this.roundedTextBoxContactNumber.Size = new System.Drawing.Size(247, 45);
             this.roundedTextBoxContactNumber.TabIndex = 12;
             // 
             // roundedTtextboxStoreName
@@ -442,7 +424,7 @@ namespace PointOfSale.Views
             this.roundedTtextboxStoreName.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTtextboxStoreName.PasswordChar = '\0';
             this.roundedTtextboxStoreName.PlaceholderText = "Store Name";
-            this.roundedTtextboxStoreName.Size = new System.Drawing.Size(248, 45);
+            this.roundedTtextboxStoreName.Size = new System.Drawing.Size(247, 45);
             this.roundedTtextboxStoreName.TabIndex = 13;
             // 
             // roundedTextboxID
@@ -459,8 +441,18 @@ namespace PointOfSale.Views
             this.roundedTextboxID.Padding = new System.Windows.Forms.Padding(10);
             this.roundedTextboxID.PasswordChar = '\0';
             this.roundedTextboxID.PlaceholderText = "ID";
-            this.roundedTextboxID.Size = new System.Drawing.Size(248, 45);
+            this.roundedTextboxID.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxID.TabIndex = 14;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSearch.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(57, 16);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(211, 23);
+            this.textBoxSearch.TabIndex = 3;
             // 
             // StoreForm
             // 
@@ -477,6 +469,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.ResumeLayout(false);
             this.roundedPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.roundedPanel3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -498,7 +491,6 @@ namespace PointOfSale.Views
         private Components.RoundedButton buttonSubmit;
         private Components.RoundedPanel roundedPanel2;
         private TableLayoutPanel tableLayoutPanel6;
-        private Components.RoundedTextbox roundedTextbox3;
         private PictureBox pictureBox1;
         private Components.RoundedPanel roundedPanel3;
         private TableLayoutPanel tableLayoutPanel5;
@@ -513,5 +505,6 @@ namespace PointOfSale.Views
         private DataGridViewTextBoxColumn Address;
         private DataGridViewTextBoxColumn AdminID;
         private DataGridViewImageColumn Delete;
+        private TextBox textBoxSearch;
     }
 }

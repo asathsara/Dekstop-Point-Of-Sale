@@ -49,7 +49,6 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedPanel2 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.roundedTextbox3 = new PointOfSale.Components.RoundedTextbox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -67,6 +66,7 @@ namespace PointOfSale.Views
             this.roundedTextBoxCardNumber = new PointOfSale.Components.RoundedTextbox();
             this.roundedTtextboxCustomerName = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -162,8 +162,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanel6.ColumnCount = 2;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel6.Controls.Add(this.roundedTextbox3, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.textBoxSearch, 1, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
@@ -172,35 +172,17 @@ namespace PointOfSale.Views
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(319, 59);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(271, 53);
             this.tableLayoutPanel6.TabIndex = 4;
-            // 
-            // roundedTextbox3
-            // 
-            this.roundedTextbox3.BackColor = System.Drawing.Color.Transparent;
-            this.roundedTextbox3.BackgroundColor = System.Drawing.Color.White;
-            this.roundedTextbox3.BorderColor = System.Drawing.Color.White;
-            this.roundedTextbox3.BorderRadius = 10;
-            this.roundedTextbox3.BorderWidth = 0;
-            this.roundedTextbox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedTextbox3.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedTextbox3.Location = new System.Drawing.Point(63, 14);
-            this.roundedTextbox3.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.roundedTextbox3.Name = "roundedTextbox3";
-            this.roundedTextbox3.Padding = new System.Windows.Forms.Padding(10);
-            this.roundedTextbox3.PasswordChar = '\0';
-            this.roundedTextbox3.PlaceholderText = "Search";
-            this.roundedTextbox3.Size = new System.Drawing.Size(236, 29);
-            this.roundedTextbox3.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::PointOfSale.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 13);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 29);
+            this.pictureBox1.Size = new System.Drawing.Size(34, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -238,7 +220,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(542, 556);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(463, 505);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // dataGridViewItems
@@ -281,13 +263,13 @@ namespace PointOfSale.Views
             this.dataGridViewItems.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewItems.EnableHeadersVisualStyles = false;
-            this.dataGridViewItems.Location = new System.Drawing.Point(0, 55);
+            this.dataGridViewItems.Location = new System.Drawing.Point(0, 50);
             this.dataGridViewItems.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridViewItems.RowTemplate.Height = 30;
-            this.dataGridViewItems.Size = new System.Drawing.Size(542, 444);
+            this.dataGridViewItems.Size = new System.Drawing.Size(463, 404);
             this.dataGridViewItems.TabIndex = 6;
             // 
             // ID
@@ -471,6 +453,16 @@ namespace PointOfSale.Views
             this.roundedTextboxID.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxID.TabIndex = 14;
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSearch.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(57, 16);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(211, 23);
+            this.textBoxSearch.TabIndex = 3;
+            // 
             // LoyaltyCustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,6 +478,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3.ResumeLayout(false);
             this.roundedPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.roundedPanel3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
@@ -507,7 +500,6 @@ namespace PointOfSale.Views
         private Components.RoundedButton buttonSubmit;
         private Components.RoundedPanel roundedPanel2;
         private TableLayoutPanel tableLayoutPanel6;
-        private Components.RoundedTextbox roundedTextbox3;
         private PictureBox pictureBox1;
         private Components.RoundedPanel roundedPanel3;
         private TableLayoutPanel tableLayoutPanel5;
@@ -522,5 +514,6 @@ namespace PointOfSale.Views
         private DataGridViewTextBoxColumn Points;
         private DataGridViewTextBoxColumn EmployeeID;
         private DataGridViewImageColumn Delete;
+        private TextBox textBoxSearch;
     }
 }
