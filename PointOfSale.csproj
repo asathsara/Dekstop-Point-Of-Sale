@@ -63,6 +63,7 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\LoyaltyCustomer.cs" />
+    <Compile Include="Models\Store.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

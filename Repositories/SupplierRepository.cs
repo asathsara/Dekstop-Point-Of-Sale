@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PointOfSale.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using PointOfSale.Models;
 
 namespace PointOfSale.Repositories
 {

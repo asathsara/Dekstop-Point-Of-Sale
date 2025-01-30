@@ -65,7 +65,7 @@ namespace PointOfSale.Repositories
             return items;
         }
 
-        
+
 
         public override void Insert(Item item)
         {

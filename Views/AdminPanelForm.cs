@@ -1,7 +1,7 @@
-﻿using System.Drawing;
+﻿using PointOfSale.Themes;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
-using PointOfSale.Themes;
 
 namespace PointOfSale.Views
 {

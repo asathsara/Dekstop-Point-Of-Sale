@@ -1,5 +1,4 @@
 ﻿using PointOfSale.Helpers;
-using PointOfSale.Views;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;

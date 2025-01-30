@@ -56,6 +56,17 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
+            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RetailQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RetailUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RetailUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
@@ -69,17 +80,6 @@ namespace PointOfSale.Views
             this.comboBoxItems = new System.Windows.Forms.ComboBox();
             this.comboBoxSuppliers = new System.Windows.Forms.ComboBox();
             this.roundedTextboxBarcode = new PointOfSale.Components.RoundedTextbox();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RetailQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RetailUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RetailUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -303,6 +303,88 @@ namespace PointOfSale.Views
             this.dataGridViewItems.TabIndex = 6;
             this.dataGridViewItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItems_CellContentClick);
             this.dataGridViewItems.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewItems_RowHeaderMouseClick);
+            // 
+            // ItemID
+            // 
+            this.ItemID.DataPropertyName = "ItemID";
+            this.ItemID.HeaderText = " ID";
+            this.ItemID.Name = "ItemID";
+            this.ItemID.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            this.ItemName.Width = 130;
+            // 
+            // Barcode
+            // 
+            this.Barcode.DataPropertyName = "Barcode";
+            this.Barcode.HeaderText = "Barcode";
+            this.Barcode.Name = "Barcode";
+            this.Barcode.ReadOnly = true;
+            // 
+            // RetailQuantity
+            // 
+            this.RetailQuantity.DataPropertyName = "RetailQuantity";
+            this.RetailQuantity.HeaderText = "Quantitiy";
+            this.RetailQuantity.Name = "RetailQuantity";
+            this.RetailQuantity.ReadOnly = true;
+            // 
+            // RetailUnit
+            // 
+            this.RetailUnit.DataPropertyName = "RetailUnit";
+            this.RetailUnit.HeaderText = "Unit";
+            this.RetailUnit.Name = "RetailUnit";
+            this.RetailUnit.ReadOnly = true;
+            // 
+            // RetailUnitPrice
+            // 
+            this.RetailUnitPrice.DataPropertyName = "RetailUnitPrice";
+            this.RetailUnitPrice.HeaderText = "Unit Price";
+            this.RetailUnitPrice.Name = "RetailUnitPrice";
+            this.RetailUnitPrice.ReadOnly = true;
+            this.RetailUnitPrice.Width = 130;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            this.Description.Width = 120;
+            // 
+            // AdminID
+            // 
+            this.AdminID.DataPropertyName = "AdminID";
+            this.AdminID.HeaderText = "AdminID";
+            this.AdminID.Name = "AdminID";
+            this.AdminID.ReadOnly = true;
+            // 
+            // SupplierID
+            // 
+            this.SupplierID.DataPropertyName = "SupplierID";
+            this.SupplierID.HeaderText = "Supplier ID";
+            this.SupplierID.Name = "SupplierID";
+            this.SupplierID.ReadOnly = true;
+            this.SupplierID.Width = 130;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.HeaderText = "Delete";
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             // 
             // roundedPanel1
             // 
@@ -529,88 +611,6 @@ namespace PointOfSale.Views
             this.roundedTextboxBarcode.PlaceholderText = "Barcode";
             this.roundedTextboxBarcode.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxBarcode.TabIndex = 11;
-            // 
-            // ItemID
-            // 
-            this.ItemID.DataPropertyName = "ItemID";
-            this.ItemID.HeaderText = " ID";
-            this.ItemID.Name = "ItemID";
-            this.ItemID.ReadOnly = true;
-            // 
-            // ItemName
-            // 
-            this.ItemName.DataPropertyName = "ItemName";
-            this.ItemName.HeaderText = "Item Name";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.ReadOnly = true;
-            this.ItemName.Width = 130;
-            // 
-            // Barcode
-            // 
-            this.Barcode.DataPropertyName = "Barcode";
-            this.Barcode.HeaderText = "Barcode";
-            this.Barcode.Name = "Barcode";
-            this.Barcode.ReadOnly = true;
-            // 
-            // RetailQuantity
-            // 
-            this.RetailQuantity.DataPropertyName = "RetailQuantity";
-            this.RetailQuantity.HeaderText = "Quantitiy";
-            this.RetailQuantity.Name = "RetailQuantity";
-            this.RetailQuantity.ReadOnly = true;
-            // 
-            // RetailUnit
-            // 
-            this.RetailUnit.DataPropertyName = "RetailUnit";
-            this.RetailUnit.HeaderText = "Unit";
-            this.RetailUnit.Name = "RetailUnit";
-            this.RetailUnit.ReadOnly = true;
-            // 
-            // RetailUnitPrice
-            // 
-            this.RetailUnitPrice.DataPropertyName = "RetailUnitPrice";
-            this.RetailUnitPrice.HeaderText = "Unit Price";
-            this.RetailUnitPrice.Name = "RetailUnitPrice";
-            this.RetailUnitPrice.ReadOnly = true;
-            this.RetailUnitPrice.Width = 130;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 120;
-            // 
-            // AdminID
-            // 
-            this.AdminID.DataPropertyName = "AdminID";
-            this.AdminID.HeaderText = "AdminID";
-            this.AdminID.Name = "AdminID";
-            this.AdminID.ReadOnly = true;
-            // 
-            // SupplierID
-            // 
-            this.SupplierID.DataPropertyName = "SupplierID";
-            this.SupplierID.HeaderText = "Supplier ID";
-            this.SupplierID.Name = "SupplierID";
-            this.SupplierID.ReadOnly = true;
-            this.SupplierID.Width = 130;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.HeaderText = "Delete";
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
             // 
             // ItemManagementForm
             // 

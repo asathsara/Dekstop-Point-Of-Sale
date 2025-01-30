@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PointOfSale.Repositories
 {
@@ -17,7 +13,7 @@ namespace PointOfSale.Repositories
         }
 
         // Abstract methods for CRUD operations (implemented in derived classes)
-        
+
         public abstract IEnumerable<T> GetAll();
         public abstract void Insert(T entity);
         public abstract void Delete(string id);

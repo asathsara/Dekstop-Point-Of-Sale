@@ -1,5 +1,4 @@
-﻿using PointOfSale.Components;
-using PointOfSale.Helpers;
+﻿using PointOfSale.Helpers;
 using PointOfSale.Models;
 using PointOfSale.Services;
 using System;
@@ -191,9 +190,6 @@ namespace PointOfSale.Views
             comboBoxUnit.SelectedItem = retailUnit;  // Assuming unit names match with the RetailUnit
         }
 
-        private void comboBoxSuppliers_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
 
-        }
     }
 }

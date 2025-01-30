@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PointOfSale.Models
+﻿namespace PointOfSale.Models
 {
-    internal class Employee
+    public class Employee
     {
+        public string EmployeeID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string EmployeeName { get; set; }
+        public string AdminID { get; set; }
     }
 }

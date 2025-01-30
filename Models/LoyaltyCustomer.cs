@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PointOfSale.Models
+﻿namespace PointOfSale.Models
 {
-    internal class LoyaltyCustomer
+    public class LoyaltyCustomer
     {
+        public string CustomerID { get; set; }
+        public string CustomerName { get; set; }
+        public string CustomerCardNumber { get; set; }
+        public float Points { get; set; }
+        public string EmployeeID { get; set; }
     }
 }
