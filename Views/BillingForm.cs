@@ -13,7 +13,7 @@ namespace PointOfSale.Views
     {
         private readonly BillingService _billingService;
         private ItemData _currentItemData;
-        private BindingList<TableItem> tableItemList;
+        private BindingList<BillItem> _billItems;
 
         // Fields for local variables
         private int intQuantity;
@@ -31,6 +31,9 @@ namespace PointOfSale.Views
             InitializeComponent();
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
+
+            
+            _billItems = new BindingList<BillItem>();
             _billingService = new BillingService(connectionString);
 
             roundedTextboxDiscountPercenatge.EnterKeyPressed += Discount_EnterKeyPressed;
@@ -127,21 +130,22 @@ namespace PointOfSale.Views
                 _currentItemData.RetailUnitPrice > 0 &&
                 totalPrice > 0)
             {
-                var tableItems = new TableItem
+                var billItem = new BillItem
                 {
+                    ItemID = _currentItemData.ItemID,
                     ItemName = _currentItemData.ItemName,
-                    Quantity = intQuantity,
-                    Unit = unit,
+                    CustomerQuantity = intQuantity,
+                    CustomerUnit = comboBoxUnit.SelectedIndex,
                     UnitPrice = _currentItemData.RetailUnitPrice,
-                    ItemAmount = totalPrice,
+                    Total = totalPrice,
                     ItemProfit = GetItemProfit(),
                 };
 
-                tableItemList.Add(tableItems);
+               _billItems.Add(billItem);
 
                 // Calculate sub total when add button clicked
-                subTotal += tableItems.ItemAmount;
-                totalProfit += tableItems.ItemProfit;
+                subTotal += billItem.Total;
+                totalProfit += billItem.ItemProfit;
 
                 SetValuesToGridView();
             }
@@ -158,15 +162,15 @@ namespace PointOfSale.Views
 
             int index = 1;
 
-            foreach (var tableItem in tableItemList)
+            foreach (var billItem in _billItems)
             {
                 dataGridViewItems.Rows.Add(
                     index,
-                    tableItem.ItemName,
-                    tableItem.Unit,
-                    tableItem.UnitPrice,
-                    tableItem.Quantity,
-                    tableItem.ItemAmount
+                    billItem.ItemName,
+                    billItem.CustomerUnit,
+                    billItem.UnitPrice,
+                    billItem.CustomerQuantity,
+                    billItem.Total
                 );
                 index++;
             }
@@ -213,7 +217,7 @@ namespace PointOfSale.Views
                 {
                     Date = DateTime.Now,
                     Time = DateTime.Now.TimeOfDay,
-                    TableItems = tableItemList.ToList(),
+                    BillItems = _billItems.ToList(),
                     SubTotal = subTotal,
                     Discount = float.Parse(labelDiscount.Text),
                     Total = total,
@@ -274,7 +278,7 @@ namespace PointOfSale.Views
                     totalProfit -= itemProfit;
 
                     // Remove the item from the list and update the GridView
-                    tableItemList.RemoveAt(e.RowIndex);
+                    _billItems.RemoveAt(e.RowIndex);
                     SetValuesToGridView();
                 }
 

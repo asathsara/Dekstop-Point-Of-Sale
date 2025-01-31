@@ -7,7 +7,7 @@ namespace PointOfSale.Models
     {
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
-        public List<TableItem> TableItems { get; set; }
+        public List<BillItem> BillItems { get; set; }
         public float SubTotal { get; set; }
         public float Discount { get; set; }
         public float Total { get; set; }
