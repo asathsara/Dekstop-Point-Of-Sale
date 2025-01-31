@@ -64,6 +64,6 @@ namespace PointOfSale.Repositories
             }
         }
 
-        
+
     }
 }

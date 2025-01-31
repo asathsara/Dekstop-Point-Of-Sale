@@ -27,7 +27,7 @@ namespace PointOfSale.Views
             dataGridViewEmployees.DataSource = employees;
         }
 
-       
+
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {

@@ -49,8 +49,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedTextboxQuantitiy = new PointOfSale.Components.RoundedTextbox();
             this.comboBoxUnit = new System.Windows.Forms.ComboBox();
-            this.comboBoxSuppliers = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxItems = new System.Windows.Forms.ComboBox();
+            this.labelBarcode = new System.Windows.Forms.Label();
             this.buttonCalculate = new PointOfSale.Components.RoundedButton();
             this.roundedButtonAdd = new PointOfSale.Components.RoundedButton();
             this.roundedPanel2 = new PointOfSale.Components.RoundedPanel();
@@ -80,9 +80,9 @@ namespace PointOfSale.Views
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantitiy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,8 +157,8 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel2.Controls.Add(this.panel9, 3, 2);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.comboBoxSuppliers, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.comboBoxItems, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.labelBarcode, 3, 1);
             this.tableLayoutPanel2.Controls.Add(this.buttonCalculate, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.roundedButtonAdd, 3, 4);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -242,28 +242,29 @@ namespace PointOfSale.Views
             this.comboBoxUnit.Size = new System.Drawing.Size(72, 36);
             this.comboBoxUnit.TabIndex = 1;
             // 
-            // comboBoxSuppliers
+            // comboBoxItems
             // 
-            this.comboBoxSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxSuppliers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSuppliers.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSuppliers.FormattingEnabled = true;
-            this.comboBoxSuppliers.Location = new System.Drawing.Point(43, 26);
-            this.comboBoxSuppliers.Name = "comboBoxSuppliers";
-            this.comboBoxSuppliers.Size = new System.Drawing.Size(194, 36);
-            this.comboBoxSuppliers.TabIndex = 11;
+            this.comboBoxItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxItems.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxItems.FormattingEnabled = true;
+            this.comboBoxItems.Location = new System.Drawing.Point(43, 26);
+            this.comboBoxItems.Name = "comboBoxItems";
+            this.comboBoxItems.Size = new System.Drawing.Size(194, 36);
+            this.comboBoxItems.TabIndex = 11;
+            this.comboBoxItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxItems_SelectedIndexChanged);
             // 
-            // label1
+            // labelBarcode
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(263, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 62);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "123456";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelBarcode.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarcode.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelBarcode.Location = new System.Drawing.Point(263, 23);
+            this.labelBarcode.Name = "labelBarcode";
+            this.labelBarcode.Size = new System.Drawing.Size(194, 62);
+            this.labelBarcode.TabIndex = 12;
+            this.labelBarcode.Text = "123456";
+            this.labelBarcode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonCalculate
             // 
@@ -286,6 +287,7 @@ namespace PointOfSale.Views
             this.buttonCalculate.TopLeftRadius = 40;
             this.buttonCalculate.TopRightRadius = 40;
             this.buttonCalculate.UseVisualStyleBackColor = false;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // roundedButtonAdd
             // 
@@ -308,6 +310,7 @@ namespace PointOfSale.Views
             this.roundedButtonAdd.TopLeftRadius = 40;
             this.roundedButtonAdd.TopRightRadius = 40;
             this.roundedButtonAdd.UseVisualStyleBackColor = false;
+            this.roundedButtonAdd.Click += new System.EventHandler(this.roundedButtonAdd_Click);
             // 
             // roundedPanel2
             // 
@@ -566,6 +569,7 @@ namespace PointOfSale.Views
             this.roundedButtonClear.TopLeftRadius = 30;
             this.roundedButtonClear.TopRightRadius = 30;
             this.roundedButtonClear.UseVisualStyleBackColor = false;
+            this.roundedButtonClear.Click += new System.EventHandler(this.roundedButtonClear_Click);
             // 
             // roundedButtonPrint
             // 
@@ -588,6 +592,7 @@ namespace PointOfSale.Views
             this.roundedButtonPrint.TopLeftRadius = 30;
             this.roundedButtonPrint.TopRightRadius = 30;
             this.roundedButtonPrint.UseVisualStyleBackColor = false;
+            this.roundedButtonPrint.Click += new System.EventHandler(this.roundedButtonPrint_Click);
             // 
             // roundedTextboxAmountPaid
             // 
@@ -710,9 +715,9 @@ namespace PointOfSale.Views
             this.Order,
             this.Item,
             this.Quantitiy,
-            this.Unit,
             this.UnitPrice,
-            this.Total,
+            this.ItemTotal,
+            this.ItemProfit,
             this.Delete});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
@@ -733,6 +738,7 @@ namespace PointOfSale.Views
             this.dataGridViewItems.RowTemplate.Height = 30;
             this.dataGridViewItems.Size = new System.Drawing.Size(501, 298);
             this.dataGridViewItems.TabIndex = 2;
+            this.dataGridViewItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItems_CellContentClick);
             // 
             // Order
             // 
@@ -756,13 +762,6 @@ namespace PointOfSale.Views
             this.Quantitiy.Name = "Quantitiy";
             this.Quantitiy.ReadOnly = true;
             // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "Unit";
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.ReadOnly = true;
-            // 
             // UnitPrice
             // 
             this.UnitPrice.DataPropertyName = "UnitPrice";
@@ -771,15 +770,23 @@ namespace PointOfSale.Views
             this.UnitPrice.ReadOnly = true;
             this.UnitPrice.Width = 150;
             // 
-            // Total
+            // ItemTotal
             // 
-            this.Total.DataPropertyName = "Total";
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
+            this.ItemTotal.DataPropertyName = "ItemTotal";
+            this.ItemTotal.HeaderText = "Total";
+            this.ItemTotal.Name = "ItemTotal";
+            this.ItemTotal.ReadOnly = true;
+            // 
+            // ItemProfit
+            // 
+            this.ItemProfit.DataPropertyName = "ItemProfit";
+            this.ItemProfit.HeaderText = "Profit";
+            this.ItemProfit.Name = "ItemProfit";
+            this.ItemProfit.ReadOnly = true;
             // 
             // Delete
             // 
+            this.Delete.DataPropertyName = "Delete";
             this.Delete.HeaderText = "Delete";
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
@@ -820,8 +827,8 @@ namespace PointOfSale.Views
         private TableLayoutPanel tableLayoutPanel3;
         private Components.RoundedTextbox roundedTextboxQuantitiy;
         private ComboBox comboBoxUnit;
-        private ComboBox comboBoxSuppliers;
-        private Label label1;
+        private ComboBox comboBoxItems;
+        private Label labelBarcode;
         private Components.RoundedButton buttonCalculate;
         private Components.RoundedButton roundedButtonAdd;
         private Components.RoundedPanel roundedPanel2;
@@ -845,15 +852,15 @@ namespace PointOfSale.Views
         private TableLayoutPanel tableLayoutPanel5;
         private Panel panel18;
         private DataGridView dataGridViewItems;
-        private DataGridViewTextBoxColumn Order;
-        private DataGridViewTextBoxColumn Item;
-        private DataGridViewTextBoxColumn Quantitiy;
-        private DataGridViewTextBoxColumn Unit;
-        private DataGridViewTextBoxColumn UnitPrice;
-        private DataGridViewTextBoxColumn Total;
-        private DataGridViewImageColumn Delete;
         private Components.RoundedTextbox roundedTextboxAmountPaid;
         private Components.RoundedTextbox roundedTextboxDiscountPercenatge;
         private Components.RoundedTextbox roundedTextboxCustomerCard;
+        private DataGridViewTextBoxColumn Order;
+        private DataGridViewTextBoxColumn Item;
+        private DataGridViewTextBoxColumn Quantitiy;
+        private DataGridViewTextBoxColumn UnitPrice;
+        private DataGridViewTextBoxColumn ItemTotal;
+        private DataGridViewTextBoxColumn ItemProfit;
+        private DataGridViewImageColumn Delete;
     }
 }

@@ -54,6 +54,12 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewEmployees = new System.Windows.Forms.DataGridView();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
@@ -61,12 +67,6 @@ namespace PointOfSale.Views
             this.roundedTextboxPassword = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxUsername = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -285,6 +285,51 @@ namespace PointOfSale.Views
             this.dataGridViewEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployees_CellContentClick);
             this.dataGridViewEmployees.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewEmployees_RowHeaderMouseClick);
             // 
+            // EmployeeID
+            // 
+            this.EmployeeID.DataPropertyName = "EmployeeID";
+            this.EmployeeID.HeaderText = " ID";
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Width = 130;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.DataPropertyName = "EmployeeName";
+            this.EmployeeName.HeaderText = "Employee Name";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            this.EmployeeName.Width = 190;
+            // 
+            // AdminID
+            // 
+            this.AdminID.DataPropertyName = "AdminID";
+            this.AdminID.HeaderText = "Admin ID";
+            this.AdminID.Name = "AdminID";
+            this.AdminID.ReadOnly = true;
+            this.AdminID.Width = 150;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.White;
@@ -421,51 +466,6 @@ namespace PointOfSale.Views
             this.roundedTextboxID.PlaceholderText = "ID";
             this.roundedTextboxID.Size = new System.Drawing.Size(246, 44);
             this.roundedTextboxID.TabIndex = 14;
-            // 
-            // EmployeeID
-            // 
-            this.EmployeeID.DataPropertyName = "EmployeeID";
-            this.EmployeeID.HeaderText = " ID";
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Width = 130;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            // 
-            // EmployeeName
-            // 
-            this.EmployeeName.DataPropertyName = "EmployeeName";
-            this.EmployeeName.HeaderText = "Employee Name";
-            this.EmployeeName.Name = "EmployeeName";
-            this.EmployeeName.ReadOnly = true;
-            this.EmployeeName.Width = 190;
-            // 
-            // AdminID
-            // 
-            this.AdminID.DataPropertyName = "AdminID";
-            this.AdminID.HeaderText = "Admin ID";
-            this.AdminID.Name = "AdminID";
-            this.AdminID.ReadOnly = true;
-            this.AdminID.Width = 150;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
             // 
             // EmployeeForm
             // 

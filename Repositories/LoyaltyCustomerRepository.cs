@@ -54,7 +54,7 @@ namespace PointOfSale.Repositories
 
                 }
             }
-                   return loyaltyCustomers;
+            return loyaltyCustomers;
         }
 
 

@@ -13,7 +13,7 @@ namespace PointOfSale.Views
         public StoreForm()
         {
             InitializeComponent();
-            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString; 
+            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
             _storeService = new StoreService(connectionString);
 
             LoadStoreData();

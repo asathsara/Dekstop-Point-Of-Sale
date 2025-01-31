@@ -88,7 +88,7 @@ namespace PointOfSale.Views
                     UserData.EmployeeID.ToString()
                 );
 
-               
+
 
                 _loyaltyCustomerService.AddLoyaltyCustomer(loyaltyCustomer);
                 MessageBox.Show("Loyalty customer added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
