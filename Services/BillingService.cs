@@ -3,6 +3,10 @@ using PointOfSale.Models;
 using PointOfSale.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace PointOfSale.Services
 {
@@ -14,11 +18,23 @@ namespace PointOfSale.Services
         private const float LOYALTY_CUSTOMER_SET_PERCENTAGE = 3f;
 
         private int customerPointsDiscount = 0;
+        private float discount = 0;
+        private Store store;
+        private static readonly string SavePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Prints");
+
 
         public BillingService(string connectionString)
         {
             _billingRepository = new BillingRepository(connectionString);
+
+            // Ensure the directory exists before using it
+            if (!Directory.Exists(SavePath))
+            {
+                Directory.CreateDirectory(SavePath);
+            }
         }
+
+
 
 
         public string GetEmployeeName(string employeeID)
@@ -40,11 +56,6 @@ namespace PointOfSale.Services
         }
 
 
-        public int InsertBill(Bill bill)
-        {
-            return _billingRepository.InsertBill(bill);
-        }
-
 
         public void InsertBillItem(BillItem billItem, int billID)
         {
@@ -56,13 +67,23 @@ namespace PointOfSale.Services
             return customerPointsDiscount;
         }
 
+        public float GetDiscount()
+        {
+            return discount;
+        }
+
+        public String GetStoreID()
+        {
+            return store.StoreID;
+        }
+
 
         public float CalculateTotalWithDiscountAndLoyalty(int customerCardNumber, float subTotal, float discountPercentage)
         {
             float total = subTotal;
             int customerPoints = 0;
             customerPointsDiscount = 0;
-            float discount = 0;
+            discount = 0;
 
             // Handle loyalty points and discount
             if (customerCardNumber > 0)
@@ -110,9 +131,72 @@ namespace PointOfSale.Services
 
 
 
-        public void UpdateLoyaltyCustomerPoints(string cardNumber, int customerPoints)
+        public int ProcessBill(Bill bill, string billText, BindingList<BillItem> billItems)
+        {
+            if (bill.Total == 0.0f)
+                throw new InvalidOperationException("Total amount cannot be zero.");
+
+            // Insert bill and get Bill ID
+            int billID = InsertBill(bill);
+
+            // Update customer loyalty points
+            UpdateLoyaltyCustomerPoints(bill.CustomerCardNumber, (int)bill.CustomerPoints);
+
+            // Save bill as an image
+            string filePath = $"{SavePath}\\Bill_{billID}.png";
+            SaveBillAsImage(billText, filePath);
+
+            foreach (BillItem billItem in billItems)
+            {
+                // Insert bill items
+                InsertBillItem(billItem, billID);
+            }
+
+            return billID;
+        }
+
+        public int InsertBill(Bill bill)
+        {
+            return _billingRepository.InsertBill(bill);
+        }
+
+        private void UpdateLoyaltyCustomerPoints(string cardNumber, int customerPoints)
         {
             _billingRepository.UpdateLoyaltyCustomerPoints(cardNumber, customerPoints);
+        }
+
+        private void SaveBillAsImage(string billText, string filePath)
+        {
+            try
+            {
+                Font font = new Font("Arial", 12, FontStyle.Regular);
+                Color textColor = Color.Black;
+                Color backColor = Color.White;
+
+                using (Bitmap dummyBitmap = new Bitmap(1, 1))
+                using (Graphics drawing = Graphics.FromImage(dummyBitmap))
+                {
+                    SizeF textSize = drawing.MeasureString(billText, font);
+                    int padding = 10;
+                    int imgWidth = (int)textSize.Width + padding * 2;
+                    int imgHeight = (int)textSize.Height + padding * 2;
+
+                    using (Bitmap img = new Bitmap(imgWidth, imgHeight))
+                    using (Graphics g = Graphics.FromImage(img))
+                    {
+                        g.Clear(backColor);
+                        using (Brush textBrush = new SolidBrush(textColor))
+                        {
+                            g.DrawString(billText, font, textBrush, padding, padding);
+                            img.Save(filePath, System.Drawing.Imaging.ImageFormat.Png);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error saving bill as image: {ex.Message}");
+            }
         }
 
 
@@ -163,7 +247,7 @@ namespace PointOfSale.Services
             int lineWidth = 45;
 
             // Get store details from the repository
-            var store = _billingRepository.GetStore();
+            store = GetStore();
 
             // Center the store name, address, and contact details
             string storeName = store.StoreName.PadLeft((lineWidth + store.StoreName.Length) / 2).PadRight(lineWidth).ToUpper();
@@ -188,10 +272,10 @@ ITEM NAME       UNIT      UNITPRICE  QTY    AMOUNT
 ";
 
             // Loop through items and format them properly
-            foreach (var item in billData.TableItems)
+            foreach (var item in billData.BillItems)
             {
                 billTemplate += string.Format("{0,-14} {1,-8} {2,10:F2} {3,6} {4,12:F2}\n",
-                    item.ItemName, item.Unit, item.UnitPrice, item.Quantity, item.ItemAmount);
+                    item.ItemName, item.CustomerUnit, item.UnitPrice, item.CustomerQuantity, item.Total);
             }
 
             billTemplate += $@"

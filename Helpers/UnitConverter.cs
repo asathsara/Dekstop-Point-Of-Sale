@@ -1,4 +1,7 @@
-﻿namespace PointOfSale
+﻿using System;
+using System.Collections.Generic;
+
+namespace PointOfSale
 {
     public static class UnitConverter
     {

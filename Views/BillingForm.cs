@@ -26,6 +26,11 @@ namespace PointOfSale.Views
         private float amountPaid;
         private float balance;
 
+        private DateTime date;
+        private TimeSpan time;
+
+        private string billTemplate;
+
         public BillingForm()
         {
             InitializeComponent();
@@ -185,8 +190,41 @@ namespace PointOfSale.Views
 
         private void roundedButtonPrint_Click(object sender, System.EventArgs e)
         {
+            // Show confirmation dialog
+            DialogResult result = MessageBox.Show("Are you sure you want to set customer points and save the bill as an image?",
+                                                  "Confirm Action",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
 
-        }
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Create Bill object
+                    Bill bill = new Bill
+                    {
+                        Total = total,
+                        TotalProfit = 0,  // Assuming you calculate this elsewhere
+                        DiscountPercentage = 0, // Assuming you calculate this elsewhere
+                        CustomerPoints = _billingService.GetCustomerPointsDiscount(),
+                        TotalDiscount = (float)_billingService.GetDiscount(),
+                        Date = date,
+                        Time = time,
+                        EmployeeID = UserData.EmployeeID,  
+                        CustomerCardNumber = customerCardNumber.ToString(),
+                        StoreID = _billingService.GetStoreID()  
+                    };
+
+                    int billID = _billingService.ProcessBill(bill, billTemplate, _billItems);
+
+                    MessageBox.Show($"Bill {billID} saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            }
 
         private void Discount_EnterKeyPressed(object sender, EventArgs e)
         {
@@ -210,13 +248,16 @@ namespace PointOfSale.Views
         {
 
             string bill = "";
+
+            date = DateTime.Now;
+            time = DateTime.Now.TimeOfDay;
             try
             {
                 // Create the BillData object
                 var billData = new BillData
                 {
-                    Date = DateTime.Now,
-                    Time = DateTime.Now.TimeOfDay,
+                    Date = date,
+                    Time = time,
                     BillItems = _billItems.ToList(),
                     SubTotal = subTotal,
                     Discount = float.Parse(labelDiscount.Text),
@@ -249,7 +290,11 @@ namespace PointOfSale.Views
 
             labelBalance.Text = balance.ToString("F2");
 
-            richTextBoxBill.Text = GenerateBill();
+            billTemplate = GenerateBill();
+
+            richTextBoxBill.Text = billTemplate;
+
+            
         }
 
 

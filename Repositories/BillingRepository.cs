@@ -236,7 +236,7 @@ namespace PointOfSale.Repositories
                     cmd.Parameters.AddWithValue("@StoreID", bill.StoreID);
 
                     // Handle nullable CustomerCardNumber
-                    if (string.IsNullOrEmpty(bill.CustomerCardNumber))
+                    if (bill.CustomerCardNumber == "0")
                     {
                         cmd.Parameters.AddWithValue("@CustomerCardNumber", DBNull.Value);
                     }
