@@ -23,6 +23,7 @@ namespace PointOfSale.Views
         private float totalProfit = 0;
         private float total = 0;
         private int customerCardNumber;
+        private float discountPercentage;
         private float amountPaid;
         private float balance;
 
@@ -204,8 +205,8 @@ namespace PointOfSale.Views
                     Bill bill = new Bill
                     {
                         Total = total,
-                        TotalProfit = 0,  // Assuming you calculate this elsewhere
-                        DiscountPercentage = 0, // Assuming you calculate this elsewhere
+                        TotalProfit = totalProfit, 
+                        DiscountPercentage = discountPercentage, 
                         CustomerPoints = _billingService.GetCustomerPointsDiscount(),
                         TotalDiscount = (float)_billingService.GetDiscount(),
                         Date = date,
@@ -231,7 +232,7 @@ namespace PointOfSale.Views
             // Parse customer card number and discount percentage
             customerCardNumber = int.TryParse(roundedTextboxCustomerCard.Text.Trim(), out customerCardNumber) ? customerCardNumber : 0;
 
-            float discountPercentage = float.TryParse(roundedTextboxDiscountPercenatge.Text.Trim(), out discountPercentage) ? discountPercentage : 0f;
+            discountPercentage = float.TryParse(roundedTextboxDiscountPercenatge.Text.Trim(), out discountPercentage) ? discountPercentage : 0f;
 
             // Calculate total price after loyalty points and discount
             total = _billingService.CalculateTotalWithDiscountAndLoyalty(customerCardNumber, subTotal, discountPercentage);
