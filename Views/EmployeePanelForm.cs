@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace PointOfSale.Views
@@ -13,11 +14,28 @@ namespace PointOfSale.Views
         private void labelBilling_Click(object sender, System.EventArgs e)
         {
             OpenChildForm(new BillingForm());
+            SetActiveLabel(labelBilling, panelImageOne);
         }
 
         private void labelCustomers_Click(object sender, System.EventArgs e)
         {
             OpenChildForm(new LoyaltyCustomersForm());
+            SetActiveLabel(labelCustomers, panelImageTwo);
+        }
+
+        // Helper function to handle active label highlighting
+        private void SetActiveLabel(Label activeLabel, Panel activePanel)
+        {
+            // Reset all labels and panels
+            labelBilling.BackColor = Color.Transparent;
+            panelImageOne.BackColor = Color.Transparent;
+
+            labelCustomers.BackColor = Color.Transparent;
+            panelImageTwo.BackColor = Color.Transparent;
+
+            // Set the active label and panel colors
+            activeLabel.BackColor = Color.FromArgb(104, 195, 255);
+            activePanel.BackColor = Color.FromArgb(104, 195, 255);
         }
 
 
@@ -81,6 +99,11 @@ namespace PointOfSale.Views
             }
 
             return greeting;
+        }
+
+        private void EmployeePanelForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -43,6 +43,7 @@ namespace PointOfSale.Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPanelForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelGreeting = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -51,7 +52,8 @@ namespace PointOfSale.Views
             this.labelTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxStore = new System.Windows.Forms.PictureBox();
+            this.panelImageFive = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.labelStore = new System.Windows.Forms.Label();
             this.panelImageFour = new System.Windows.Forms.Panel();
             this.pictureBoxSuppliers = new System.Windows.Forms.PictureBox();
@@ -65,6 +67,12 @@ namespace PointOfSale.Views
             this.labelDashboard = new System.Windows.Forms.Label();
             this.panelImageOne = new System.Windows.Forms.Panel();
             this.pictureBoxDashboard = new System.Windows.Forms.PictureBox();
+            this.labelBilling = new System.Windows.Forms.Label();
+            this.labelCustomers = new System.Windows.Forms.Label();
+            this.panelImageSix = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelImageSeven = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelSignout = new System.Windows.Forms.Label();
             this.pictureBoxSignout = new System.Windows.Forms.PictureBox();
@@ -75,7 +83,8 @@ namespace PointOfSale.Views
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStore)).BeginInit();
+            this.panelImageFive.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelImageFour.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuppliers)).BeginInit();
             this.panelImageThree.SuspendLayout();
@@ -84,6 +93,10 @@ namespace PointOfSale.Views
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagment)).BeginInit();
             this.panelImageOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).BeginInit();
+            this.panelImageSix.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelImageSeven.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignout)).BeginInit();
             this.roundedPanel1.SuspendLayout();
@@ -181,7 +194,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel2.Controls.Add(this.pictureBoxStore, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.panelImageFive, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.labelStore, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.panelImageFour, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.panelImageThree, 0, 2);
@@ -191,28 +204,45 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.Controls.Add(this.labelManagment, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.labelDashboard, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panelImageOne, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.labelBilling, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.labelCustomers, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.panelImageSix, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.panelImageSeven, 0, 7);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 189);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(230, 250);
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(230, 418);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // pictureBoxStore
+            // panelImageFive
             // 
-            this.pictureBoxStore.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBoxStore.Image = global::PointOfSale.Properties.Resources.store;
-            this.pictureBoxStore.Location = new System.Drawing.Point(12, 214);
-            this.pictureBoxStore.Name = "pictureBoxStore";
-            this.pictureBoxStore.Size = new System.Drawing.Size(21, 22);
-            this.pictureBoxStore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxStore.TabIndex = 16;
-            this.pictureBoxStore.TabStop = false;
+            this.panelImageFive.Controls.Add(this.pictureBox4);
+            this.panelImageFive.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImageFive.Location = new System.Drawing.Point(0, 200);
+            this.panelImageFive.Margin = new System.Windows.Forms.Padding(0);
+            this.panelImageFive.Name = "panelImageFive";
+            this.panelImageFive.Size = new System.Drawing.Size(46, 50);
+            this.panelImageFive.TabIndex = 21;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox4.Image = global::PointOfSale.Properties.Resources.store;
+            this.pictureBox4.Location = new System.Drawing.Point(13, 14);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 2;
+            this.pictureBox4.TabStop = false;
             // 
             // labelStore
             // 
@@ -220,9 +250,10 @@ namespace PointOfSale.Views
             this.labelStore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelStore.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelStore.Location = new System.Drawing.Point(49, 200);
+            this.labelStore.Location = new System.Drawing.Point(46, 200);
+            this.labelStore.Margin = new System.Windows.Forms.Padding(0);
             this.labelStore.Name = "labelStore";
-            this.labelStore.Size = new System.Drawing.Size(178, 50);
+            this.labelStore.Size = new System.Drawing.Size(184, 50);
             this.labelStore.TabIndex = 15;
             this.labelStore.Text = "Store";
             this.labelStore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,9 +328,10 @@ namespace PointOfSale.Views
             this.labelSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelSuppliers.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSuppliers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelSuppliers.Location = new System.Drawing.Point(49, 150);
+            this.labelSuppliers.Location = new System.Drawing.Point(46, 150);
+            this.labelSuppliers.Margin = new System.Windows.Forms.Padding(0);
             this.labelSuppliers.Name = "labelSuppliers";
-            this.labelSuppliers.Size = new System.Drawing.Size(178, 50);
+            this.labelSuppliers.Size = new System.Drawing.Size(184, 50);
             this.labelSuppliers.TabIndex = 9;
             this.labelSuppliers.Text = "Suppliers";
             this.labelSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,9 +343,10 @@ namespace PointOfSale.Views
             this.labelEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelEmployee.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelEmployee.Location = new System.Drawing.Point(49, 100);
+            this.labelEmployee.Location = new System.Drawing.Point(46, 100);
+            this.labelEmployee.Margin = new System.Windows.Forms.Padding(0);
             this.labelEmployee.Name = "labelEmployee";
-            this.labelEmployee.Size = new System.Drawing.Size(178, 50);
+            this.labelEmployee.Size = new System.Drawing.Size(184, 50);
             this.labelEmployee.TabIndex = 7;
             this.labelEmployee.Text = "Employees";
             this.labelEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -325,9 +358,10 @@ namespace PointOfSale.Views
             this.labelManagment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelManagment.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelManagment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelManagment.Location = new System.Drawing.Point(49, 50);
+            this.labelManagment.Location = new System.Drawing.Point(46, 50);
+            this.labelManagment.Margin = new System.Windows.Forms.Padding(0);
             this.labelManagment.Name = "labelManagment";
-            this.labelManagment.Size = new System.Drawing.Size(178, 50);
+            this.labelManagment.Size = new System.Drawing.Size(184, 50);
             this.labelManagment.TabIndex = 3;
             this.labelManagment.Text = "Item Managment";
             this.labelManagment.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -371,6 +405,78 @@ namespace PointOfSale.Views
             this.pictureBoxDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxDashboard.TabIndex = 2;
             this.pictureBoxDashboard.TabStop = false;
+            // 
+            // labelBilling
+            // 
+            this.labelBilling.BackColor = System.Drawing.Color.Transparent;
+            this.labelBilling.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelBilling.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelBilling.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBilling.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.labelBilling.Location = new System.Drawing.Point(46, 316);
+            this.labelBilling.Margin = new System.Windows.Forms.Padding(0);
+            this.labelBilling.Name = "labelBilling";
+            this.labelBilling.Size = new System.Drawing.Size(184, 50);
+            this.labelBilling.TabIndex = 19;
+            this.labelBilling.Text = "Billing";
+            this.labelBilling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelBilling.Click += new System.EventHandler(this.labelBilling_Click);
+            // 
+            // labelCustomers
+            // 
+            this.labelCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelCustomers.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.labelCustomers.Location = new System.Drawing.Point(49, 366);
+            this.labelCustomers.Name = "labelCustomers";
+            this.labelCustomers.Size = new System.Drawing.Size(178, 52);
+            this.labelCustomers.TabIndex = 20;
+            this.labelCustomers.Text = "Customers";
+            this.labelCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelCustomers.Click += new System.EventHandler(this.labelCustomers_Click);
+            // 
+            // panelImageSix
+            // 
+            this.panelImageSix.Controls.Add(this.pictureBox2);
+            this.panelImageSix.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImageSix.Location = new System.Drawing.Point(0, 316);
+            this.panelImageSix.Margin = new System.Windows.Forms.Padding(0);
+            this.panelImageSix.Name = "panelImageSix";
+            this.panelImageSix.Size = new System.Drawing.Size(46, 50);
+            this.panelImageSix.TabIndex = 22;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::PointOfSale.Properties.Resources.dashboard;
+            this.pictureBox2.Location = new System.Drawing.Point(13, 14);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // panelImageSeven
+            // 
+            this.panelImageSeven.Controls.Add(this.pictureBox3);
+            this.panelImageSeven.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImageSeven.Location = new System.Drawing.Point(0, 366);
+            this.panelImageSeven.Margin = new System.Windows.Forms.Padding(0);
+            this.panelImageSeven.Name = "panelImageSeven";
+            this.panelImageSeven.Size = new System.Drawing.Size(46, 52);
+            this.panelImageSeven.TabIndex = 23;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Image = global::PointOfSale.Properties.Resources.employee;
+            this.pictureBox3.Location = new System.Drawing.Point(13, 15);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 22);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -454,16 +560,19 @@ namespace PointOfSale.Views
             this.Controls.Add(this.panelConetentForm);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelNavigation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin";
+            this.Text = "Admin Panel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminPanelForm_FormClosed);
             this.Load += new System.EventHandler(this.AdminPanelForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStore)).EndInit();
+            this.panelImageFive.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelImageFour.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSuppliers)).EndInit();
             this.panelImageThree.ResumeLayout(false);
@@ -472,6 +581,10 @@ namespace PointOfSale.Views
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxManagment)).EndInit();
             this.panelImageOne.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDashboard)).EndInit();
+            this.panelImageSix.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelImageSeven.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSignout)).EndInit();
             this.roundedPanel1.ResumeLayout(false);
@@ -488,7 +601,6 @@ namespace PointOfSale.Views
         private Label labelTitle;
         private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel2;
-        private PictureBox pictureBoxStore;
         private Label labelStore;
         private Panel panelImageFour;
         private PictureBox pictureBoxSuppliers;
@@ -507,5 +619,13 @@ namespace PointOfSale.Views
         private PictureBox pictureBoxSignout;
         private Panel panelNavigation;
         private Components.RoundedPanel roundedPanel1;
+        private Label labelBilling;
+        private Panel panelImageFive;
+        private PictureBox pictureBox4;
+        private Label labelCustomers;
+        private Panel panelImageSix;
+        private PictureBox pictureBox2;
+        private Panel panelImageSeven;
+        private PictureBox pictureBox3;
     }
 }

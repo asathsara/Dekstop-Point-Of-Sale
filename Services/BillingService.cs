@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace PointOfSale.Services
 {
@@ -16,7 +15,7 @@ namespace PointOfSale.Services
 
         private const float LOYALTY_CUSTOMER_GET_PERCENTAGE = 10f;
         private const float LOYALTY_CUSTOMER_SET_PERCENTAGE = 3f;
-
+        private int customerPoints;
         private int customerPointsDiscount = 0;
         private float discount = 0;
         private Store store;
@@ -67,6 +66,11 @@ namespace PointOfSale.Services
             return customerPointsDiscount;
         }
 
+        public int GetCustomerPoints()
+        {
+            return customerPoints;
+        }
+
         public float GetDiscount()
         {
             return discount;
@@ -81,22 +85,25 @@ namespace PointOfSale.Services
         public float CalculateTotalWithDiscountAndLoyalty(int customerCardNumber, float subTotal, float discountPercentage)
         {
             float total = subTotal;
-            int customerPoints = 0;
+            customerPoints = 0;
             customerPointsDiscount = 0;
             discount = 0;
-
-            // Handle loyalty points and discount
-            if (customerCardNumber > 0)
-            {
-                customerPoints = GetLoyaltyCustomerPoints(customerCardNumber.ToString());
-                customerPointsDiscount = (int)CalculateLoyaltyDiscount(subTotal, ref customerPoints);
-                total -= customerPointsDiscount;
-            }
 
             if (discountPercentage > 0)
             {
                 discount = total * discountPercentage / 100;
                 total -= discount;
+            }
+
+            // Handle loyalty points and discount
+            if (customerCardNumber > 0)
+            {
+                customerPoints = GetLoyaltyCustomerPoints(customerCardNumber.ToString());
+                customerPointsDiscount = (int)CalculateLoyaltyDiscount(subTotal,  ref customerPoints);
+                total -= customerPointsDiscount;
+
+                // gain some customer points
+                customerPoints += (int)(total / 100 * LOYALTY_CUSTOMER_SET_PERCENTAGE);
             }
 
             // Return final total after applying loyalty and discount
@@ -119,6 +126,8 @@ namespace PointOfSale.Services
                 customerPoints = 0;
             }
 
+            
+
             return loyaltyPointsDiscount;
         }
 
@@ -131,7 +140,7 @@ namespace PointOfSale.Services
 
 
 
-        public int ProcessBill(Bill bill, string billText, BindingList<BillItem> billItems)
+        public int ProcessBill(Bill bill, string billText, BindingList<BillItem> billItems, int remainCustomerPoints)
         {
             if (bill.Total == 0.0f)
                 throw new InvalidOperationException("Total amount cannot be zero.");
@@ -140,7 +149,7 @@ namespace PointOfSale.Services
             int billID = InsertBill(bill);
 
             // Update customer loyalty points
-            UpdateLoyaltyCustomerPoints(bill.CustomerCardNumber, (int)bill.CustomerPoints);
+            UpdateLoyaltyCustomerPoints(bill.CustomerCardNumber, remainCustomerPoints);
 
             // Save bill as an image
             string filePath = $"{SavePath}\\Bill_{billID}.png";

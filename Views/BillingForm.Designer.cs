@@ -80,6 +80,7 @@ namespace PointOfSale.Views
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantitiy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -715,6 +716,7 @@ namespace PointOfSale.Views
             this.Order,
             this.Item,
             this.Quantitiy,
+            this.CustomerUnit,
             this.UnitPrice,
             this.ItemTotal,
             this.ItemProfit,
@@ -761,6 +763,13 @@ namespace PointOfSale.Views
             this.Quantitiy.HeaderText = "Quantitiy";
             this.Quantitiy.Name = "Quantitiy";
             this.Quantitiy.ReadOnly = true;
+            // 
+            // CustomerUnit
+            // 
+            this.CustomerUnit.DataPropertyName = "CustomerUnit";
+            this.CustomerUnit.HeaderText = "Unit";
+            this.CustomerUnit.Name = "CustomerUnit";
+            this.CustomerUnit.ReadOnly = true;
             // 
             // UnitPrice
             // 
@@ -858,6 +867,7 @@ namespace PointOfSale.Views
         private DataGridViewTextBoxColumn Order;
         private DataGridViewTextBoxColumn Item;
         private DataGridViewTextBoxColumn Quantitiy;
+        private DataGridViewTextBoxColumn CustomerUnit;
         private DataGridViewTextBoxColumn UnitPrice;
         private DataGridViewTextBoxColumn ItemTotal;
         private DataGridViewTextBoxColumn ItemProfit;

@@ -40,6 +40,7 @@ namespace PointOfSale.Views
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeePanelForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.labelGreeting = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -230,9 +231,10 @@ namespace PointOfSale.Views
             this.labelCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelCustomers.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.labelCustomers.Location = new System.Drawing.Point(49, 50);
+            this.labelCustomers.Location = new System.Drawing.Point(46, 50);
+            this.labelCustomers.Margin = new System.Windows.Forms.Padding(0);
             this.labelCustomers.Name = "labelCustomers";
-            this.labelCustomers.Size = new System.Drawing.Size(178, 50);
+            this.labelCustomers.Size = new System.Drawing.Size(184, 50);
             this.labelCustomers.TabIndex = 3;
             this.labelCustomers.Text = "Customers";
             this.labelCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,9 +361,11 @@ namespace PointOfSale.Views
             this.Controls.Add(this.panelConetentForm);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panelNavigation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeePanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard";
+            this.Text = "Employee Panel";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeePanelForm_FormClosed);
             this.Load += new System.EventHandler(this.EmployeePanelForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

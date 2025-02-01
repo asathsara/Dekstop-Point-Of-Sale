@@ -89,74 +89,81 @@ namespace PointOfSale.Views
         private void labelDashboard_Click(object sender, EventArgs e)
         {
             OpenChildForm(new DashboardForm());
-
-            labelDashboard.BackColor = Color.FromArgb(104, 195, 255);
-            panelImageOne.BackColor = Color.FromArgb(104, 195, 255);
-
-            labelManagment.BackColor = Color.Transparent;
-            panelImageTwo.BackColor = Color.Transparent;
-
-            labelEmployee.BackColor = Color.Transparent;
-            panelImageThree.BackColor = Color.Transparent;
-
-            labelSuppliers.BackColor = Color.Transparent;
-            panelImageFour.BackColor = Color.Transparent;
+            SetActiveLabel(labelDashboard, panelImageOne);
         }
 
         private void labelSuppliers_Click(object sender, EventArgs e)
         {
             OpenChildForm(new SuppliersForm());
-
-            labelSuppliers.BackColor = Color.FromArgb(104, 195, 255);
-            panelImageFour.BackColor = Color.FromArgb(104, 195, 255);
-
-            labelDashboard.BackColor = Color.Transparent;
-            panelImageOne.BackColor = Color.Transparent;
-
-            labelManagment.BackColor = Color.Transparent;
-            panelImageTwo.BackColor = Color.Transparent;
-
-            labelEmployee.BackColor = Color.Transparent;
-            panelImageThree.BackColor = Color.Transparent;
+            SetActiveLabel(labelSuppliers, panelImageFour);
         }
 
         private void labelManagment_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ItemManagementForm());
-
-            labelManagment.BackColor = Color.FromArgb(104, 195, 255);
-            panelImageTwo.BackColor = Color.FromArgb(104, 195, 255);
-
-            labelDashboard.BackColor = Color.Transparent;
-            panelImageOne.BackColor = Color.Transparent;
-
-            labelEmployee.BackColor = Color.Transparent;
-            panelImageThree.BackColor = Color.Transparent;
-
-            labelSuppliers.BackColor = Color.Transparent;
-            panelImageFour.BackColor = Color.Transparent;
+            SetActiveLabel(labelManagment, panelImageTwo);
         }
 
         private void labelEmployee_Click(object sender, EventArgs e)
         {
             OpenChildForm(new EmployeeForm());
+            SetActiveLabel(labelEmployee, panelImageThree);
+        }
 
-            labelEmployee.BackColor = Color.FromArgb(104, 195, 255);
-            panelImageThree.BackColor = Color.FromArgb(104, 195, 255);
+        private void labelStore_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new StoreForm());
+            SetActiveLabel(labelStore, panelImageFive);
+        }
 
+        private void labelBilling_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new BillingForm());
+            SetActiveLabel(labelBilling, panelImageSix);
+        }
+
+        private void labelCustomers_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new LoyaltyCustomersForm());
+            SetActiveLabel(labelCustomers, panelImageSeven);
+        }
+
+        // Helper function to handle active label highlighting
+        private void SetActiveLabel(Label activeLabel, Panel activePanel)
+        {
+            // Reset all labels and panels
             labelDashboard.BackColor = Color.Transparent;
             panelImageOne.BackColor = Color.Transparent;
 
             labelManagment.BackColor = Color.Transparent;
             panelImageTwo.BackColor = Color.Transparent;
 
+            labelEmployee.BackColor = Color.Transparent;
+            panelImageThree.BackColor = Color.Transparent;
+
             labelSuppliers.BackColor = Color.Transparent;
             panelImageFour.BackColor = Color.Transparent;
+
+            labelStore.BackColor = Color.Transparent;
+            panelImageFive.BackColor = Color.Transparent;
+
+            labelBilling.BackColor = Color.Transparent;
+            panelImageSix.BackColor = Color.Transparent;
+
+            labelCustomers.BackColor = Color.Transparent;
+            panelImageSeven.BackColor = Color.Transparent;
+
+            // Set the active label and panel colors
+            activeLabel.BackColor = Color.FromArgb(104, 195, 255);
+            activePanel.BackColor = Color.FromArgb(104, 195, 255);
         }
 
-        private void labelStore_Click(object sender, EventArgs e)
+
+        private void AdminPanelForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            OpenChildForm(new StoreForm());
+            Application.Exit();
         }
+
+
     }
 }

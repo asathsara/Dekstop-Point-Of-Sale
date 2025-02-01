@@ -17,12 +17,12 @@ namespace PointOfSale.Views
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
-            
+
             SetPanelGradients();
 
             // Set values
 
-            
+
             DashboardRepository dashboardRepo = new DashboardRepository(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
 
             // Get the total counts using the repository

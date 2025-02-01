@@ -16,7 +16,7 @@ namespace PointOfSale.Views
         private BindingList<BillItem> _billItems;
 
         // Fields for local variables
-        private int intQuantity;
+        private int quantity;
         private string unit;
         private float totalPrice;
         private float subTotal = 0;
@@ -38,7 +38,7 @@ namespace PointOfSale.Views
             string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
 
-            
+
             _billItems = new BindingList<BillItem>();
             _billingService = new BillingService(connectionString);
 
@@ -69,6 +69,7 @@ namespace PointOfSale.Views
             // Bind the ComboBox directly to the items list
             comboBoxItems.DataSource = items;
 
+
             comboBoxItems.DisplayMember = "ItemName";
             comboBoxItems.ValueMember = "ItemID";
         }
@@ -97,7 +98,7 @@ namespace PointOfSale.Views
             try
             {
                 // Parse quantity from user input
-                if (!int.TryParse(roundedTextboxQuantitiy.Text.Trim(), out intQuantity))
+                if (!int.TryParse(roundedTextboxQuantitiy.Text.Trim(), out quantity))
                 {
                     MessageBox.Show("Invalid quantity", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -107,7 +108,7 @@ namespace PointOfSale.Views
                 unit = comboBoxUnit.SelectedItem?.ToString() ?? "One";
 
                 // Call BillingService to calculate total price
-                totalPrice = _billingService.CalculateTotalPrice(intQuantity, unit, _currentItemData);
+                totalPrice = _billingService.CalculateTotalPrice(quantity, unit, _currentItemData);
 
                 // Display total price
                 labelTotalPrice.Text = $"Rs. {totalPrice:F2}";
@@ -131,27 +132,28 @@ namespace PointOfSale.Views
         private void roundedButtonAdd_Click(object sender, System.EventArgs e)
         {
             if (!string.IsNullOrEmpty(_currentItemData.ItemName) &&
-                intQuantity > 0 &&
+                quantity > 0 &&
                 !string.IsNullOrEmpty(unit) &&
                 _currentItemData.RetailUnitPrice > 0 &&
                 totalPrice > 0)
             {
+                var itemProfit = GetItemProfit() * quantity;
                 var billItem = new BillItem
                 {
                     ItemID = _currentItemData.ItemID,
                     ItemName = _currentItemData.ItemName,
-                    CustomerQuantity = intQuantity,
-                    CustomerUnit = comboBoxUnit.SelectedIndex,
+                    CustomerQuantity = quantity,
+                    CustomerUnit = comboBoxUnit.SelectedIndex == -1 ? 0 : comboBoxUnit.SelectedIndex,
                     UnitPrice = _currentItemData.RetailUnitPrice,
                     Total = totalPrice,
-                    ItemProfit = GetItemProfit(),
+                    ItemProfit = itemProfit,
                 };
 
-               _billItems.Add(billItem);
+                _billItems.Add(billItem);
 
                 // Calculate sub total when add button clicked
                 subTotal += billItem.Total;
-                totalProfit += billItem.ItemProfit;
+                totalProfit += itemProfit;
 
                 SetValuesToGridView();
             }
@@ -173,20 +175,56 @@ namespace PointOfSale.Views
                 dataGridViewItems.Rows.Add(
                     index,
                     billItem.ItemName,
-                    billItem.CustomerUnit,
-                    billItem.UnitPrice,
                     billItem.CustomerQuantity,
-                    billItem.Total
+                    UserData.UnitsArray[billItem.CustomerUnit],
+                    billItem.UnitPrice,
+                    billItem.Total,
+                    billItem.ItemProfit
+
                 );
                 index++;
             }
 
-            labelSubTotal.Text = $"{subTotal:F2}";  // Output: "12.35"
+            labelSubTotal.Text = $"Rs. {subTotal:F2}"; 
         }
 
         private void roundedButtonClear_Click(object sender, System.EventArgs e)
         {
+            //Clear all input fields
+            roundedTextboxCustomerCard.Text = "";
+            roundedTextboxDiscountPercenatge.Text = "";
+            roundedTextboxAmountPaid.Text = "";
+            roundedTextboxQuantitiy.Text = "";
 
+            // Reset labels
+            labelBarcode.Text = "";
+            labelDiscount.Text = "Rs. 0.00";
+            labelTotal.Text = "Rs. 0.00";
+            labelBalance.Text = "Rs. 0.00";
+
+            // Clear the item selection
+            comboBoxItems.SelectedIndex = -1;
+            comboBoxUnit.SelectedIndex = -1;
+
+            // Clear the bill items list
+            _billItems.Clear();
+            SetValuesToGridView();
+
+            // Reset bill variables
+            subTotal = 0;
+            totalProfit = 0;
+            total = 0;
+            amountPaid = 0;
+            balance = 0;
+            discountPercentage = 0;
+            customerCardNumber = 0;
+
+            // Clear bill template
+            billTemplate = "";
+            richTextBoxBill.Clear();
+
+            // Reset the current item data
+            _currentItemData = null;
         }
 
         private void roundedButtonPrint_Click(object sender, System.EventArgs e)
@@ -205,18 +243,20 @@ namespace PointOfSale.Views
                     Bill bill = new Bill
                     {
                         Total = total,
-                        TotalProfit = totalProfit, 
-                        DiscountPercentage = discountPercentage, 
+                        TotalProfit = totalProfit,
+                        DiscountPercentage = discountPercentage,
                         CustomerPoints = _billingService.GetCustomerPointsDiscount(),
                         TotalDiscount = (float)_billingService.GetDiscount(),
                         Date = date,
                         Time = time,
-                        EmployeeID = UserData.EmployeeID,  
+                        EmployeeID = UserData.EmployeeID,
                         CustomerCardNumber = customerCardNumber.ToString(),
-                        StoreID = _billingService.GetStoreID()  
+                        StoreID = _billingService.GetStoreID()
                     };
 
-                    int billID = _billingService.ProcessBill(bill, billTemplate, _billItems);
+                    int remainCustomerPoints = _billingService.GetCustomerPoints();
+
+                    int billID = _billingService.ProcessBill(bill, billTemplate, _billItems,remainCustomerPoints);
 
                     MessageBox.Show($"Bill {billID} saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -225,7 +265,7 @@ namespace PointOfSale.Views
                     MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            }
+        }
 
         private void Discount_EnterKeyPressed(object sender, EventArgs e)
         {
@@ -238,8 +278,8 @@ namespace PointOfSale.Views
             total = _billingService.CalculateTotalWithDiscountAndLoyalty(customerCardNumber, subTotal, discountPercentage);
 
             // Update UI with calculated discount and total
-            labelDiscount.Text = (subTotal - total).ToString("F2");
-            labelTotal.Text = total.ToString("F2");
+            labelDiscount.Text = $"Rs. {(subTotal - total).ToString("F2")}";
+            labelTotal.Text = $"Rs. {total.ToString("F2")}";
 
 
         }
@@ -266,7 +306,7 @@ namespace PointOfSale.Views
                     AmountPaid = float.Parse(roundedTextboxAmountPaid.Text.Trim()),
                     Balance = float.Parse(labelBalance.Text),
                     CustomerCardNumber = customerCardNumber,
-                    CustomerPoints = _billingService.GetCustomerPointsDiscount(),
+                    CustomerPoints = _billingService.GetCustomerPoints(),
                     EmployeeName = _billingService.GetEmployeeName(UserData.EmployeeID)
                 };
 
@@ -289,13 +329,13 @@ namespace PointOfSale.Views
 
             balance = amountPaid - total;
 
-            labelBalance.Text = balance.ToString("F2");
+            labelBalance.Text = $"Rs. {balance.ToString("F2")}";
 
             billTemplate = GenerateBill();
 
             richTextBoxBill.Text = billTemplate;
 
-            
+
         }
 
 
@@ -309,7 +349,7 @@ namespace PointOfSale.Views
 
                 // Retrieve the value of another cell in the same row
                 float itemTotal = float.TryParse(clickedRow.Cells["ItemTotal"].Value.ToString(), out itemTotal) ? itemTotal : 0f;
-                float itemProfit = float.TryParse(clickedRow.Cells["ItemProfit"].Value.ToString(), out itemTotal) ? itemTotal : 0f;
+                float itemProfit = float.TryParse(clickedRow.Cells["ItemProfit"].Value.ToString(), out itemProfit) ? itemProfit : 0f;
 
                 // Ask for confirmation before removing the row
                 DialogResult result = MessageBox.Show("Are you sure you want to remove this item?",
@@ -323,6 +363,7 @@ namespace PointOfSale.Views
                     subTotal -= itemTotal;
                     totalProfit -= itemProfit;
 
+                    
                     // Remove the item from the list and update the GridView
                     _billItems.RemoveAt(e.RowIndex);
                     SetValuesToGridView();
