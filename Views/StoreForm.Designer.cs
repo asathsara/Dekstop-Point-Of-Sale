@@ -44,6 +44,10 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewStore = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
@@ -51,10 +55,6 @@ namespace PointOfSale.Views
             this.roundedTextboxContactNumber = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxStoreName = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContactNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -269,6 +269,37 @@ namespace PointOfSale.Views
             this.dataGridViewStore.Size = new System.Drawing.Size(463, 404);
             this.dataGridViewStore.TabIndex = 6;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "EmployeeID";
+            this.ID.HeaderText = " ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // StoreName
+            // 
+            this.StoreName.DataPropertyName = "StoreName";
+            this.StoreName.HeaderText = "Store Name";
+            this.StoreName.Name = "StoreName";
+            this.StoreName.ReadOnly = true;
+            this.StoreName.Width = 165;
+            // 
+            // ContactNumber
+            // 
+            this.ContactNumber.DataPropertyName = "ContactNumber";
+            this.ContactNumber.HeaderText = "Contact Number";
+            this.ContactNumber.Name = "ContactNumber";
+            this.ContactNumber.ReadOnly = true;
+            this.ContactNumber.Width = 200;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            this.Address.Width = 190;
+            // 
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.White;
@@ -406,37 +437,6 @@ namespace PointOfSale.Views
             this.roundedTextboxID.PlaceholderText = "ID";
             this.roundedTextboxID.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxID.TabIndex = 14;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "EmployeeID";
-            this.ID.HeaderText = " ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // StoreName
-            // 
-            this.StoreName.DataPropertyName = "StoreName";
-            this.StoreName.HeaderText = "Store Name";
-            this.StoreName.Name = "StoreName";
-            this.StoreName.ReadOnly = true;
-            this.StoreName.Width = 165;
-            // 
-            // ContactNumber
-            // 
-            this.ContactNumber.DataPropertyName = "ContactNumber";
-            this.ContactNumber.HeaderText = "Contact Number";
-            this.ContactNumber.Name = "ContactNumber";
-            this.ContactNumber.ReadOnly = true;
-            this.ContactNumber.Width = 200;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            this.Address.Width = 190;
             // 
             // StoreForm
             // 

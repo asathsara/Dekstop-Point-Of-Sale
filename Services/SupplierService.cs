@@ -14,9 +14,8 @@ namespace PointOfSale.Services
             _supplierRepo = new SupplierRepository(connectionString);
         }
 
-        public void AddSupplier(Supplier supplier)
+        private void ValidateSupplier(Supplier supplier)
         {
-            // Validation logic moved here
             if (string.IsNullOrEmpty(supplier.SupplierID))
                 throw new ArgumentException("Supplier ID is required.");
             if (string.IsNullOrEmpty(supplier.SupplierName))
@@ -31,10 +30,20 @@ namespace PointOfSale.Services
                 throw new ArgumentException("Invalid Unit.");
             if (supplier.WholeSaleUnitPrice <= 0)
                 throw new ArgumentException("Invalid Unit Price.");
+        }
 
-            // Pass valid Supplier object to repository
+        public void UpdateSupplier(Supplier supplier)
+        {
+            ValidateSupplier(supplier);
+            _supplierRepo.Update(supplier);
+        }
+
+        public void AddSupplier(Supplier supplier)
+        {
+            ValidateSupplier(supplier);
             _supplierRepo.Insert(supplier);
         }
+
 
         public IEnumerable<Supplier> GetAllSuppliers()
         {

@@ -40,9 +40,9 @@ namespace PointOfSale.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -67,13 +67,15 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedTextboxUnitPrice = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxSupplier = new PointOfSale.Components.RoundedTextbox();
-            this.buttonSubmit = new PointOfSale.Components.RoundedButton();
             this.roundedTextboxContact = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxItem = new PointOfSale.Components.RoundedTextbox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.roundedTextboxQuantity = new PointOfSale.Components.RoundedTextbox();
             this.comboBoxUnit = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.roundedButtonUpdate = new PointOfSale.Components.RoundedButton();
+            this.roundedButtonSubmit = new PointOfSale.Components.RoundedButton();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -87,6 +89,7 @@ namespace PointOfSale.Views
             this.roundedPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -248,21 +251,21 @@ namespace PointOfSale.Views
             this.dataGridViewSuppliers.AllowUserToDeleteRows = false;
             this.dataGridViewSuppliers.AllowUserToResizeColumns = false;
             this.dataGridViewSuppliers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridViewSuppliers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewSuppliers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewSuppliers.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSuppliers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewSuppliers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridViewSuppliers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(6, 10, 6, 10);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSuppliers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSuppliers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SupplierID,
@@ -274,15 +277,15 @@ namespace PointOfSale.Views
             this.WholeSaleUnitPrice,
             this.AdminID,
             this.Delete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSuppliers.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(179)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSuppliers.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewSuppliers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewSuppliers.EnableHeadersVisualStyles = false;
             this.dataGridViewSuppliers.Location = new System.Drawing.Point(0, 50);
@@ -388,11 +391,11 @@ namespace PointOfSale.Views
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.Controls.Add(this.roundedTextboxUnitPrice, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.roundedTextboxSupplier, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.buttonSubmit, 1, 10);
             this.tableLayoutPanel2.Controls.Add(this.roundedTextboxContact, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.roundedTextboxID, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.roundedTextboxItem, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel7, 1, 10);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -445,29 +448,6 @@ namespace PointOfSale.Views
             this.roundedTextboxSupplier.PlaceholderText = "Supplier";
             this.roundedTextboxSupplier.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxSupplier.TabIndex = 13;
-            // 
-            // buttonSubmit
-            // 
-            this.buttonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
-            this.buttonSubmit.BottomLeftRadius = 40;
-            this.buttonSubmit.BottomRightRadius = 40;
-            this.buttonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSubmit.FlatAppearance.BorderSize = 0;
-            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSubmit.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonSubmit.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmit.Location = new System.Drawing.Point(35, 501);
-            this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(251, 53);
-            this.buttonSubmit.TabIndex = 1;
-            this.buttonSubmit.Text = "Submit";
-            this.buttonSubmit.TopLeftRadius = 40;
-            this.buttonSubmit.TopRightRadius = 40;
-            this.buttonSubmit.UseVisualStyleBackColor = false;
-            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // roundedTextboxContact
             // 
@@ -532,7 +512,7 @@ namespace PointOfSale.Views
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(251, 49);
             this.tableLayoutPanel4.TabIndex = 17;
             // 
@@ -565,6 +545,70 @@ namespace PointOfSale.Views
             this.comboBoxUnit.Size = new System.Drawing.Size(95, 36);
             this.comboBoxUnit.TabIndex = 1;
             // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.roundedButtonUpdate, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.roundedButtonSubmit, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(32, 498);
+            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(257, 59);
+            this.tableLayoutPanel7.TabIndex = 18;
+            // 
+            // roundedButtonUpdate
+            // 
+            this.roundedButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            this.roundedButtonUpdate.BottomLeftRadius = 25;
+            this.roundedButtonUpdate.BottomRightRadius = 25;
+            this.roundedButtonUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButtonUpdate.FlatAppearance.BorderSize = 0;
+            this.roundedButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonUpdate.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonUpdate.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonUpdate.Location = new System.Drawing.Point(133, 5);
+            this.roundedButtonUpdate.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedButtonUpdate.Name = "roundedButtonUpdate";
+            this.roundedButtonUpdate.Size = new System.Drawing.Size(119, 49);
+            this.roundedButtonUpdate.TabIndex = 3;
+            this.roundedButtonUpdate.Text = "Update";
+            this.roundedButtonUpdate.TopLeftRadius = 25;
+            this.roundedButtonUpdate.TopRightRadius = 25;
+            this.roundedButtonUpdate.UseVisualStyleBackColor = false;
+            this.roundedButtonUpdate.Click += new System.EventHandler(this.roundedButtonUpdate_Click);
+            // 
+            // roundedButtonSubmit
+            // 
+            this.roundedButtonSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.roundedButtonSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(163)))), ((int)(((byte)(255)))));
+            this.roundedButtonSubmit.BottomLeftRadius = 25;
+            this.roundedButtonSubmit.BottomRightRadius = 25;
+            this.roundedButtonSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedButtonSubmit.FlatAppearance.BorderSize = 0;
+            this.roundedButtonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.roundedButtonSubmit.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundedButtonSubmit.ForeColor = System.Drawing.Color.White;
+            this.roundedButtonSubmit.Location = new System.Drawing.Point(5, 5);
+            this.roundedButtonSubmit.Margin = new System.Windows.Forms.Padding(5);
+            this.roundedButtonSubmit.Name = "roundedButtonSubmit";
+            this.roundedButtonSubmit.Size = new System.Drawing.Size(118, 49);
+            this.roundedButtonSubmit.TabIndex = 2;
+            this.roundedButtonSubmit.Text = "Submit";
+            this.roundedButtonSubmit.TopLeftRadius = 25;
+            this.roundedButtonSubmit.TopRightRadius = 25;
+            this.roundedButtonSubmit.UseVisualStyleBackColor = false;
+            this.roundedButtonSubmit.Click += new System.EventHandler(this.roundedButtonSubmit_Click);
+            // 
             // SuppliersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,6 +632,7 @@ namespace PointOfSale.Views
             this.roundedPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -600,7 +645,6 @@ namespace PointOfSale.Views
         private TableLayoutPanel tableLayoutPanel3;
         private Components.RoundedPanel roundedPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private Components.RoundedButton buttonSubmit;
         private Components.RoundedPanel roundedPanel2;
         private TableLayoutPanel tableLayoutPanel6;
         private PictureBox pictureBox1;
@@ -625,5 +669,8 @@ namespace PointOfSale.Views
         private DataGridViewTextBoxColumn AdminID;
         private DataGridViewImageColumn Delete;
         private TextBox textBoxSearch;
+        private TableLayoutPanel tableLayoutPanel7;
+        private Components.RoundedButton roundedButtonUpdate;
+        private Components.RoundedButton roundedButtonSubmit;
     }
 }

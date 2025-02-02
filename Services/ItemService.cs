@@ -50,6 +50,14 @@ namespace PointOfSale.Services
 
             _itemRepo.Delete(itemId);
         }
+        
+        public void UpdateBillItem(string itemId)
+        {
+            if (string.IsNullOrEmpty(itemId))
+                throw new ArgumentException("Item ID is required to delete.");
+
+            _itemRepo.UpdateBillItem(itemId);
+        }
 
         public IEnumerable<Supplier> GetSuppliers()
         {

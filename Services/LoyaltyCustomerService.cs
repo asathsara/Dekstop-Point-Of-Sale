@@ -35,6 +35,11 @@ namespace PointOfSale.Services
             _loyaltyCustomerRepo.Delete(customerId);
         }
 
+        public void UpdateBill(int customerCardNumber)
+        {
+            _loyaltyCustomerRepo.UpdateBill(customerCardNumber);
+        }
+
         public LoyaltyCustomer ValidateAndProcessData(string customerID, string name, string cardNumber, int points, String employeeID)
         {
             if (string.IsNullOrEmpty(customerID))

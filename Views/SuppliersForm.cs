@@ -40,32 +40,7 @@ namespace PointOfSale.Views
             dataGridViewSuppliers.DataSource = suppliers;
         }
 
-        private void buttonSubmit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var supplier = new Supplier
-                {
-                    SupplierID = roundedTextboxID.Text.Trim(),
-                    SupplierName = roundedTextboxSupplier.Text.Trim(),
-                    ItemName = roundedTextboxItem.Text.Trim(),
-                    ContactNumber = int.TryParse(roundedTextboxContact.Text.Trim(), out int contactNumber) ? contactNumber : 0,
-                    WholeSaleQuantity = int.TryParse(roundedTextboxQuantity.Text.Trim(), out int quantity) ? quantity : 0,
-                    WholeSaleUnit = comboBoxUnit.SelectedIndex,
-                    WholeSaleUnitPrice = int.TryParse(roundedTextboxUnitPrice.Text.Trim(), out int unitPrice) ? unitPrice : 0,
-                    AdminID = UserData.AdminID.ToString()
-                };
-
-                _supplierService.AddSupplier(supplier);
-                MessageBox.Show("Supplier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadSuppliers();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+       
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
             string searchTerm = textBoxSearch.Text.Trim().ToLower();
@@ -120,6 +95,58 @@ namespace PointOfSale.Views
             roundedTextboxQuantity.Text = wholeSaleQuantity;
             comboBoxUnit.SelectedItem = wholeSaleUnit; // Assuming comboBoxUnit items match the wholeSaleUnit values
             roundedTextboxUnitPrice.Text = wholeSaleUnitPrice;
+        }
+
+        private void roundedButtonUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var supplier = new Supplier
+                {
+                    SupplierID = roundedTextboxID.Text.Trim(),
+                    SupplierName = roundedTextboxSupplier.Text.Trim(),
+                    ItemName = roundedTextboxItem.Text.Trim(),
+                    ContactNumber = int.TryParse(roundedTextboxContact.Text.Trim(), out int contactNumber) ? contactNumber : 0,
+                    WholeSaleQuantity = int.TryParse(roundedTextboxQuantity.Text.Trim(), out int quantity) ? quantity : 0,
+                    WholeSaleUnit = comboBoxUnit.SelectedIndex,
+                    WholeSaleUnitPrice = int.TryParse(roundedTextboxUnitPrice.Text.Trim(), out int unitPrice) ? unitPrice : 0,
+                    AdminID = UserData.AdminID.ToString()
+                };
+
+                _supplierService.AddSupplier(supplier);
+                MessageBox.Show("Supplier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadSuppliers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void roundedButtonSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var supplier = new Supplier
+                {
+                    SupplierID = roundedTextboxID.Text.Trim(),
+                    SupplierName = roundedTextboxSupplier.Text.Trim(),
+                    ItemName = roundedTextboxItem.Text.Trim(),
+                    ContactNumber = int.TryParse(roundedTextboxContact.Text.Trim(), out int contactNumber) ? contactNumber : 0,
+                    WholeSaleQuantity = int.TryParse(roundedTextboxQuantity.Text.Trim(), out int quantity) ? quantity : 0,
+                    WholeSaleUnit = comboBoxUnit.SelectedIndex,
+                    WholeSaleUnitPrice = int.TryParse(roundedTextboxUnitPrice.Text.Trim(), out int unitPrice) ? unitPrice : 0,
+                    AdminID = UserData.AdminID.ToString()
+                };
+
+                _supplierService.AddSupplier(supplier);
+                MessageBox.Show("Supplier added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadSuppliers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

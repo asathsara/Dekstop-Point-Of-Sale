@@ -99,7 +99,7 @@ namespace PointOfSale.Services
             if (customerCardNumber > 0)
             {
                 customerPoints = GetLoyaltyCustomerPoints(customerCardNumber.ToString());
-                customerPointsDiscount = (int)CalculateLoyaltyDiscount(subTotal,  ref customerPoints);
+                customerPointsDiscount = (int)CalculateLoyaltyDiscount(subTotal, ref customerPoints);
                 total -= customerPointsDiscount;
 
                 // gain some customer points
@@ -126,7 +126,7 @@ namespace PointOfSale.Services
                 customerPoints = 0;
             }
 
-            
+
 
             return loyaltyPointsDiscount;
         }

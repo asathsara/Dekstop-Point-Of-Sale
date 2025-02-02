@@ -36,6 +36,16 @@ namespace PointOfSale.Services
             _employeeRepo.Delete(employeeId);
         }
 
+        public void UpdateLoyaltyCustomer(string employeeID)
+        {
+            _employeeRepo.UpdateLoyaltyCustomer(employeeID);
+        }
+
+        public void UpdateBill(string employeeID)
+        {
+            _employeeRepo.UpdateBill(employeeID);
+        }
+
         public Employee ValidateAndProcessData(string employeeID, string username, string password, string name)
         {
             if (string.IsNullOrEmpty(employeeID))

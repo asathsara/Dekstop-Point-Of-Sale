@@ -39,13 +39,17 @@ namespace PointOfSale.Views
             if (e.ColumnIndex == dataGridViewLoyaltyCustomers.Columns["Delete"].Index && e.RowIndex >= 0)
             {
                 DataGridViewRow clickedRow = dataGridViewLoyaltyCustomers.Rows[e.RowIndex];
+
                 string customerID = clickedRow.Cells["CustomerID"].Value?.ToString() ?? string.Empty;
+                int customerCardNumber = int.Parse(clickedRow.Cells["CustomerCardNumber"].Value.ToString());
 
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this customer?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes && !string.IsNullOrEmpty(customerID))
                 {
+                    _loyaltyCustomerService.UpdateBill(customerCardNumber);
                     _loyaltyCustomerService.DeleteLoyaltyCustomer(customerID);
+
                     LoadLoyaltyCustomers();
                 }
             }

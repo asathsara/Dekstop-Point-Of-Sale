@@ -28,6 +28,28 @@ namespace PointOfSale.Repositories
             }
         }
 
+        public void UpdateBillItem(String itemID)
+        {
+
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+
+                string query = @"
+                                UPDATE BillItem
+                                SET ItemID = @BillItemDeleted
+                                WHERE ItemID = @ItemID;";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@ItemID", itemID);
+                command.Parameters.AddWithValue("@BillItemDeleted", DBNull.Value);
+
+                command.ExecuteNonQuery();
+            }
+
+        }
+
 
         public override IEnumerable<Item> GetAll()
         {

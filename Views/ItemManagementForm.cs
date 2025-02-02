@@ -150,6 +150,8 @@ namespace PointOfSale.Views
                 if (result == DialogResult.Yes && !string.IsNullOrEmpty(itemID))
                 {
                     _itemService.DeleteItem(itemID);
+                    _itemService.DeleteItem(itemID);
+
                     LoadItems();
                 }
             }

@@ -48,7 +48,10 @@ namespace PointOfSale.Views
 
                 if (result == DialogResult.Yes && !string.IsNullOrEmpty(employeeID))
                 {
+                    _employeeService.UpdateBill(employeeID);
+                    _employeeService.UpdateLoyaltyCustomer(employeeID);
                     _employeeService.DeleteEmployee(employeeID);
+
                     LoadEmployees();
                 }
             }

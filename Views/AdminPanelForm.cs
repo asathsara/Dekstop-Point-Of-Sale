@@ -46,7 +46,7 @@ namespace PointOfSale.Views
             }
             else
             {
-                greeting = " Good Night";
+                greeting = "Good Night";
             }
 
             return greeting;

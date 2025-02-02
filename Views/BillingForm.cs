@@ -22,6 +22,7 @@ namespace PointOfSale.Views
         private float subTotal = 0;
         private float totalProfit = 0;
         private float total = 0;
+        private float totalDiscount;
         private int customerCardNumber;
         private float discountPercentage;
         private float amountPaid;
@@ -185,7 +186,7 @@ namespace PointOfSale.Views
                 index++;
             }
 
-            labelSubTotal.Text = $"Rs. {subTotal:F2}"; 
+            labelSubTotal.Text = $"Rs. {subTotal:F2}";
         }
 
         private void roundedButtonClear_Click(object sender, System.EventArgs e)
@@ -256,7 +257,7 @@ namespace PointOfSale.Views
 
                     int remainCustomerPoints = _billingService.GetCustomerPoints();
 
-                    int billID = _billingService.ProcessBill(bill, billTemplate, _billItems,remainCustomerPoints);
+                    int billID = _billingService.ProcessBill(bill, billTemplate, _billItems, remainCustomerPoints);
 
                     MessageBox.Show($"Bill {billID} saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -277,8 +278,10 @@ namespace PointOfSale.Views
             // Calculate total price after loyalty points and discount
             total = _billingService.CalculateTotalWithDiscountAndLoyalty(customerCardNumber, subTotal, discountPercentage);
 
+            totalDiscount = subTotal - total;
+
             // Update UI with calculated discount and total
-            labelDiscount.Text = $"Rs. {(subTotal - total).ToString("F2")}";
+            labelDiscount.Text = $"Rs. {totalDiscount.ToString("F2")}";
             labelTotal.Text = $"Rs. {total.ToString("F2")}";
 
 
@@ -301,10 +304,10 @@ namespace PointOfSale.Views
                     Time = time,
                     BillItems = _billItems.ToList(),
                     SubTotal = subTotal,
-                    Discount = float.Parse(labelDiscount.Text),
+                    Discount = totalDiscount,
                     Total = total,
                     AmountPaid = float.Parse(roundedTextboxAmountPaid.Text.Trim()),
-                    Balance = float.Parse(labelBalance.Text),
+                    Balance = balance,
                     CustomerCardNumber = customerCardNumber,
                     CustomerPoints = _billingService.GetCustomerPoints(),
                     EmployeeName = _billingService.GetEmployeeName(UserData.EmployeeID)
@@ -363,7 +366,7 @@ namespace PointOfSale.Views
                     subTotal -= itemTotal;
                     totalProfit -= itemProfit;
 
-                    
+
                     // Remove the item from the list and update the GridView
                     _billItems.RemoveAt(e.RowIndex);
                     SetValuesToGridView();

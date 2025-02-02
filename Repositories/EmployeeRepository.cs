@@ -1,4 +1,5 @@
-﻿using PointOfSale.Models;
+﻿using PointOfSale.Helpers;
+using PointOfSale.Models;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -94,6 +95,50 @@ namespace PointOfSale.Repositories
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public void UpdateLoyaltyCustomer(string employeeID)
+        {
+
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+
+                string query = @"
+            UPDATE LoyaltyCustomer
+            SET EmployeeID = @AdminID
+            WHERE EmployeeID = @EmployeeID;";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@EmployeeID", employeeID);
+                command.Parameters.AddWithValue("@AdminID", UserData.EmployeeID);
+
+                command.ExecuteNonQuery();
+            }
+
+        }
+
+        public void UpdateBill(string employeeID)
+        {
+
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+
+                string query = @"
+            UPDATE Bill
+            SET EmployeeID = @AdminID
+            WHERE EmployeeID = @EmployeeID;";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@EmployeeID", employeeID);
+                command.Parameters.AddWithValue("@AdminID", UserData.EmployeeID);
+
+                command.ExecuteNonQuery();
+            }
+
         }
     }
 }

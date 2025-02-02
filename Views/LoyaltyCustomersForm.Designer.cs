@@ -54,6 +54,12 @@ namespace PointOfSale.Views
             this.roundedPanel3 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridViewLoyaltyCustomers = new System.Windows.Forms.DataGridView();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerCardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.roundedPanel1 = new PointOfSale.Components.RoundedPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSubmit = new PointOfSale.Components.RoundedButton();
@@ -61,12 +67,6 @@ namespace PointOfSale.Views
             this.roundedTextboxCardNumber = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxCustomerName = new PointOfSale.Components.RoundedTextbox();
             this.roundedTextboxID = new PointOfSale.Components.RoundedTextbox();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerCardNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Points = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -285,6 +285,52 @@ namespace PointOfSale.Views
             this.dataGridViewLoyaltyCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItems_CellContentClick);
             this.dataGridViewLoyaltyCustomers.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewItems_RowHeaderMouseClick);
             // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "CustomerID";
+            this.CustomerID.HeaderText = " ID";
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.ReadOnly = true;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.DataPropertyName = "CustomerName";
+            this.CustomerName.HeaderText = "Customer Name";
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            this.CustomerName.Width = 200;
+            // 
+            // CustomerCardNumber
+            // 
+            this.CustomerCardNumber.DataPropertyName = "CustomerCardNumber";
+            this.CustomerCardNumber.HeaderText = "Card Number";
+            this.CustomerCardNumber.Name = "CustomerCardNumber";
+            this.CustomerCardNumber.ReadOnly = true;
+            this.CustomerCardNumber.Width = 165;
+            // 
+            // Points
+            // 
+            this.Points.DataPropertyName = "Points";
+            this.Points.HeaderText = "Points";
+            this.Points.Name = "Points";
+            this.Points.ReadOnly = true;
+            this.Points.Width = 190;
+            // 
+            // EmployeeID
+            // 
+            this.EmployeeID.DataPropertyName = "EmployeeID";
+            this.EmployeeID.HeaderText = "Employee ID";
+            this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.ReadOnly = true;
+            this.EmployeeID.Width = 150;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            // 
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.White;
@@ -420,52 +466,6 @@ namespace PointOfSale.Views
             this.roundedTextboxID.PlaceholderText = "ID";
             this.roundedTextboxID.Size = new System.Drawing.Size(247, 45);
             this.roundedTextboxID.TabIndex = 14;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.DataPropertyName = "CustomerID";
-            this.CustomerID.HeaderText = " ID";
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.ReadOnly = true;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.DataPropertyName = "CustomerName";
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
-            this.CustomerName.Width = 200;
-            // 
-            // CustomerCardNumber
-            // 
-            this.CustomerCardNumber.DataPropertyName = "CustomerCardNumber";
-            this.CustomerCardNumber.HeaderText = "Card Number";
-            this.CustomerCardNumber.Name = "CustomerCardNumber";
-            this.CustomerCardNumber.ReadOnly = true;
-            this.CustomerCardNumber.Width = 165;
-            // 
-            // Points
-            // 
-            this.Points.DataPropertyName = "Points";
-            this.Points.HeaderText = "Points";
-            this.Points.Name = "Points";
-            this.Points.ReadOnly = true;
-            this.Points.Width = 190;
-            // 
-            // EmployeeID
-            // 
-            this.EmployeeID.DataPropertyName = "EmployeeID";
-            this.EmployeeID.HeaderText = "Employee ID";
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.ReadOnly = true;
-            this.EmployeeID.Width = 150;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
             // 
             // LoyaltyCustomersForm
             // 

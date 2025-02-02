@@ -90,16 +90,9 @@ namespace PointOfSale.Repositories
                     {
                         string checkSupplierExistsQuery = "SELECT COUNT(1) FROM Supplier WHERE SupplierID = @SupplierID";
                         string insertSupplierQuery = @"INSERT INTO Supplier (SupplierID, SupplierName, ContactNumber, AdminID) 
-                                                VALUES (@SupplierID, @SupplierName, @ContactNumber, @AdminID)";
-                        string updateSupplierQuery = @"UPDATE Supplier 
-                                               SET SupplierName = @SupplierName, ContactNumber = @ContactNumber, AdminID = @AdminID 
-                                               WHERE SupplierID = @SupplierID";
+                                        VALUES (@SupplierID, @SupplierName, @ContactNumber, @AdminID)";
                         string insertSupplierItemQuery = @"INSERT INTO SupplierItem (SupplierID, ItemName, WholeSaleQuantity, WholeSaleUnit, WholeSaleUnitPrice) 
-                                                    VALUES (@SupplierID, @ItemName, @WholeSaleQuantity, @WholeSaleUnit, @WholeSaleUnitPrice)";
-                        string updateSupplierItemQuery = @"UPDATE SupplierItem 
-                                                   SET ItemName = @ItemName, WholeSaleQuantity = @WholeSaleQuantity, 
-                                                       WholeSaleUnit = @WholeSaleUnit, WholeSaleUnitPrice = @WholeSaleUnitPrice
-                                                   WHERE SupplierID = @SupplierID";
+                                            VALUES (@SupplierID, @ItemName, @WholeSaleQuantity, @WholeSaleUnit, @WholeSaleUnitPrice)";
 
                         bool supplierExists = false;
                         using (SqlCommand cmd = new SqlCommand(checkSupplierExistsQuery, conn, transaction))
@@ -108,32 +101,8 @@ namespace PointOfSale.Repositories
                             supplierExists = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
                         }
 
-                        if (supplierExists)
+                        if (!supplierExists) // Insert only if the supplier does not exist
                         {
-                            // Update the supplier if it already exists
-                            using (SqlCommand cmd = new SqlCommand(updateSupplierQuery, conn, transaction))
-                            {
-                                cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
-                                cmd.Parameters.AddWithValue("@SupplierName", supplier.SupplierName);
-                                cmd.Parameters.AddWithValue("@ContactNumber", supplier.ContactNumber);
-                                cmd.Parameters.AddWithValue("@AdminID", supplier.AdminID);
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            // Update the supplier item if it exists
-                            using (SqlCommand cmd = new SqlCommand(updateSupplierItemQuery, conn, transaction))
-                            {
-                                cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
-                                cmd.Parameters.AddWithValue("@ItemName", supplier.ItemName);
-                                cmd.Parameters.AddWithValue("@WholeSaleQuantity", supplier.WholeSaleQuantity);
-                                cmd.Parameters.AddWithValue("@WholeSaleUnit", supplier.WholeSaleUnit);
-                                cmd.Parameters.AddWithValue("@WholeSaleUnitPrice", supplier.WholeSaleUnitPrice);
-                                cmd.ExecuteNonQuery();
-                            }
-                        }
-                        else
-                        {
-                            // Insert a new supplier if it does not exist
                             using (SqlCommand cmd = new SqlCommand(insertSupplierQuery, conn, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
@@ -143,16 +112,16 @@ namespace PointOfSale.Repositories
                                 cmd.ExecuteNonQuery();
                             }
 
-                            // Insert a new supplier item
-                            using (SqlCommand cmd = new SqlCommand(insertSupplierItemQuery, conn, transaction))
-                            {
-                                cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
-                                cmd.Parameters.AddWithValue("@ItemName", supplier.ItemName);
-                                cmd.Parameters.AddWithValue("@WholeSaleQuantity", supplier.WholeSaleQuantity);
-                                cmd.Parameters.AddWithValue("@WholeSaleUnit", supplier.WholeSaleUnit);
-                                cmd.Parameters.AddWithValue("@WholeSaleUnitPrice", supplier.WholeSaleUnitPrice);
-                                cmd.ExecuteNonQuery();
-                            }
+                        }
+
+                        using (SqlCommand cmd = new SqlCommand(insertSupplierItemQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
+                            cmd.Parameters.AddWithValue("@ItemName", supplier.ItemName);
+                            cmd.Parameters.AddWithValue("@WholeSaleQuantity", supplier.WholeSaleQuantity);
+                            cmd.Parameters.AddWithValue("@WholeSaleUnit", supplier.WholeSaleUnit);
+                            cmd.Parameters.AddWithValue("@WholeSaleUnitPrice", supplier.WholeSaleUnitPrice);
+                            cmd.ExecuteNonQuery();
                         }
 
                         transaction.Commit();
@@ -165,6 +134,54 @@ namespace PointOfSale.Repositories
                 }
             }
         }
+
+        public void Update(Supplier supplier)
+        {
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                using (SqlTransaction transaction = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        string updateSupplierQuery = @"UPDATE Supplier 
+                                       SET SupplierName = @SupplierName, ContactNumber = @ContactNumber, AdminID = @AdminID 
+                                       WHERE SupplierID = @SupplierID";
+                        string updateSupplierItemQuery = @"UPDATE SupplierItem 
+                                           SET ItemName = @ItemName, WholeSaleQuantity = @WholeSaleQuantity, 
+                                               WholeSaleUnit = @WholeSaleUnit, WholeSaleUnitPrice = @WholeSaleUnitPrice
+                                           WHERE SupplierID = @SupplierID";
+
+                        using (SqlCommand cmd = new SqlCommand(updateSupplierQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
+                            cmd.Parameters.AddWithValue("@SupplierName", supplier.SupplierName);
+                            cmd.Parameters.AddWithValue("@ContactNumber", supplier.ContactNumber);
+                            cmd.Parameters.AddWithValue("@AdminID", supplier.AdminID);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        using (SqlCommand cmd = new SqlCommand(updateSupplierItemQuery, conn, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@SupplierID", supplier.SupplierID);
+                            cmd.Parameters.AddWithValue("@ItemName", supplier.ItemName);
+                            cmd.Parameters.AddWithValue("@WholeSaleQuantity", supplier.WholeSaleQuantity);
+                            cmd.Parameters.AddWithValue("@WholeSaleUnit", supplier.WholeSaleUnit);
+                            cmd.Parameters.AddWithValue("@WholeSaleUnitPrice", supplier.WholeSaleUnitPrice);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        Console.WriteLine($"An error occurred: {ex.Message}");
+                    }
+                }
+            }
+        }
+
 
 
 

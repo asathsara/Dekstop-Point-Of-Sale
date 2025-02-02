@@ -1,4 +1,5 @@
 ﻿using PointOfSale.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -94,6 +95,28 @@ namespace PointOfSale.Repositories
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public void UpdateBill(int customerCardNumber)
+        {
+
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+
+                string query = @"
+            UPDATE Bill
+            SET CustomerCardNumber = @CustomerDeleted
+            WHERE CustomerCardNumber = @CustomerCardNumber;";
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@CustomerCardNumber", customerCardNumber);
+                command.Parameters.AddWithValue("@CustomerDeleted", DBNull.Value);
+
+                command.ExecuteNonQuery();
+            }
+
         }
     }
 }
